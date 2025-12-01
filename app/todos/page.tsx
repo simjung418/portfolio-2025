@@ -1,7 +1,9 @@
 "use client";
 import Input from "@/components/input";
-import { CheckIcon, PlusIcon, SparklesIcon, PencilIcon } from "@heroicons/react/16/solid";
+import Checkbox from "@/components/checkbox";
+import { PlusIcon, SparklesIcon, PencilIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
+
 
 export default function Todos() {
   const todoList = [
@@ -72,6 +74,7 @@ export default function Todos() {
               <SparklesIcon />
               <div className="w-full text-xl text-neutral-900">{label}</div>
               <PencilIcon />
+              <Checkbox/>
             </li>
           );
         })}

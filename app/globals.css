@@ -26,7 +26,7 @@ body {
 }
 /* start todos */
 .green {
-  @apply bg-green-50 border-green-200;
+  @apply bg-green-50 border-green-100;
 }
 
 .green:hover {
@@ -50,11 +50,15 @@ body {
 }
 
 .yellow>svg {
-  @apply text-yellow-300;
+  @apply text-yellow-400;
+}
+
+.yellow section { 
+  @apply bg-yellow-50 text-yellow-400 border-yellow-400;
 }
 
 .stone {
-  @apply bg-stone-50 border-stone-200;
+  @apply bg-stone-50 border-stone-100;
 }
 
 .stone:hover {
