@@ -65,11 +65,11 @@ body {
   @apply bg-stone-100;
 }
 
-.stone svg {
-  @apply text-stone-300/0;
+.stone>svg {
+  @apply text-stone-300;
 }
 
-.stone svg:hover {
-  @apply text-stone-300;
+.stone section { 
+  @apply bg-stone-50 text-stone-400 border-stone-400;
 }
 /* end todos */
