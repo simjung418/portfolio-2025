@@ -33,7 +33,7 @@ body {
   @apply bg-green-100;
 }
 
-.green>svg {
+.green > svg {
   @apply text-green-300;
 }
 
@@ -49,11 +49,11 @@ body {
   @apply bg-yellow-100;
 }
 
-.yellow>svg {
+.yellow > svg {
   @apply text-yellow-400;
 }
 
-.yellow section { 
+.yellow section {
   @apply bg-yellow-50 text-yellow-400 border-yellow-400;
 }
 
@@ -65,11 +65,11 @@ body {
   @apply bg-stone-100;
 }
 
-.stone>svg {
+.stone > svg {
   @apply text-stone-300;
 }
 
-.stone section { 
+.stone section {
   @apply bg-stone-50 text-stone-400 border-stone-400;
 }
 /* end todos */

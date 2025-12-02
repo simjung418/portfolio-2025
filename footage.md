@@ -1,26 +1,18 @@
 # 포트폴리오 제작 기록
 
 ### 251130
-
-□ 페이지 만들기 (app/todos/page.tsx)
-
-□ 투두 목록 컴포넌트 (빈 배열이라도 OK)
-
-□ 추가 버튼 (클릭해도 아무 일 안 일어나도 OK)
-
-□ "Hello Todo" 텍스트라도 보이면 성공!
-
-
-→ 못생겨도 OK!
-
-→ 작동 안 해도 OK!
-
-→ 그냥 화면에 뭔가 보이면 성공!
-
+- Todos page
+  [] 라우팅, tsx 러프하게 작성
+  [] input component 분리
 
 ### 251201
-
 - Todos page
-[] css 추가
-[] 버튼 기능 추가
-[]
+  [] Custom Hook 설계완료
+  [] Server Action (cookies) 이용하여 데이터 저장 기능 구현
+  [] UIUX 디테일 작업
+
+### 251202
+- Title component
+  [] 이미지 구상했던 타이틀 폰트 탐색 (google font)
+  [] 메타데이터를 이용하여 컴포넌트화 된 타이틀 작업
+  [] 메타데이터 타입문제로 중단 - 내일 재개

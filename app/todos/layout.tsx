@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title: "Todos",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
