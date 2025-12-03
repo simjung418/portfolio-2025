@@ -10,7 +10,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-neutral-50 h-screen py-10">
+    <div className="bg-neutral-50 h-screen py-10 px-5">
       {children}
     </div>
   );

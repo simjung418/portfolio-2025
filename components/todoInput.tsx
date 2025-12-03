@@ -16,9 +16,6 @@ export default function Input({ initialValue = "", onSubmit, onCancel }: TodoInp
       setValue("");
     }
   };
-  
-
-
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Escape") {
@@ -34,7 +31,9 @@ export default function Input({ initialValue = "", onSubmit, onCancel }: TodoInp
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        onKeyUp={handleKeyDown}/>
+        onKeyDown={handleKeyDown}
+        className="text-xl text-neutral-900 outline-none"
+      />
     </form>
   );
 }

@@ -1,0 +1,59 @@
+@reference "tailwindcss";
+/* start todos */
+.green {
+  @apply bg-green-50 border-green-100 ring-green-300;
+}
+
+.green:hover {
+  @apply bg-green-100;
+}
+
+.green > * > svg {
+  @apply text-green-300;
+}
+
+.green section {
+  @apply bg-green-50 text-green-300 border-green-300;
+}
+
+.yellow {
+  @apply bg-yellow-50 border-yellow-200 ring-yellow-400;
+}
+
+.yellow:hover {
+  @apply bg-yellow-100;
+}
+
+.yellow > * > svg {
+  @apply text-yellow-400;
+}
+
+.yellow section {
+  @apply bg-yellow-50 text-yellow-400 border-yellow-400;
+}
+
+.stone {
+  @apply bg-stone-50 border-stone-100 ring-stone-400;
+}
+
+.stone:hover {
+  @apply bg-stone-100;
+}
+
+.stone > * > svg {
+  @apply text-stone-400;
+}
+
+.stone section {
+  @apply bg-stone-50 text-stone-400 border-stone-400;
+}
+/* end todos */
+
+
+.svg_transition {
+  @apply [&_svg]:transition-opacity [&_svg]:ease-in;
+}
+
+.svg_opacity {
+  @apply opacity-20 hover:opacity-100 sm:opacity-0;
+}

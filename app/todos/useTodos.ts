@@ -11,6 +11,7 @@ const getStatus = (isDone: boolean, isRoutine: boolean) => {
 export function useTodos() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isEditing, setIsEditing] = useState(false);
 
   // 컴포넌트 마운트되면 쿠키 불러오기
   useEffect(() => {
@@ -35,7 +36,13 @@ export function useTodos() {
 
   useEffect(() => {
     if (todos.length > 0 && !isLoading) {
-      setCookie(JSON.stringify(todos));
+      setCookie(JSON.stringify(todos)); // todos가 변할때 마다 쿠키에 저장
+    }
+    const checkEditing = todos.find(i => i.isEditing);
+    if (checkEditing) { // 에디팅 체크 될때마다 변환
+      setIsEditing(true);
+    } else {
+      setIsEditing(false);
     }
   }, [todos, isLoading])
 
@@ -65,11 +72,14 @@ export function useTodos() {
   const handleLabel = (id: number, label: string) => {
     updateTodo(id, (item) => ({ ...item, label: label, isEditing: !item.isEditing }));
   };
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter(item => item.id !== id));
+  }
   const updateTodo = (id: number, updater: (item: Todo) => Todo) => {
     setTodos(todos.map((item) => (item.id === id ? updater(item) : item)));
   };
 
-  return { todos, addTodo, handleIsDone, handleIsEdit, handleLabel, handleIsRoutine }
+  return { todos, isEditing, addTodo, handleIsDone, handleIsEdit, handleLabel, handleIsRoutine, handleDelete }
 }
 
 const todoList = [
