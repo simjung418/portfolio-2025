@@ -5,6 +5,10 @@ const orbitron = Orbitron({
   subsets: ["latin"],
 });
 
-export default function SectionTitle(param: string) {
-  return <h2 className={orbitron.variable}>{param}</h2>;
+interface SectionTitleProps {
+  title: string;
+}
+
+export default function SectionTitle({title}: SectionTitleProps) {
+  return <h2 className={`${orbitron.className} text-7xl font-stretch-ultra-expanded`}>{title}</h2>;
 }
