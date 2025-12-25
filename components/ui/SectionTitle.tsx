@@ -1,0 +1,17 @@
+"use client";
+
+import { usePageTitle } from "@/providers/TitleContext";
+
+export default function SectionTitle() {
+  const { title } = usePageTitle();
+  const titleArray: string[] = title.split('');
+
+  return (
+    <h1 className={`text-3xl text-neutral-300 scale-x-200 origin-left sm:text-7xl`}>
+      {titleArray.map((value, index) => {
+        return (
+        <span key={`title-${index}`}>{value}</span>
+      )})}
+    </h1>
+  );
+}

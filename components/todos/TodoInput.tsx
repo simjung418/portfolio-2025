@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { TodoInputProps } from "@/types";
+import { TodoInputProps } from "@/lib/types";
 
 export default function Input({ initialValue = "", onSubmit, onCancel }: TodoInputProps) {
   const [value, setValue] = useState(initialValue);
@@ -26,14 +26,7 @@ export default function Input({ initialValue = "", onSubmit, onCancel }: TodoInp
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input id="newLabel"
-        ref={todoInput}
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onKeyDown={handleKeyDown}
-        className="text-xl text-neutral-900 outline-none"
-      />
+      <input id="newLabel" ref={todoInput} type="text" value={value} onChange={(e) => setValue(e.target.value)} onKeyDown={handleKeyDown} className="text-xl text-neutral-900 outline-none" />
     </form>
   );
 }

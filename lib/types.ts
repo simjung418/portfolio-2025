@@ -1,0 +1,88 @@
+import { ReactNode } from "react";
+
+export interface Todo {
+  id: number;
+  label: string;
+  isDone: boolean;
+  isRoutine: boolean;
+  isEditing: boolean;
+  status?: string;
+}
+
+export interface TodoInputProps {
+  initialValue?: string;
+  onSubmit: (value: string) => void;
+  onCancel?: () => void;
+}
+
+export type SkillKey =
+  | 'nextjs'
+  | 'typescript'
+  | 'react'
+  | 'tailwind'
+  | 'prisma'
+  | 'vue'
+  | 'php'
+  | 'mysql'
+  | 'reactnative'
+  | 'python'
+  | 'swiftui';
+
+export type SkillData = {
+  name: string;
+  features: string[];
+  projects: {
+    name: string;
+    summary: string;
+  }[];
+}
+
+export const SKILL_SECTIONS_KEY = [
+  "CURRENT_SKILLS"
+  , "EXPERIENCE_SKILLS"
+  , "STUDYING_SKILLS"
+  , "INTEREST_SKILLS"
+] as const
+
+export type SkillSectionKey = typeof SKILL_SECTIONS_KEY[number]
+
+export type SkillSectionData = {
+  name: string;
+  skills: readonly SkillKey[];
+}
+
+export const PROJECT_LIST = [
+  "todos"
+  , "portfolio"
+  , "wotd"
+] as const
+
+export type ProjectListKeys = typeof PROJECT_LIST[number]
+
+export const PROJECT_STATUSES = [
+  "PROCESSING"
+  , "UPCOMING"
+] as const
+
+export type ProjectStatus = typeof PROJECT_STATUSES[number]
+
+export type Cards = {
+  title: string;
+  desc: ReactNode;
+  tech?: string[];
+  status?: ProjectStatus;
+  detail: ReactNode;
+}
+
+export const CAREER_LIST = [
+  "bisat2",
+  "iso",
+  "deepread2",
+  "lexcloud",
+  "metafield",
+  "bavl",
+  "platform",
+  "l10n",
+] as const 
+
+export type CareerListKeys = typeof CAREER_LIST[number]

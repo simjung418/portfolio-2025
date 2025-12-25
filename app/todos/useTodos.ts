@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Todo } from "@/types";
+import { Todo } from "@/lib/types";
 import { getCookie, setCookie } from "./cookies";
 
 const getStatus = (isDone: boolean, isRoutine: boolean) => {

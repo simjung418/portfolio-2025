@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/components/todoInput";
+import Input from "@/components/todos/TodoInput";
 import { PlusIcon, SparklesIcon, CheckIcon, XMarkIcon, PencilIcon, TrashIcon } from "@heroicons/react/16/solid";
 import { useTodos } from "./useTodos";
 import styles from "./page.module.css"
@@ -8,7 +8,7 @@ export default function Todos() {
   const { todos, isEditing, addTodo, handleIsDone, handleIsEdit, handleLabel, handleIsRoutine, handleDelete } = useTodos();
   return (
     <div className="flex flex-col max-w-md gap-3 mx-auto my-2">
-      <h1 className="text-2xl font-bold">Todos!</h1>
+      <h2 className="text-2xl font-bold">Todos!</h2>
       <p className="">오늘 당신의 todo를 입력하세요.</p>
       <ul className="flex flex-col gap-2">
         {todos.map((item) => {
