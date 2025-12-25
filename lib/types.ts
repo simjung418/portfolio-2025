@@ -66,13 +66,20 @@ export const PROJECT_STATUSES = [
 
 export type ProjectStatus = typeof PROJECT_STATUSES[number]
 
-export type Cards = {
+export type BaseCards = {
   title: string;
   desc: ReactNode;
   tech?: string[];
   status?: ProjectStatus;
-  detail: ReactNode;
-}
+} // 기본 카드정보 설정
+
+export type Cards<TDetail = ReactNode> = BaseCards & { detail?: TDetail } // 제네릭을 이용하여 옵션정보 설정
+
+export type CareerDetail = {
+  challenge: ReactNode,
+  action: ReactNode,
+  result: ReactNode,
+} // 부가옵션 경우의 수 설정
 
 export const CAREER_LIST = [
   "bisat2",
@@ -83,6 +90,6 @@ export const CAREER_LIST = [
   "bavl",
   "platform",
   "l10n",
-] as const 
+] as const
 
 export type CareerListKeys = typeof CAREER_LIST[number]

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Cards, ProjectListKeys } from "@/lib/types";
-import { CardList, CardDetail } from "@/components/cards";
+import { Cards, PROJECT_LIST, ProjectListKeys } from "@/lib/types";
+import { CardList } from "@/components/cards";
+import { ProjectCardDetail } from "@/components/projects/CardDetail";
 
 const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
   todos: {
@@ -59,8 +60,8 @@ export default function ProjectsPage() {
   };
   return (
     <>
-      <CardList cards={PROJECT_CARDS} onSelect={onSelect} />
-      <CardDetail selected={selected} />
+      <CardList list={PROJECT_LIST} cards={PROJECT_CARDS} onSelect={onSelect} />
+      <ProjectCardDetail selected={selected} />
     </>
   );
 }

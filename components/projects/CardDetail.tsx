@@ -4,7 +4,7 @@ type Props = {
   selected: Cards;
 };
 
-export const CardDetail = ({ selected }: Props) => {
+export const ProjectCardDetail = ({ selected }: Props) => {
   return (
     <div className="sm:[&_p]:text-2xl/10 [&_p]:text-md [&_p]:font-medium ">
       <h2>{selected.title}</h2>

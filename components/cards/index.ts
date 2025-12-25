@@ -1,3 +1,3 @@
 export { CardList } from "./CardList";
-export { CardDetail } from "./CardDetail";
+export { CardDetail } from "../projects/CardDetail";
 export { TechTag } from "./TechTag";
