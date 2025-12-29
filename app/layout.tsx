@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/ui/Navigation";
 import { TitleProvider } from "@/providers/TitleContext";
-import SectionTitle from "@/components/ui/SectionTitle";
+import { Navigation, SectionTitle, Footer } from "@/components/ui/";
 
 export const metadata: Metadata = {
   title: {
@@ -25,12 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} antialiased`}>
+      <body className={`${orbitron.variable} antialiased md:px-4 md:py-8 md:mx-auto max-w-7xl`}>
         <Navigation />
         <TitleProvider>
           <SectionTitle />
-          <div className="px-5 py-8">{children}</div>
+          <div>{children}</div>
         </TitleProvider>
+        <Footer />
       </body>
     </html>
   );
