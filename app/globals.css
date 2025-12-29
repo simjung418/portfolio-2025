@@ -51,5 +51,5 @@ h1 > span {
 }
 
 h2 {
-  @apply text-2xl sm:text-6xl font-bold my-4 font-orbitron scale-x-130 origin-left;
+  @apply text-2xl sm:text-6xl font-bold my-4;
 }

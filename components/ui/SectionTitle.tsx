@@ -12,6 +12,6 @@ export default function SectionTitle() {
         return (
         <span key={`title-${index}`}>{value}</span>
       )})}
-    </h1>
+    </h1>//PARKING 제목 텍스트 바뀔때 애니메이션 펑션 추가
   );
 }

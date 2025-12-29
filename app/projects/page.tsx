@@ -60,7 +60,7 @@ export default function ProjectsPage() {
   };
   return (
     <>
-      <CardList list={PROJECT_LIST} cards={PROJECT_CARDS} onSelect={onSelect} />
+      <CardList list={PROJECT_LIST} cards={PROJECT_CARDS} onSelect={onSelect} selected={selected}/>
       <ProjectCardDetail selected={selected} />
     </>
   );
