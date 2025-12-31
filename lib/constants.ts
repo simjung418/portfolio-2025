@@ -1,216 +1,156 @@
 import { Cards, ProjectListKeys, SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "./types";
 
 export const SKILLS: Record<SkillKey, SkillData> = {
-  "nextjs": {
-    name: 'Next.js',
+  nextjs: {
+    name: "Next.js",
+    subtext: "모두가 지킬 수 있는 약속",
     features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
+      "App Router 기반 페이지/레이아웃 설계",
+      "Route Handler로 간단한 API 분리 경험",
+      "넓은 개발 네트워크에서 발전한 안정적인 컨벤션",
+      "컴포넌트/데이터 흐름을 구조적으로 정리하는 데 집중"
     ],
     projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "react": {
-    name: 'React',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "tailwind": {
-    name: 'TailwindCSS',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "typescript": {
-    name: 'Typescript',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "prisma": {
-    name: 'Prisma',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "vue": {
-    name: 'Vue.js',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "php": {
-    name: 'PHP',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "mysql": {
-    name: 'MySQL',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "python": {
-    name: 'Python',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "reactnative": {
-    name: 'React Native',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
-    ]
-  },
-  "swiftui": {
-    name: 'Swift UI',
-    features: [
-      'App Router',
-      'Server Components',
-      'API Routes',
-      'SSR / Data Fetching'
-    ],
-    projects: [
-      {
-        name: 'Todos Tracker',
-        summary: '쿠키 기반 상태 관리 및 Prisma 연동'
-      },
-      {
-        name: 'Portfolio Landing',
-        summary: 'App Router 기반 구조 설계'
-      }
+      { name: "Todos Project", summary: "쿠키 저장 + useTodos 훅으로 상태/로직 분리" },
+      { name: "Portfolio", summary: "섹션별 데이터 구조 설계 + 타입으로 계약 유지" }
     ]
   },
 
+  react: {
+    name: "React",
+    subtext: "",
+    features: [
+      "상태/이벤트 흐름을 먼저 잡고 UI를 얹는 방식 선호",
+      "Custom Hook으로 로직 분리(useTodos 등)",
+      "재사용 컴포넌트 구조와 props 계약을 타입으로 관리",
+      "작은 UI 수정이 커지지 않게 책임/역할 분리"
+    ],
+    projects: [
+      { name: "Todos Project", summary: "Hook 중심 상태 관리로 화면과 로직을 분리" },
+      { name: "Portfolio", summary: "카드/섹션 컴포넌트화로 일관된 UI 패턴 유지" }
+    ]
+  },
+
+  typescript: {
+    name: "TypeScript",
+    subtext: "탄탄한 구조를 위한 초석",
+    features: [
+      "상수 배열을 진실의 원천으로 두고 타입을 추론",
+      "satisfies로 타입 계약 검증 + 리터럴 유지",
+      "Record/union key로 데이터-UI 연결 안정성 확보",
+      "제네릭으로 cards/detail 확장 구조 설계"
+    ],
+    projects: [
+      { name: "Portfolio", summary: "cards/detail 제네릭 설계 + section key 계약 유지" },
+      { name: "Todos Project", summary: "상태/액션 타입을 명확히 두고 안정성 확보" }
+    ]
+  },
+
+  tailwind: {
+    name: "TailwindCSS",
+    subtext: "CSS는 CSS로",
+    features: [
+      "타이포 중심 레이아웃(큰 타이틀/서브텍스트 리듬) 구성",
+      "반응형 기준(sm/md/lg)으로 구조 먼저 잡고 디테일 조정",
+      "컴포넌트 단위 클래스 패턴을 일정하게 유지",
+      "hover/active 등 인터랙션을 ‘필요한 곳만’ 최소 적용"
+    ],
+    projects: [
+      { name: "Portfolio", summary: "섹션 공통 UI 패턴 통일 + 반응형 정리" }
+    ]
+  },
+
+  prisma: {
+    name: "Prisma",
+    subtext: "모던한 백엔드 구현을 위한 도구",
+    features: [
+      "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
+      "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
+      "‘필요할 때만’ 도입하는 기준을 갖고 접근"
+    ],
+    projects: [
+      { name: "Todos Project", summary: "데이터 연동을 가정한 구조/흐름 검증" }
+    ]
+  },
+
+  vue: {
+    name: "Vue.js",
+    subtext: "레거시 프레임워크",
+    features: [
+      "레거시(jQuery 혼재) 환경에서 Vue 기반으로 점진 전환 경험",
+      "데이터 책임/컴포넌트 책임 분리가 UX 변경에 미치는 영향 체감",
+      "Vue Router/Vuex 기반 구조 운영 경험"
+    ],
+    projects: [
+      { name: "렉스클라우드 운영", summary: "레거시 혼재 환경에서 유지보수/개선 주도" },
+      { name: "BIS@T 2.0", summary: "리팩토링 프로젝트에서 구조 기반 설계 주도" }
+    ]
+  },
+
+  php: {
+    name: "PHP",
+    subtext: "레거시 백엔드 언어",
+    features: [
+      "핵심 플랫폼 유지보수 과정에서 백엔드 코드 직접 수정 경험",
+      "외주 의존도를 줄이기 위해 내부에서 해결 가능한 범위 확장",
+      "API/데이터 흐름 이해를 바탕으로 FE-BE 협업 효율화"
+    ],
+    projects: [
+      { name: "렉스클라우드 운영", summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결" }
+    ]
+  },
+
+  mysql: {
+    name: "MySQL",
+    subtext: "레거시 백엔드 언어",
+    features: [
+      "요구사항을 빠르게 해결하기 위해 DB 구조 학습/파악",
+      "문제 원인을 데이터 관점까지 내려가서 찾는 습관",
+      "운영 환경에서 변경 영향도를 고려하며 대응"
+    ],
+    projects: [
+      { name: "렉스클라우드 운영", summary: "DB 구조 이해를 기반으로 유지보수 속도/정확도 개선" }
+    ]
+  },
+
+  python: {
+    name: "Python",
+    subtext: "자동화, 스크래핑을 위한 언어",
+    features: [
+      "자동화/데이터 처리 관점에서 활용 가능성 탐색",
+      "필요한 순간에 빠르게 실험하고 검증하는 용도",
+      "현재는 학습 단계"
+    ],
+    projects: [
+      { name: "학습/실험", summary: "작은 자동화 스크립트로 문제 해결 연습" }
+    ]
+  },
+
+  swiftui: {
+    name: "SwiftUI",
+    subtext: "앱 개발을 위한 기반",
+    features: [
+      "앱 친화적 UX를 직접 설계/구현하기 위한 학습",
+      "프로토타이핑 중심으로 화면/상태 흐름을 익히는 중",
+      "현재는 학습 단계"
+    ],
+    projects: [
+      { name: "WOTD", summary: "UX 기획/프로토타입 설계 + SwiftUI로 구현 시도" }
+    ]
+  },
+
+  reactnative: {
+    name: "React Native",
+    subtext: "앱 개발 다양성을 위한 기반",
+    features: [
+      "React 경험을 모바일 UI로 확장하기 위한 관심 기술",
+      "웹에서 쌓은 구조/상태 관리 감각을 앱으로 연결하는 목표",
+      "현재는 관심 단계"
+    ],
+    projects: [
+      { name: "관심/리서치", summary: "프로젝트 적용 가능성 탐색" }
+    ]
+  }
 };
 
 export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
@@ -222,32 +162,32 @@ export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
       "tailwind",
       "prisma",
       "typescript"
-    ] as const satisfies readonly SkillKey[]
+    ] as const
   },
   "EXPERIENCE_SKILLS": {
-    name: "실무경험",
+    name: "실무 경험",
     skills: [
       "vue",
       "php",
       "mysql",
-    ] as const satisfies readonly SkillKey[]
+    ] as const
   },
   "STUDYING_SKILLS": {
     name: "학습중",
     skills: [
       "python",
       "swiftui"
-    ] as const satisfies readonly SkillKey[]
+    ] as const
   },
   "INTEREST_SKILLS": {
     name: "관심 기술",
     skills: [
       "reactnative"
-    ] as const satisfies readonly SkillKey[]
+    ] as const
   },
 }
 
-export const SKILL_SECTIONS_KEY = [
+export const SKILL_SECTION_KEYS = [
   "CURRENT_SKILLS"
   , "EXPERIENCE_SKILLS"
   , "STUDYING_SKILLS"

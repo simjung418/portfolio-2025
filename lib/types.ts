@@ -30,6 +30,7 @@ export type SkillKey =
 
 export type SkillData = {
   name: string;
+  subtext: string;
   features: string[];
   projects: {
     name: string;
@@ -37,14 +38,14 @@ export type SkillData = {
   }[];
 }
 
-export const SKILL_SECTIONS_KEY = [
+export const SKILL_SECTION_KEYS = [
   "CURRENT_SKILLS"
   , "EXPERIENCE_SKILLS"
   , "STUDYING_SKILLS"
   , "INTEREST_SKILLS"
 ] as const
 
-export type SkillSectionKey = typeof SKILL_SECTIONS_KEY[number]
+export type SkillSectionKey = typeof SKILL_SECTION_KEYS[number]
 
 export type SkillSectionData = {
   name: string;
