@@ -1,6 +1,6 @@
 import { SkillKey } from "@/lib/types";
-import { SkillList } from "./index";
-import { SKILL_SECTIONS_KEY, SKILL_SECTIONS } from "@/lib/constants";
+import { SkillList } from "./SkillList";
+import { SKILL_SECTION_KEYS, SKILL_SECTIONS } from "@/lib/constants";
 
 type Props = {
   activeSkill: SkillKey;
@@ -9,18 +9,20 @@ type Props = {
 
 export const SkillSection = ({ activeSkill, onSelect }: Props) => {
   return (
-    <div>
-      {SKILL_SECTIONS_KEY.map((sectionKey) => {
-        console.log(sectionKey);
+    <div className="flex flex-col gap-4">
+      {SKILL_SECTION_KEYS.map((sectionKey) => {
         const section = SKILL_SECTIONS[sectionKey];
-        console.log(section);
         return (
           <div key={sectionKey}>
-            <h2>{section.name}</h2>
-            <SkillList section={sectionKey} activeSkill={activeSkill} onSelect={onSelect}></SkillList>
+            <h3 className="font-bold md:mb-2 md:text-2xl">{section.name}</h3>
+            <SkillList
+              section={sectionKey}
+              activeSkill={activeSkill}
+              onSelect={onSelect}
+            ></SkillList>
           </div>
         );
       })}
     </div>
   );
-}
+};
