@@ -2,32 +2,18 @@ import { Cards, ProjectListKeys, SkillData, SkillKey, SkillSectionData, SkillSec
 
 export const SKILLS: Record<SkillKey, SkillData> = {
   nextjs: {
-    name: "Next.js",
-    subtext: "모두가 지킬 수 있는 약속",
+    name: "React / Next.js",
+    subtext: "만인의 검증된 선택",
     features: [
+      "npm 기반 생태계로 도구 도입·유지 비용 감소",
       "App Router 기반 페이지/레이아웃 설계",
-      "Route Handler로 간단한 API 분리 경험",
-      "넓은 개발 네트워크에서 발전한 안정적인 컨벤션",
-      "컴포넌트/데이터 흐름을 구조적으로 정리하는 데 집중"
+      "기존 프레임워크의 구조적 이점을 더 일관된 규칙과 체계 안에서 유지",
+      "공식 컨벤션, 라이브러리가 다양하여 팀 합류/인수인계 비용 감소",
+      "컴포넌트/데이터 흐름을 구조적으로 정리하는 데 집중 가능"
     ],
     projects: [
       { name: "Todos Project", summary: "쿠키 저장 + useTodos 훅으로 상태/로직 분리" },
-      { name: "Portfolio", summary: "섹션별 데이터 구조 설계 + 타입으로 계약 유지" }
-    ]
-  },
-
-  react: {
-    name: "React",
-    subtext: "",
-    features: [
-      "상태/이벤트 흐름을 먼저 잡고 UI를 얹는 방식 선호",
-      "Custom Hook으로 로직 분리(useTodos 등)",
-      "재사용 컴포넌트 구조와 props 계약을 타입으로 관리",
-      "작은 UI 수정이 커지지 않게 책임/역할 분리"
-    ],
-    projects: [
-      { name: "Todos Project", summary: "Hook 중심 상태 관리로 화면과 로직을 분리" },
-      { name: "Portfolio", summary: "카드/섹션 컴포넌트화로 일관된 UI 패턴 유지" }
+      { name: "Portfolio", summary: "섹션별 데이터 구조 설계" }
     ]
   },
 
@@ -48,15 +34,17 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   tailwind: {
     name: "TailwindCSS",
-    subtext: "CSS는 CSS로",
+    subtext: "디자인 반영이 또 하나의 구조가 되지 않도록",
     features: [
-      "타이포 중심 레이아웃(큰 타이틀/서브텍스트 리듬) 구성",
+      // "타이포 중심 레이아웃(큰 타이틀/서브텍스트 리듬) 구성",
       "반응형 기준(sm/md/lg)으로 구조 먼저 잡고 디테일 조정",
       "컴포넌트 단위 클래스 패턴을 일정하게 유지",
-      "hover/active 등 인터랙션을 ‘필요한 곳만’ 최소 적용"
+      "hover/active 등 인터랙션을 ‘필요한 곳만’ 최소 적용",
+      "커스텀 css 사용 최소화로 구조 단순화"
     ],
     projects: [
-      { name: "Portfolio", summary: "섹션 공통 UI 패턴 통일 + 반응형 정리" }
+      { name: "Portfolio", summary: "섹션 공통 UI 패턴 통일 + 반응형 정리" },
+      { name: "Todos Project", summary: "상태 색상/variant를 컴포넌트 단위로 캡슐화" }
     ]
   },
 
@@ -67,15 +55,12 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
       "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
       "‘필요할 때만’ 도입하는 기준을 갖고 접근"
-    ],
-    projects: [
-      { name: "Todos Project", summary: "데이터 연동을 가정한 구조/흐름 검증" }
     ]
   },
 
   vue: {
     name: "Vue.js",
-    subtext: "레거시 프레임워크",
+    subtext: "레거시를 정리하며 배운 구조 감각",
     features: [
       "레거시(jQuery 혼재) 환경에서 Vue 기반으로 점진 전환 경험",
       "데이터 책임/컴포넌트 책임 분리가 UX 변경에 미치는 영향 체감",
@@ -89,7 +74,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   php: {
     name: "PHP",
-    subtext: "레거시 백엔드 언어",
+    subtext: "문제를 끝까지 닫기 위한 백엔드 이해",
     features: [
       "핵심 플랫폼 유지보수 과정에서 백엔드 코드 직접 수정 경험",
       "외주 의존도를 줄이기 위해 내부에서 해결 가능한 범위 확장",
@@ -102,7 +87,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   mysql: {
     name: "MySQL",
-    subtext: "레거시 백엔드 언어",
+    subtext: "원인을 데이터까지 추적",
     features: [
       "요구사항을 빠르게 해결하기 위해 DB 구조 학습/파악",
       "문제 원인을 데이터 관점까지 내려가서 찾는 습관",
@@ -115,7 +100,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   python: {
     name: "Python",
-    subtext: "자동화, 스크래핑을 위한 언어",
+    subtext: "자동화, 스크래핑을 위한 도구",
     features: [
       "자동화/데이터 처리 관점에서 활용 가능성 탐색",
       "필요한 순간에 빠르게 실험하고 검증하는 용도",
@@ -146,9 +131,6 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "React 경험을 모바일 UI로 확장하기 위한 관심 기술",
       "웹에서 쌓은 구조/상태 관리 감각을 앱으로 연결하는 목표",
       "현재는 관심 단계"
-    ],
-    projects: [
-      { name: "관심/리서치", summary: "프로젝트 적용 가능성 탐색" }
     ]
   }
 };
@@ -158,9 +140,7 @@ export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
     name: "현재 집중",
     skills: [
       "nextjs",
-      "react",
       "tailwind",
-      "prisma",
       "typescript"
     ] as const
   },
@@ -175,6 +155,7 @@ export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
   "STUDYING_SKILLS": {
     name: "학습중",
     skills: [
+      "prisma",
       "python",
       "swiftui"
     ] as const

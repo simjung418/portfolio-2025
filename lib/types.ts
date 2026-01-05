@@ -18,7 +18,6 @@ export interface TodoInputProps {
 export type SkillKey =
   | 'nextjs'
   | 'typescript'
-  | 'react'
   | 'tailwind'
   | 'prisma'
   | 'vue'
@@ -30,9 +29,9 @@ export type SkillKey =
 
 export type SkillData = {
   name: string;
-  subtext: string;
+  subtext?: string;
   features: string[];
-  projects: {
+  projects?: {
     name: string;
     summary: string;
   }[];
