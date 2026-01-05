@@ -19,12 +19,12 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   typescript: {
     name: "TypeScript",
-    subtext: "탄탄한 구조를 위한 초석",
+    subtext: "코드로 남기는 설명서",
     features: [
-      "상수 배열을 진실의 원천으로 두고 타입을 추론",
-      "satisfies로 타입 계약 검증 + 리터럴 유지",
-      "Record/union key로 데이터-UI 연결 안정성 확보",
-      "제네릭으로 cards/detail 확장 구조 설계"
+      "초기 개발의 코드 규칙을 코드 레벨에서 고정",
+      "구조 변경시 컴파일 단계에서 오류를 잡아 유지보수 리스크 감소",
+      "as const + satisfies로 데이터/키 계약을 유지",
+      "유지보수 시 타입이 코드 흐름을 이해하는데 유용"
     ],
     projects: [
       { name: "Portfolio", summary: "cards/detail 제네릭 설계 + section key 계약 유지" },
