@@ -36,11 +36,9 @@ export const SKILLS: Record<SkillKey, SkillData> = {
     name: "TailwindCSS",
     subtext: "디자인 반영이 또 하나의 구조가 되지 않도록",
     features: [
-      // "타이포 중심 레이아웃(큰 타이틀/서브텍스트 리듬) 구성",
-      "반응형 기준(sm/md/lg)으로 구조 먼저 잡고 디테일 조정",
-      "컴포넌트 단위 클래스 패턴을 일정하게 유지",
-      "hover/active 등 인터랙션을 ‘필요한 곳만’ 최소 적용",
-      "커스텀 css 사용 최소화로 구조 단순화"
+      "컴포넌트 단위 클래스 패턴을 고정하여 일정하게 유지",
+      "통일된 사이즈/색상 체계로 UI 변경 시 유지보수 부담 감소",
+      "별도 CSS 파일의 커스텀 클래스 사용 최소화로 구조 단순화"
     ],
     projects: [
       { name: "Portfolio", summary: "섹션 공통 UI 패턴 통일 + 반응형 정리" },
@@ -50,21 +48,22 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   prisma: {
     name: "Prisma",
-    subtext: "모던한 백엔드 구현을 위한 도구",
+    subtext: "프론트엔드 관점에서 데이터 흐름을 이해하는 방법",
     features: [
       "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
       "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
-      "‘필요할 때만’ 도입하는 기준을 갖고 접근"
+      "데이터 저장이 필요한 프로젝트를 고려한 구조 설계 습득"
     ]
   },
 
   vue: {
     name: "Vue.js",
-    subtext: "레거시를 정리하며 배운 구조 감각",
+    subtext: "레거시를 정리하며 습득한 구조 감각",
     features: [
       "레거시(jQuery 혼재) 환경에서 Vue 기반으로 점진 전환 경험",
+      "직접 DOM을 제어하지 않고도 UI 동작을 구현하는 방식에 대해 이해",
       "데이터 책임/컴포넌트 책임 분리가 UX 변경에 미치는 영향 체감",
-      "Vue Router/Vuex 기반 구조 운영 경험"
+      "Vue Router/Vuex 기반 구조 운영"
     ],
     projects: [
       { name: "렉스클라우드 운영", summary: "레거시 혼재 환경에서 유지보수/개선 주도" },
