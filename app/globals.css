@@ -52,3 +52,7 @@ h1 > span {
 h2 {
   @apply text-2xl sm:text-6xl font-bold my-4;
 }
+
+a, button {
+  @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-400;
+}

@@ -16,7 +16,7 @@ export const SkillList = ({ section, activeSkill, onSelect }: Props) => {
           <li key={skill}>
             <button
               type="button"
-              className={`${activeSkill === skill ? "ring-2 ring-green-400" : ""} w-full rounded-md px-4 py-2 text-left text-lg font-medium focus:ring-2 focus:ring-green-400`}
+              className={`${activeSkill === skill ? "bg-neutral-100 border border-neutral-200" : ""} w-full rounded-md px-4 py-2 text-left text-lg font-medium box-border`}
               onClick={() => onSelect(skill)}
             >
               {detail.name}
