@@ -1,4 +1,4 @@
-import { Cards, ProjectListKeys, SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "./types";
+import { SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "./types";
 
 export const SKILLS: Record<SkillKey, SkillData> = {
   nextjs: {
@@ -46,21 +46,11 @@ export const SKILLS: Record<SkillKey, SkillData> = {
     ]
   },
 
-  prisma: {
-    name: "Prisma",
-    subtext: "프론트엔드 관점에서 데이터 흐름을 이해하는 방법",
-    features: [
-      "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
-      "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
-      "데이터 저장이 필요한 프로젝트를 고려한 구조 설계 습득"
-    ]
-  },
-
   vue: {
     name: "Vue.js",
     subtext: "레거시를 정리하며 습득한 구조 감각",
     features: [
-      "레거시(jQuery 혼재) 환경에서 Vue 기반으로 점진 전환 경험",
+      "jQuery 혼재 환경에서 Vue 기반으로 점진 전환 경험",
       "직접 DOM을 제어하지 않고도 UI 동작을 구현하는 방식에 대해 이해",
       "데이터 책임/컴포넌트 책임 분리가 UX 변경에 미치는 영향 체감",
       "Vue Router/Vuex 기반 구조 운영"
@@ -73,20 +63,21 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   php: {
     name: "PHP",
-    subtext: "문제를 끝까지 닫기 위한 백엔드 이해",
+    subtext: "문제를 끝까지 해결하기 위한 백엔드 이해",
     features: [
       "핵심 플랫폼 유지보수 과정에서 백엔드 코드 직접 수정 경험",
       "외주 의존도를 줄이기 위해 내부에서 해결 가능한 범위 확장",
       "API/데이터 흐름 이해를 바탕으로 FE-BE 협업 효율화"
     ],
     projects: [
-      { name: "렉스클라우드 운영", summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결" }
+      { name: "렉스클라우드 운영", summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결" },
+      { name: "WordPress", summary: "기존 구조를 파악하여 PHP 기반 기능 수정 경험" }
     ]
   },
 
   mysql: {
     name: "MySQL",
-    subtext: "원인을 데이터까지 추적",
+    subtext: "플랫폼 관리를 위한 데이터 흐름의 이해",
     features: [
       "요구사항을 빠르게 해결하기 위해 DB 구조 학습/파악",
       "문제 원인을 데이터 관점까지 내려가서 찾는 습관",
@@ -97,16 +88,23 @@ export const SKILLS: Record<SkillKey, SkillData> = {
     ]
   },
 
+  prisma: {
+    name: "Prisma",
+    subtext: "프론트엔드 관점에서 데이터 흐름을 이해하는 방법",
+    features: [
+      "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
+      "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
+      "데이터 저장이 필요한 프로젝트를 고려한 구조 설계 습득"
+    ]
+  },
+
   python: {
     name: "Python",
-    subtext: "자동화, 스크래핑을 위한 도구",
+    subtext: "실무 바깥의 문제를 해결하는 언어",
     features: [
-      "자동화/데이터 처리 관점에서 활용 가능성 탐색",
-      "필요한 순간에 빠르게 실험하고 검증하는 용도",
-      "현재는 학습 단계"
-    ],
-    projects: [
-      { name: "학습/실험", summary: "작은 자동화 스크립트로 문제 해결 연습" }
+      "자동화, 데이터 수집을 위해 BeautifulSoup 및 Selenium 활용 경험",
+      "실무 서비스 개발보다 프로덕트 제작 외의 문제 해결에 사용",
+      "기존 다른언어 학습 경험을 바탕으로 필요 시 실무 사용까지 빠르게 확장 가능"
     ]
   },
 
@@ -155,14 +153,14 @@ export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
     name: "학습중",
     skills: [
       "prisma",
-      "python",
-      "swiftui"
+      "python"
     ] as const
   },
   "INTEREST_SKILLS": {
     name: "관심 기술",
     skills: [
-      "reactnative"
+      "reactnative",
+      "swiftui"
     ] as const
   },
 }
