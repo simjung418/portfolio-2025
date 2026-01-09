@@ -11,11 +11,10 @@ import { TechTag } from "@/components/cards";
 type Props<K extends string, TDetail> = {
   list: readonly K[];
   cards: Record<K, Cards<TDetail>>;
-  selected: Cards<TDetail>;
   onSelect: (name: K) => void;
 };
 
-export const CardList = <K extends string, TDetail>({ list, cards, selected, onSelect }: Props<K, TDetail>) => {
+export const CardList = <K extends string, TDetail>({ list, cards, onSelect }: Props<K, TDetail>) => {
   return (
     <ul className="flex flex-col items-stretch max-w-lg gap-4 snap-x snap-mandatory ">
       {list.map((name) => {

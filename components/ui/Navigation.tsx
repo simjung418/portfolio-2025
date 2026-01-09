@@ -50,7 +50,7 @@ export const Navigation = () => {
         {menus.map((menu) => {
           const link = links[menu];
           return (
-            <li className="cursor-pointer">
+            <li key={menu} className="cursor-pointer">
               <Link className="px-2 py-1 rounded-md border" href={link.route}>
                 {link.title}
               </Link>
