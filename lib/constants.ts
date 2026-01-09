@@ -108,26 +108,16 @@ export const SKILLS: Record<SkillKey, SkillData> = {
     ]
   },
 
-  swiftui: {
-    name: "SwiftUI",
-    subtext: "앱 개발을 위한 기반",
+  appdevelop: {
+    name: "앱 개발 (SwiftUI / React Native)",
+    subtext: "앱 생태계 스며들기 위한 학습",
     features: [
-      "앱 친화적 UX를 직접 설계/구현하기 위한 학습",
-      "프로토타이핑 중심으로 화면/상태 흐름을 익히는 중",
-      "현재는 학습 단계"
+      "프로덕트의 확장 시 앱 환경에서도 자연스럽게 동작하기 위해 UX와 퍼포먼스 관점에서 접근",
+      "iOS 네이티브(SwiftUI)와 크로스플랫폼(React Native)의 차이를 비교하며 학습",
+      "프로젝트 기획 / 설계하며 앱 개발 흐름을 익히는 단계",
     ],
     projects: [
-      { name: "WOTD", summary: "UX 기획/프로토타입 설계 + SwiftUI로 구현 시도" }
-    ]
-  },
-
-  reactnative: {
-    name: "React Native",
-    subtext: "앱 개발 다양성을 위한 기반",
-    features: [
-      "React 경험을 모바일 UI로 확장하기 위한 관심 기술",
-      "웹에서 쌓은 구조/상태 관리 감각을 앱으로 연결하는 목표",
-      "현재는 관심 단계"
+      { name: "WOTD", summary: "UX 기획/프로토타입 설계 + SwiftUI로 구현" }
     ]
   }
 };
@@ -159,8 +149,7 @@ export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
   "INTEREST_SKILLS": {
     name: "관심 기술",
     skills: [
-      "reactnative",
-      "swiftui"
+      "appdevelop"
     ] as const
   },
 }

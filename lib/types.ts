@@ -23,9 +23,8 @@ export type SkillKey =
   | 'vue'
   | 'php'
   | 'mysql'
-  | 'reactnative'
   | 'python'
-  | 'swiftui';
+  | 'appdevelop';
 
 export type SkillData = {
   name: string;
