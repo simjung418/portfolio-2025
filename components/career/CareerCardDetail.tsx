@@ -13,12 +13,18 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
     <div>
       <h2 className="text-neutral-700">{card.title}</h2>
       <div className="flex flex-1 justify-between gap-4">
-        <dl>
+        <div className="flex flex-col gap-5">
+          <dl>
+            <dt className="text-lg font-bold text-neutral-400 capitalize sm:text-3xl">
+              Detail
+            </dt>
+            <dd className="text-md font-medium sm:text-2xl/10">{card.desc}</dd>
+          </dl>
           {CAR.map((val, index) => {
             return (
-              <div
+              <dl
                 key={`${selected}_${val}`}
-                className="mb-3 flex flex-col gap-2 sm:gap-1"
+                className="flex flex-col gap-2 sm:gap-1"
               >
                 <dt className="text-lg font-bold text-neutral-400 capitalize sm:text-3xl">
                   {val}
@@ -26,10 +32,10 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
                 <dd className="text-md font-medium sm:text-2xl/10">
                   {detail?.[val]}
                 </dd>
-              </div>
+              </dl>
             );
           })}
-        </dl>
+        </div>
         <div>
           {card.imgs != undefined
             ? card.imgs.map((img, index) => (
