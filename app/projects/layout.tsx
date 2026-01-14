@@ -2,7 +2,7 @@ import ClientTitleSetter from "@/providers/ClientTitleSetter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Todos",
+  title: "Projects",
 };
 
 export default function Layout({
@@ -12,7 +12,7 @@ export default function Layout({
 }>) {
   return (
     <div>
-      <ClientTitleSetter pageTitle="Skills" />
+      <ClientTitleSetter pageTitle="Projects" />
       {children}
     </div>
   );

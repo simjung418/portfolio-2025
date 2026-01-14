@@ -1,4 +1,4 @@
-import { Cards } from "@/lib/types";
+import { Cards, ProjectListKeys } from "@/lib/types";
 import { TechTag } from "@/components/cards";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
@@ -8,22 +8,29 @@ import { TechTag } from "@/components/cards";
 // 이 3개가 같은 key 타입(K)으로 묶여 있으면 안전하게 동작한다.
 // 그래서 union(A | B) 대신 generic(K)로 계약을 건다.
 
-type Props<K extends string, TDetail> = {
-  list: readonly K[];
-  cards: Record<K, Cards<TDetail>>;
-  onSelect: (name: K) => void;
+type Props = {
+  list: readonly ProjectListKeys[];
+  cards: Record<ProjectListKeys, Cards>;
+  onSelect: (name: ProjectListKeys) => void;
+  selected: ProjectListKeys;
 };
 
-export const CardList = <K extends string, TDetail>({ list, cards, onSelect }: Props<K, TDetail>) => {
+export const CardList = ({ list, cards, onSelect, selected }: Props) => {
   return (
-    <ul className="flex flex-col items-stretch max-w-lg gap-4 snap-x snap-mandatory ">
+    <ul className="flex max-w-lg snap-x snap-mandatory flex-col items-stretch gap-4">
       {list.map((name) => {
         const p = cards[name];
         const status = p.status ? p.status : "";
 
         return (
-          <li key={name} className={`snap-start shrink-0 max-w-lg md:w-full w-[95%]`}>
-            <button onClick={() => onSelect(name)} className={`${status} flex flex-col gap-4 h-full justify-between border sm:rounded-2xl rounded-md p-4 **:[p]:text-lg **:[p]:font-medium text-left`}>
+          <li
+            key={name}
+            className={`w-[95%] max-w-lg shrink-0 snap-start md:w-full`}
+          >
+            <button
+              onClick={() => onSelect(name)}
+              className={`${status} flex h-full w-full flex-col justify-between gap-4 rounded-md border p-4 text-left sm:rounded-2xl **:[p]:text-lg **:[p]:font-medium ${selected === name ? "bg-green-300" : "bg-white"}`}
+            >
               <div>
                 <h3 className="mb-2 text-2xl font-semibold">{p.title}</h3>
                 {p.desc}
