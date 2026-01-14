@@ -7,7 +7,7 @@ export const SectionTitle = () => {
   const titleArray: string[] = title.split("");
 
   return (
-    <h1 className={`text-3xl text-neutral-300 scale-x-200 origin-left sm:text-7xl`}>
+    <h1 className={`text-3xl text-neutral-300 scale-x-200 origin-left sm:text-7xl my-3`}>
       {titleArray.map((value, index) => {
         return <span key={`title-${index}`}>{value}</span>;
       })}
