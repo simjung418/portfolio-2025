@@ -1,5 +1,5 @@
 import { Cards, ProjectListKeys } from "@/lib/types";
-import { TechTag } from "@/components/cards";
+import TechTag from "@/components/cards/TechTag";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
 // 1) key 목록(list)
@@ -15,7 +15,7 @@ type Props = {
   selected: ProjectListKeys;
 };
 
-export const CardList = ({ list, cards, onSelect, selected }: Props) => {
+export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
   return (
     <ul className="flex max-w-lg snap-x snap-mandatory flex-col items-stretch gap-4">
       {list.map((name) => {

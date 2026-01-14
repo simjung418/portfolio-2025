@@ -1,6 +1,6 @@
 import { SkillKey } from "@/lib/types";
 import { SkillList } from "./SkillList";
-import { SKILL_SECTION_KEYS, SKILL_SECTIONS } from "@/lib/constants";
+import { SKILL_SECTION_KEYS, SKILL_SECTIONS } from "@/app/skill/skill.content";
 
 type Props = {
   activeSkill: SkillKey;

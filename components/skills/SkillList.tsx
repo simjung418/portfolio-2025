@@ -1,4 +1,4 @@
-import { SKILLS, SKILL_SECTIONS } from "@/lib/constants";
+import { SKILLS, SKILL_SECTIONS } from "@/app/skill/skill.content";
 import { SkillKey, SkillSectionKey } from "@/lib/types";
 
 type Props = {

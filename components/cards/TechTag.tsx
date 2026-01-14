@@ -5,7 +5,7 @@ type Props = {
   parent: string;
 }
 
-export const TechTag = ({ tags, parent }: Props) => {
+const TechTag = ({ tags, parent }: Props) => {
   return (
     <ul className="flex flex-wrap items-center gap-2">
       {tags.map((tech, index) => (
@@ -14,3 +14,5 @@ export const TechTag = ({ tags, parent }: Props) => {
     </ul>
   );
 }
+
+export default TechTag
