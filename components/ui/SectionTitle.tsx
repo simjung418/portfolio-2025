@@ -1,16 +1,33 @@
 "use client";
 
-import { usePageTitle } from "@/providers/TitleContext";
+import { usePathname } from "next/navigation";
+
+const TITLE_MAP: Record<string, string> = {
+  "/": "Home",
+  "/about": "About me",
+  "/skills": "Skills",
+  "/projects": "Projects",
+  "/career": "Career",
+  "/todos": "Todos",
+};
 
 export const SectionTitle = () => {
-  const { title } = usePageTitle();
-  const titleArray: string[] = title.split("");
+  const path = usePathname();
+  const title = TITLE_MAP[path] ?? "";
 
   return (
-    <h1 className={`text-3xl text-neutral-300 scale-x-200 origin-left sm:text-7xl my-3`}>
-      {titleArray.map((value, index) => {
-        return <span key={`title-${index}`}>{value}</span>;
-      })}
-    </h1> //PARKING 제목 텍스트 바뀔때 애니메이션 펑션 추가
+    <h1
+      className={`my-3 origin-left scale-x-200 text-3xl text-neutral-300 sm:text-7xl`}
+    >
+      {title.split("").map((char, index) => (
+        <span
+          key={`${title}-${index}`}
+          className={`animate-font inline-block text-neutral-300`}
+          style={{ animationDelay: `${(index + 1) * 0.15}s` }}
+        >
+          {char}
+        </span>
+      ))}
+    </h1>
   );
 };

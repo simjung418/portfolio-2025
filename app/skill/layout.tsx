@@ -1,4 +1,3 @@
-import ClientTitleSetter from "@/providers/ClientTitleSetter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function Layout({
 }>) {
   return (
     <div>
-      <ClientTitleSetter pageTitle="Skills" />
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-import ClientTitleSetter from "@/providers/ClientTitleSetter";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <ClientTitleSetter pageTitle="About me" />
       <ul className="mt-8 flex flex-col sm:gap-7 gap-4 **:[&_dl]:flex **:[&_dl]:flex-col **:sm:[&_dl]:gap-4 **:[&_dl]:gap-2 **:sm:[&_dt]:text-4xl **:[&_dt]:text-2xl **:[&_dt]:font-bold **:[&_dt]:text-neutral-800 **:sm:[dd]:text-xl/8 **:[dd]:text-md **:[dd]:font-medium">
         <li>
           <dl>

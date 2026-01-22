@@ -1,4 +1,3 @@
-import ClientTitleSetter from "@/providers/ClientTitleSetter";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ClientTitleSetter pageTitle="Home" />
       <h2 className="text-green-500">구조와 UX를 중심으로 문제를 해결하는</h2>
       <h2>5년 차 프론트엔드 개발자, 심정민 입니다.</h2>
       <p className="mt-4 font-semibold sm:mt-8 sm:text-3xl text-md sm:leading-normal">레거시 환경 실무 경험을 바탕으로 UX와 개발 구조가</p>
