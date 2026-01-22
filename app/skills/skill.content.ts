@@ -3,6 +3,7 @@ import { SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "@/lib/ty
 export const SKILLS: Record<SkillKey, SkillData> = {
   nextjs: {
     name: "React / Next.js",
+    icon: "nextjs.png",
     subtext: "만인의 검증된 선택",
     features: [
       "npm 기반 생태계로 도구 도입·유지 비용 감소",
@@ -19,6 +20,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   typescript: {
     name: "TypeScript",
+    icon: "ts.png",
     subtext: "코드로 남기는 설명서",
     features: [
       "초기 개발의 코드 규칙을 코드 레벨에서 고정",
@@ -34,6 +36,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   tailwind: {
     name: "TailwindCSS",
+    icon: "tailwind.svg",
     subtext: "디자인 반영이 또 하나의 구조가 되지 않도록",
     features: [
       "컴포넌트 단위 클래스 패턴을 고정하여 일정하게 유지",
@@ -48,6 +51,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   vue: {
     name: "Vue.js",
+    icon: "vue.png",
     subtext: "레거시를 정리하며 습득한 구조 감각",
     features: [
       "jQuery 혼재 환경에서 Vue 기반으로 점진 전환 경험",
@@ -63,6 +67,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   php: {
     name: "PHP",
+    icon: "php.png",
     subtext: "문제를 끝까지 해결하기 위한 백엔드 이해",
     features: [
       "핵심 플랫폼 유지보수 과정에서 백엔드 코드 직접 수정 경험",
@@ -77,6 +82,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   mysql: {
     name: "MySQL",
+    icon: "mysql.png",
     subtext: "플랫폼 관리를 위한 데이터 흐름의 이해",
     features: [
       "요구사항을 빠르게 해결하기 위해 DB 구조 학습/파악",
@@ -90,6 +96,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   prisma: {
     name: "Prisma",
+    icon: "prisma.png",
     subtext: "프론트엔드 관점에서 데이터 흐름을 이해하는 방법",
     features: [
       "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
@@ -100,6 +107,7 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   python: {
     name: "Python",
+    icon: "python.png",
     subtext: "실무 바깥의 문제를 해결하는 언어",
     features: [
       "자동화, 데이터 수집을 위해 BeautifulSoup 및 Selenium 활용 경험",
@@ -110,7 +118,8 @@ export const SKILLS: Record<SkillKey, SkillData> = {
 
   appdevelop: {
     name: "앱 개발 (SwiftUI / React Native)",
-    subtext: "앱 생태계 스며들기 위한 학습",
+    icon: "swift.svg",
+    subtext: "앱 생태계에 스며들기 위한 학습",
     features: [
       "프로덕트의 확장 시 앱 환경에서도 자연스럽게 동작하기 위해 UX와 퍼포먼스 관점에서 접근",
       "iOS 네이티브(SwiftUI)와 크로스플랫폼(React Native)의 차이를 비교하며 학습",

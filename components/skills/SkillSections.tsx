@@ -1,13 +1,13 @@
 import { SkillKey } from "@/lib/types";
 import { SkillList } from "./SkillList";
-import { SKILL_SECTION_KEYS, SKILL_SECTIONS } from "@/app/skill/skill.content";
+import { SKILL_SECTION_KEYS, SKILL_SECTIONS } from "@/app/skills/skill.content";
 
 type Props = {
   activeSkill: SkillKey;
   onSelect: (skill: SkillKey) => void;
 };
 
-export const SkillSection = ({ activeSkill, onSelect }: Props) => {
+export const SkillSections = ({ activeSkill, onSelect }: Props) => {
   return (
     <div className="flex flex-col gap-4">
       {SKILL_SECTION_KEYS.map((sectionKey) => {

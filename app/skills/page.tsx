@@ -1,6 +1,6 @@
 "use client";
 
-import { SkillDetail, SkillSection } from "@/components/skills/index";
+import { SkillDetail, SkillSections } from "@/components/skills/index";
 import { useSkill } from "./useSkill";
 
 export default function SkillsPage() {
@@ -18,7 +18,7 @@ export default function SkillsPage() {
 
       <aside className="md:flex-1">
         <div className="sticky top-24">
-          <SkillSection activeSkill={activeSkill} onSelect={onSelect} />
+          <SkillSections activeSkill={activeSkill} onSelect={onSelect} />
         </div>
       </aside>
     </div>

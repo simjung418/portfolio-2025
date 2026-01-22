@@ -17,7 +17,7 @@ export const SkillDetail = ({ skill }: Props) => {
 
       {skill.projects ? (
         <>
-          <h4 className="mt-6 pl-2 font-bold md:text-2xl">관련 프로젝트</h4>
+          <h4 className="mt-6 pl-2 font-bold md:text-2xl">관련 프로젝트 / 커리어</h4>
           <ul className="my-4 flex flex-col gap-4 pl-5">
             {skill.projects.map((p) => (
               <li key={p.name} className="w-1/2 rounded-md border p-4">

@@ -1,5 +1,6 @@
-import { SKILLS, SKILL_SECTIONS } from "@/app/skill/skill.content";
+import { SKILLS, SKILL_SECTIONS } from "@/app/skills/skill.content";
 import { SkillKey, SkillSectionKey } from "@/lib/types";
+import Image from "next/image";
 
 type Props = {
   section: SkillSectionKey;
@@ -16,9 +17,17 @@ export const SkillList = ({ section, activeSkill, onSelect }: Props) => {
           <li key={skill}>
             <button
               type="button"
-              className={`${activeSkill === skill ? "bg-neutral-100 border border-neutral-200" : ""} w-full rounded-md px-4 py-2 text-left text-lg font-medium box-border`}
+              className={`box-border flex w-full items-center gap-3 rounded-md border px-4 py-2 text-left text-lg font-medium transition-colors ${activeSkill === skill ? "border-transparent bg-green-100 text-green-700 hover:bg-green-200 active:bg-green-300" : "border-transparent hover:border-neutral-200 hover:bg-neutral-100 active:border-neutral-300 active:bg-neutral-200"}`}
               onClick={() => onSelect(skill)}
             >
+              <div className="relative size-7">
+                <Image
+                  src={`/skills/${detail.icon}`}
+                  alt={detail.name}
+                  className="absolute object-contain"
+                  fill
+                />
+              </div>
               {detail.name}
             </button>
           </li>

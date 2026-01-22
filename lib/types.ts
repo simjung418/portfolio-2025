@@ -29,6 +29,7 @@ export type SkillKey =
 
 export type SkillData = {
   name: string;
+  icon: string | ReactNode;
   subtext?: string;
   features: string[];
   projects?: {
