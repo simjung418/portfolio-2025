@@ -4,46 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { useEffect, useRef, useState } from "react";
+import { RoutePath,  ROUTES } from "@/lib/types";
 
-const links: Record<MenuNames, LinkDetails> = {
-  home: {
-    route: "/",
-    title: "Home",
-  },
-  about: {
-    route: "/about",
-    title: "About",
-  },
-  skills: {
-    route: "/skill",
-    title: "Skills",
-  },
-  projects: {
-    route: "/projects",
-    title: "Projects",
-  },
-  career: {
-    route: "/career",
-    title: "Career",
-  },
-  // contact: {
-  //   route: "/todos",
-  //   title: "Contact",
-  // },
-};
-
-const menus = ["home", "about", "skills", "projects", "career"];
-
-type MenuNames = (typeof menus)[number];
-
-type LinkDetails = {
-  route: string;
-  title: string;
-};
 
 export const Navigation = () => {
   const [isNavOpening, setIsNavOpening] = useState(false);
-  const path = usePathname();
+  const path = usePathname() as RoutePath;
   const navRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -91,15 +57,14 @@ export const Navigation = () => {
             : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        {menus.map((menu) => {
-          const link = links[menu];
+        {Object.entries(ROUTES).map(([route, meta]) => {
           return (
-            <li key={menu} className="cursor-pointer">
+            <li key={route} className="cursor-pointer">
               <Link
-                className={`px-2 py-1 text-2xl font-medium  hover:text-neutral-500 active:text-neutral-600 ${path === link.route ? "text-green-500" : "text-neutral-400"}`}
-                href={link.route}
+                className={`px-2 py-1 text-2xl font-medium  hover:text-neutral-500 active:text-neutral-600 ${path === route ? "text-green-500" : "text-neutral-400"}`}
+                href={route}
               >
-                {link.title}
+                {meta.title}
               </Link>
             </li>
           );
