@@ -1,61 +1,23 @@
 
 import { Metadata } from "next";
+import AboutContent from "./content.mdx";
 
 export const metadata: Metadata = {
-  title: "Aboutme"
-}
+  title: "Aboutme",
+};
 
 export default function AboutPage() {
   return (
     <>
-      <ul className="mt-8 flex flex-col sm:gap-7 gap-4 **:[&_dl]:flex **:[&_dl]:flex-col **:sm:[&_dl]:gap-4 **:[&_dl]:gap-2 **:sm:[&_dt]:text-4xl **:[&_dt]:text-2xl **:[&_dt]:font-bold **:[&_dt]:text-neutral-800 **:sm:[dd]:text-xl/8 **:[dd]:text-md **:[dd]:font-medium">
-        <li>
-          <dl>
-            <dt>구조와 UX를 중심으로 문제를 바라보기까지</dt>
-            <dd>
-              <p>php, vue2, jQuery 혼재된 레거시 환경을 관리하며 데이터 책임이 모호한 구조로 인해</p>
-              <p>작은 UIUX 변경에도 마크업부터 다시 진행해야 했습니다.</p>
-              <p>이를 보완하기 위해 초기 수정단계에서 컴포넌트의 책임과 역할을 부여하는것을 우선으로 생각하며 플랫폼을 관리했습니다.</p>
-              <p>하지만 혼자서 이해하고 있는 방대한 양의 유지보수를 위한 정보를 인수인계가 가능할지에 대한 불안을 항상 가지고 있었습니다.</p>
-              <p>이 경험이 저에게 <strong>요구사항을 빠르고 안정적으로 해결하려면 탄탄한 구조가 필수적</strong>이라는것을 알려주었습니다.</p>
-              <p>그리고 모두가 이해할 수 있는 탄탄한 구조, 변경에 강한 UX라는 결과를 타입스크립트를 통해 구현하는것이</p>
-              <p>가장 이상적이라고 판단하여 React / Next.js / Typescript 기반의 개발방식으로 전환하게 되었습니다.</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt>“도움이 되는 서비스”가 되기 위해 문제를 해결하는 법</dt>
-            <dd>
-              <p>서비스 중인 플랫폼에서 사용자의 피드백을 관리하며,</p>
-              <p>빠른 개선이 필요하지만 회사 내부에서 해결할 수 없는 유지보수 상황을 반복해서 경험했습니다.</p>
-              <p>외주 일정과 권한 문제로</p>
-              <p>“안된다”, “기다려야 한다”는 답변을 반복할때마다</p>
-              <p>사용자에게 즉시 도움이 되지 못한다는 한계를 크게 느꼈습니다.</p>
-              <p>그래서 문제를 근본적으로 해결하기 위해</p>
-              <p>기존에 알지 못했던 DB 구조를 학습하고, PHP 기반 백엔드 코드를 직접 작업하여</p>
-              <p>기다리지 않아도 되는 선택을 만들어냈습니다.</p>
-              <p>이 경험을 통해 “도움이 되는 서비스”란</p>
-              <p><strong>문제를 더 깊이 바라보고 근본적으로 해결하려는 태도에서 나온다</strong>는 기준을 갖게 되었습니다.</p>
-            </dd>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dt>협업과 프로세스가 “결과물의 품질”을 만드는 방식</dt>
-            <dd>
-              <p>협업은 사이좋게 일하는 그 자체의 결과가 아니라,</p>
-              <p>팀의 누구나 일정한 품질의 결과를 만들기 위해 꼭 필요한 과정입니다.</p>
-              <p>요구사항을 정의하고, 방향을 결정하며 결과물의 품질을 책임지는 역할은 한사람만의 시야로는 지속 가능하지 않습니다.</p>
-              <p>그렇기에 <strong>명확한 기준, 피드백을 주고받으며 다양한 이의 손을 거치는 협업과정이 필수적</strong>이라고 생각합니다.</p>
-              <p>프로세스와 기준이 있을 때 결과물은 개인이 아닌 팀의 자산이 됩니다.</p>
-              <p>그래서 코드 리뷰와 명확한 기준이 있는 환경에서</p>
-              <p>결과물의 완성도를 함께 높이는 협업을 경험하고 싶습니다.</p>
-            </dd>
-          </dl>
-        </li>
-      </ul>
+      <article className="prose prose-neutral sm:prose-h3:text-4xl prose-h3:text-2xl prose-h3:font-bold prose-h3:text-neutral-800 prose-hr:my-13 prose-p:text-md prose-p:font-medium sm:prose-p:text-xl prose-p:my-4 prose-p:leading-relaxed mt-8 max-w-none">
+        <div className="[&_p]:max-w-[70ch] [&_p]:indent-2">
+          <AboutContent />
+        </div>
+      </article>
     </>
   );
 }
 /* // PARKING 가독성 조정 */
+{
+  /* <ul className="mt-8 sm:gap-7 gap-4 **:[&_dl]:flex **:[&_dl]:flex-col **:sm:[&_dl]:gap-4 **:[&_dl]:gap-2 **:sm:[&_dt]:text-4xl **:[&_dt]:text-2xl **:[&_dt]:font-bold **:[&_dt]:text-neutral-800 **:sm:[dd]:text-xl/8 **:[dd]:text-md **:[dd]:font-medium"></ul> */
+}

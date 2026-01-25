@@ -6,7 +6,6 @@ import { Bars3Icon } from "@heroicons/react/16/solid";
 import { useEffect, useRef, useState } from "react";
 import { RoutePath,  ROUTES } from "@/lib/types";
 
-
 export const Navigation = () => {
   const [isNavOpening, setIsNavOpening] = useState(false);
   const path = usePathname() as RoutePath;

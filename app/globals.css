@@ -1,8 +1,14 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #fafafa;
   --foreground: #171717;
+}
+
+@theme {
+  --button-background: oklch(97% 0 0);
+  --button-shadow: oklch(70.8% 0 0);
 }
 
 @theme inline {
@@ -53,4 +59,25 @@ h2 {
 a,
 button {
   @apply focus-visible:ring-1 focus-visible:ring-green-400 focus-visible:outline-none;
+}
+
+.shadowed-button {
+  box-shadow:
+    -4px -4px 30px var(--color-white),
+    4px 4px 30px --alpha(var(--button-shadow) / 0.4),
+    inset -4px -4px 4px --alpha(var(--button-shadow) / 0.25),
+    inset 4px 4px 4px var(--color-white);
+  background: var(--button-background);
+}
+
+.shadowed-button:hover {
+  box-shadow:
+    -4px -4px 30px var(--color-white),
+    4px 4px 30px --alpha(var(--button-shadow) / 0.4);
+}
+
+.shadowed-button:active {
+  box-shadow:
+    -4px -4px 4px --alpha(var(--color-white) / 0.7),
+    4px 4px 4px --alpha(var(--button-shadow) / 0.2);
 }
