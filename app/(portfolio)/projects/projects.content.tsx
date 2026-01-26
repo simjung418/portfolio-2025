@@ -1,4 +1,5 @@
 import { Cards, ProjectListKeys } from "@/lib/types";
+import Link from "next/link";
 
 export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
   todos: {
@@ -13,13 +14,27 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
     detail: (
       <>
         <p>React/Next.js를 이용하여 클론할 소스 없이</p>
-        <p>모던 프론트엔드 스택이 실제로 어떻게 동작하는지 스스로 체화하기 위해 진행했습니다.</p>
+        <p>
+          모던 프론트엔드 스택이 실제로 어떻게 동작하는지 스스로 체화하기 위해
+          진행했습니다.
+        </p>
         <p>상태 관리는 Custom Hook(useTodos)으로 분리하고, </p>
-        <p>DB 없이도 상태가 유지되도록 하기 위해 쿠키 기반 저장 방식을 이용하여</p>
+        <p>
+          DB 없이도 상태가 유지되도록 하기 위해 쿠키 기반 저장 방식을 이용하여
+        </p>
         <p>가볍고 안정적으로 작동하도록 만들었습니다.</p>
         <p>Vue.js 실무 경험을 바탕으로 Next.js 환경에 빠르게 적응하고,</p>
         <p>React/Next.js 컨벤션을 제것으로 만드는 과정을 통해</p>
-        <p>새로운 개발환경에서도 편안하게 개발을 진행할 수 있는 발판을 만들었습니다.</p>
+        <p>
+          새로운 개발환경에서도 편안하게 개발을 진행할 수 있는 발판을
+          만들었습니다.
+        </p>
+        <Link
+          href="/todos"
+          className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
+        >
+          Todos 보러가기
+        </Link>
       </>
     ),
   },
@@ -32,8 +47,22 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
     ),
     tech: ["React", "Components", "Next.js", "TypeScript", "TailwindCSS"],
     status: "PROCESSING",
-    detail: <p>• 섹션 단위 정보 구조 설계 (Hero/About/Skills/Projects/Career) • Skills: 리스트→디테일 UX + 타입 안정성 • 디자인 시스템/타이포/레이아웃 실험</p>,
-  },
+    detail: (
+      <>
+        <p>
+          • 섹션 단위 정보 구조 설계 (Hero/About/Skills/Projects/Career) •
+          Skills: 리스트→디테일 UX + 타입 안정성 • 디자인 시스템/타이포/레이아웃
+          실험
+        </p>
+        <Link
+          href="/todos"
+          className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
+        >
+          github 보러가기
+        </Link>
+      </>
+    ),
+  } /* ,
   api: {
     title: "Todos Project",
     desc: (
@@ -67,5 +96,5 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
     tech: ["Figma", "SwiftUI"],
     status: "UPCOMING",
     detail: <>루틴/트래킹 UX 설계 • SwiftUI 컴포넌트 구조 학습 • 프로토타입 → 점진 기능 확장</>,
-  },
+  }, */,
 };

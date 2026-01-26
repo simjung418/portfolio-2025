@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { Navigation, SectionTitle, Footer } from "@/components/ui/";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: {
@@ -23,8 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} antialiased md:px-4 md:py-8 md:mx-auto max-w-7xl`}>
-        <div className="flex justify-between items-center">
+      <body
+        className={clsx(
+          `mx-auto max-w-7xl px-4 antialiased md:py-8`,
+          orbitron.variable,
+        )}
+      >
+        <div className="flex items-center justify-between">
           <SectionTitle />
           <Navigation />
         </div>

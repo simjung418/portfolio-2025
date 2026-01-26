@@ -26,6 +26,7 @@ export default function CareerPage() {
             className="scroll-mt-24"
           >
             <CareerCardDetail card={CAREER_CARDS[name]} selected={selected} />
+            <div className="w-full bg-neutral-300 h-px my-4 md:my-8"></div>
           </div>
         ))}
       </section>
