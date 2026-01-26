@@ -1,4 +1,4 @@
-import { SKILLS } from "@/app/skills/skill.content";
+import { SKILLS } from "@/app/(portfolio)/skills/skill.content";
 import { SkillData, SkillKey } from "@/lib/types";
 import { useState } from "react";
 
