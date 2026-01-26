@@ -1,7 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { TodoInputProps } from "@/lib/types";
+type Props = {
+  initialValue?: string;
+  onSubmit: (value: string) => void;
+  onCancel?: () => void;
+}
 
-export default function Input({ initialValue = "", onSubmit, onCancel }: TodoInputProps) {
+export default function Input({ initialValue = "", onSubmit, onCancel }: Props) {
   const [value, setValue] = useState(initialValue);
   const todoInput = useRef<HTMLInputElement>(null);
 

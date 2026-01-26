@@ -39,14 +39,19 @@ export interface Todo {
   isDone: boolean;
   isRoutine: boolean;
   isEditing: boolean;
-  status?: string;
 }
 
-export interface TodoInputProps {
-  initialValue?: string;
-  onSubmit: (value: string) => void;
-  onCancel?: () => void;
-}
+export type TodoActions = 
+  | { type: "LOAD"; todos: Todo[] }
+  | { type: "ADD"; initialTodo: Todo }
+  | { type: "TOGGLE_DONE"; id: number }
+  | { type: "TOGGLE_EDIT"; id: number }
+  | { type: "TOGGLE_ROUTINE"; id: number }
+  | { type: "UPDATE_LABEL"; id: number; label: string };
+
+export type TodoStatusSource = Pick<Todo, "isDone" | "isRoutine">;
+
+export type TodoStatus = "green" | "yellow" | "stone";
 // todo ends
 
 // skills starts
@@ -88,7 +93,7 @@ export type SkillSectionData = {
 // skills ends
 
 // projects starts
-export const PROJECT_LIST = ["todos", "portfolio", "api", "wotd"] as const;
+export const PROJECT_LIST = ["todos", "portfolio"/* , "api", "wotd" */] as const;
 
 export type ProjectListKeys = (typeof PROJECT_LIST)[number];
 

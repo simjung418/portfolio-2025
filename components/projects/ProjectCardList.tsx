@@ -1,5 +1,6 @@
 import { Cards, ProjectListKeys } from "@/lib/types";
 import TechTag from "@/components/cards/TechTag";
+import clsx from "clsx";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
 // 1) key 목록(list)
@@ -25,11 +26,15 @@ export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
         return (
           <li
             key={name}
-            className={`w-[95%] max-w-lg shrink-0 snap-start md:w-full`}
+            className="w-[95%] max-w-lg shrink-0 snap-start md:w-full"
           >
             <button
               onClick={() => onSelect(name)}
-              className={`${status} flex h-full w-full flex-col justify-between gap-4 rounded-md border p-4 text-left sm:rounded-2xl **:[p]:text-lg **:[p]:font-medium ${selected === name ? "bg-green-300" : "bg-white"}`}
+              className={clsx(
+                `flex h-full w-full flex-col justify-between gap-4 rounded-md border p-4 text-left md:rounded-2xl **:[p]:text-lg **:[p]:font-medium`,
+                status,
+                selected === name ? "bg-green-300" : "bg-white",
+              )}
             >
               <div>
                 <h3 className="mb-2 text-2xl font-semibold">{p.title}</h3>

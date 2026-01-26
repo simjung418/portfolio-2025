@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Todo } from "@/lib/types";
 import { getCookie, setCookie } from "./cookies";
-
-const getStatus = (isDone: boolean, isRoutine: boolean) => {
-  if (isDone) return "green";           // 완료됨 → 항상 초록
-  if (isRoutine) return "yellow";       // 루틴인데 미완료 → 노랑
-  return "stone";                       // 일반 할일 미완료 → 회색
-};
+import todosReducer from "./todos.reducer";
+import { selectGetStatus, selectHasEditingTodo } from "./todos.selector";
+import { todoList } from "./todos.constant";
 
 export function useTodos() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const initialTodos: Todo[] = todoList.map((item) => ({
+    ...item,
+    status: selectGetStatus(item)
+  }));
+  const [todos, dispatch] = useReducer(todosReducer, initialTodos)
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -19,14 +20,7 @@ export function useTodos() {
       const cookieTodo = await getCookie();
 
       if (cookieTodo !== '') {
-        setTodos(JSON.parse(cookieTodo));
-      } else {
-        // 쿠키 없으면 기본값
-        const initialTodos = todoList.map((item) => ({
-          ...item,
-          status: getStatus(item.isDone, item.isRoutine)
-        }));
-        setTodos(initialTodos);
+        dispatch({ type: "LOAD", todos: JSON.parse(cookieTodo) });
       }
       setIsLoading(false); // 로딩 끝
     };
@@ -38,8 +32,7 @@ export function useTodos() {
     if (todos.length > 0 && !isLoading) {
       setCookie(JSON.stringify(todos)); // todos가 변할때 마다 쿠키에 저장
     }
-    const checkEditing = todos.find(i => i.isEditing);
-    if (checkEditing) { // 에디팅 체크 될때마다 변환
+    if (selectHasEditingTodo(todos)) { // 에디팅 체크 될때마다 변환
       setIsEditing(true);
     } else {
       setIsEditing(false);
@@ -48,74 +41,21 @@ export function useTodos() {
 
   const addTodo = () => {
     const length = todos.length;
-    setTodos([
-      ...todos,
-      {
-        id: length + 1,
-        label: "",
-        isDone: false,
-        isRoutine: false,
-        isEditing: true,
-        status: "stone",
-      },
-    ]);
+    const initialTodo = {
+      id: length + 1,
+      label: "",
+      isDone: false,
+      isRoutine: false,
+      isEditing: true,
+    }
+    dispatch({ type: "ADD", initialTodo })
   };
-  const handleIsDone = (id: number) => {
-    updateTodo(id, (item) => ({ ...item, isDone: !item.isDone, status: getStatus(!item.isDone, item.isRoutine) }));
-  };
-  const handleIsEdit = (id: number) => {
-    updateTodo(id, (item) => ({ ...item, isEditing: !item.isEditing }));
-  };
-  const handleIsRoutine = (id: number) => {
-    updateTodo(id, (item) => ({ ...item, isRoutine: !item.isRoutine, status: getStatus(item.isDone, !item.isRoutine) }));
-  };
-  const handleLabel = (id: number, label: string) => {
-    updateTodo(id, (item) => ({ ...item, label: label, isEditing: !item.isEditing }));
-  };
-  const handleDelete = (id: number) => {
-    setTodos(todos.filter(item => item.id !== id));
+  const toggleDone = (id: number) => dispatch({ type: "TOGGLE_DONE", id });
+  const toggleEdit = (id: number) => dispatch({ type: "TOGGLE_EDIT", id });
+  const toggleRoutine = (id: number) => dispatch({ type: "TOGGLE_ROUTINE", id });
+  const updateLabel = (id: number, label: string) => dispatch({ type: "UPDATE_LABEL", id, label });
+
+  return {
+    todos, isEditing, addTodo, toggleDone, toggleEdit, updateLabel, toggleRoutine
   }
-  const updateTodo = (id: number, updater: (item: Todo) => Todo) => {
-    setTodos(todos.map((item) => (item.id === id ? updater(item) : item)));
-  };
-
-  return { todos, isEditing, addTodo, handleIsDone, handleIsEdit, handleLabel, handleIsRoutine, handleDelete }
 }
-
-const todoList = [
-  {
-    id: 1,
-    label: "컴퓨터 켜기",
-    isDone: true,
-    isRoutine: true,
-    isEditing: false,
-  },
-  {
-    id: 2,
-    label: "헬스장 가기",
-    isDone: false,
-    isRoutine: true,
-    isEditing: false,
-  },
-  {
-    id: 3,
-    label: "공부하기",
-    isDone: false,
-    isRoutine: true,
-    isEditing: false,
-  },
-  {
-    id: 4,
-    label: "영양제 먹기",
-    isDone: false,
-    isRoutine: true,
-    isEditing: false,
-  },
-  {
-    id: 5,
-    label: "빨래하기",
-    isDone: false,
-    isRoutine: false,
-    isEditing: false,
-  },
-];

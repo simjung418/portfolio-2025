@@ -16,21 +16,21 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
       <div className="flex flex-1 justify-between gap-4">
         <div className="flex flex-col gap-5">
           <dl>
-            <dt className="text-lg font-bold text-neutral-400 capitalize sm:text-3xl">
+            <dt className="text-lg font-bold text-neutral-400 capitalize md:text-3xl">
               Detail
             </dt>
-            <dd className="text-md font-medium sm:text-2xl/10">{card.desc}</dd>
+            <dd className="text-md font-medium md:text-2xl/10">{card.desc}</dd>
           </dl>
           {CAR.map((val, index) => {
             return (
               <dl
                 key={`${selected}_${val}`}
-                className="flex flex-col gap-2 sm:gap-1"
+                className="flex flex-col gap-2 md:gap-1"
               >
-                <dt className="text-lg font-bold text-neutral-400 capitalize sm:text-3xl">
+                <dt className="text-lg font-bold text-neutral-400 capitalize md:text-3xl">
                   {val}
                 </dt>
-                <dd className="text-md font-medium sm:text-2xl/10">
+                <dd className="text-md font-medium md:text-2xl/10">
                   {detail?.[val]}
                 </dd>
               </dl>
