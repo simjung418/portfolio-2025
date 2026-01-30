@@ -19,6 +19,7 @@ type Props = {
   };
   status: TodoStatus;
 };
+
 const statusClassMap: Record<TodoStatus, string> = {
   green: styles.green,
   yellow: styles.yellow,

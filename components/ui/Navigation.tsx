@@ -60,8 +60,8 @@ export const Navigation = () => {
         onClick={() => setIsNavOpening((prev) => !prev)}
         // className="flex size-20 items-center justify-center rounded-full border border-neutral-500"
         className={clsx(
-          `group shadowed-button relative flex size-12 items-center justify-center rounded-full transition md:size-16`,
-          isNavOpening && "is-nav",
+          `group shadowed-button relative flex size-12 items-center justify-center rounded-full transition-all md:size-16`,
+          isNavOpening && "clicked",
         )}
       >
         <Bars3Icon className="size-6 text-neutral-300 transition-colors md:size-8" />

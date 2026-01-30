@@ -1,4 +1,4 @@
-import { Cards, ProjectListKeys } from "@/lib/types";
+import { ProjectCards, ProjectListKeys } from "@/lib/types";
 import TechTag from "@/components/cards/TechTag";
 import clsx from "clsx";
 
@@ -11,9 +11,15 @@ import clsx from "clsx";
 
 type Props = {
   list: readonly ProjectListKeys[];
-  cards: Record<ProjectListKeys, Cards>;
+  cards: Record<ProjectListKeys, ProjectCards>;
   onSelect: (name: ProjectListKeys) => void;
   selected: ProjectListKeys;
+};
+
+const projectCardClassMap = {
+  base: "flex h-full w-full flex-col justify-between gap-4 rounded-md backdrop-blur-md p-4 text-left md:rounded-2xl **:[p]:text-lg **:[p]:font-medium transition-all duration-200 shadowed-button",
+  active:
+    "clicked **:[h3]:text-green-500  **:[&_p]:text-neutral-600 bg-green-200/40!",
 };
 
 export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
@@ -31,16 +37,22 @@ export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
             <button
               onClick={() => onSelect(name)}
               className={clsx(
-                `flex h-full w-full flex-col justify-between gap-4 rounded-md border p-4 text-left md:rounded-2xl **:[p]:text-lg **:[p]:font-medium`,
+                projectCardClassMap.base,
                 status,
-                selected === name ? "bg-green-300" : "bg-white",
+                selected === name && projectCardClassMap.active,
               )}
             >
               <div>
                 <h3 className="mb-2 text-2xl font-semibold">{p.title}</h3>
                 {p.desc}
               </div>
-              {p.tech ? <TechTag tags={p.tech} parent={name} /> : null}
+              {p.tech ? (
+                <TechTag
+                  tags={p.tech}
+                  parent={name}
+                  parentClicked={selected === name}
+                />
+              ) : null}
             </button>
           </li>
         );

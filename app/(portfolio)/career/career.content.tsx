@@ -1,6 +1,6 @@
-import { Cards, CareerDetail, CareerListKeys } from "@/lib/types";
+import { CareerCards, CareerListKeys } from "@/lib/types";
 
-export const CAREER_CARDS: Record<CareerListKeys, Cards<CareerDetail>> = {
+export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   bisat2: {
     tabName: "BIS@T 2.0",
     title: "BIS@T 2.0 프론트엔드 리팩토링",

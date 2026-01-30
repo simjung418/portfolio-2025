@@ -11,31 +11,11 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
       </>
     ),
     tech: ["React", "Custom Hook", "Next.js", "TypeScript", "TailwindCSS"],
-    detail: (
-      <>
-        <p>React/Next.js를 이용하여 클론할 소스 없이</p>
-        <p>
-          모던 프론트엔드 스택이 실제로 어떻게 동작하는지 스스로 체화하기 위해
-          진행했습니다.
-        </p>
-        <p>상태 관리는 Custom Hook(useTodos)으로 분리하고, </p>
-        <p>
-          DB 없이도 상태가 유지되도록 하기 위해 쿠키 기반 저장 방식을 이용하여
-        </p>
-        <p>가볍고 안정적으로 작동하도록 만들었습니다.</p>
-        <p>Vue.js 실무 경험을 바탕으로 Next.js 환경에 빠르게 적응하고,</p>
-        <p>React/Next.js 컨벤션을 제것으로 만드는 과정을 통해</p>
-        <p>
-          새로운 개발환경에서도 편안하게 개발을 진행할 수 있는 발판을
-          만들었습니다.
-        </p>
+    cta: (
         <Link
           href="/todos"
           className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
         >
-          Todos 보러가기
-        </Link>
-      </>
     ),
   },
   portfolio: {

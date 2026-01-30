@@ -1,9 +1,9 @@
-import { Cards, CareerDetail, CareerListKeys } from "@/lib/types";
+import { CareerCards, CareerListKeys } from "@/lib/types";
 import Image from "next/image";
 import TechTag from "@/components/cards/TechTag";
 
 type Props = {
-  card: Cards<CareerDetail>;
+  card: CareerCards;
   selected: CareerListKeys;
 };
 
@@ -36,7 +36,7 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
               </dl>
             );
           })}
-          {card.tech ? <TechTag tags={card.tech!} parent={selected} /> : null}
+          {card.tech ? <TechTag tags={card.tech!} parent={selected} parentClicked={false} /> : null}
         </div>
         <div>
           {card.imgs != undefined

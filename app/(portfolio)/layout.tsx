@@ -26,15 +26,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          `mx-auto max-w-7xl px-4 antialiased md:py-8`,
+          `mx-auto max-w-7xl px-6 antialiased md:py-8`,
           orbitron.variable,
         )}
       >
-        <div className="flex items-center justify-between">
+        <header className="mb-8 flex items-center justify-between">
           <SectionTitle />
           <Navigation />
-        </div>
-        <div>{children}</div>
+        </header>
+        {children}
         <Footer />
       </body>
     </html>

@@ -41,7 +41,7 @@ export interface Todo {
   isEditing: boolean;
 }
 
-export type TodoActions = 
+export type TodoActions =
   | { type: "LOAD"; todos: Todo[] }
   | { type: "ADD"; initialTodo: Todo }
   | { type: "TOGGLE_DONE"; id: number }
@@ -105,25 +105,32 @@ export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
 // projects + career starts
 export type BaseCards = {
   title: string;
-  tabName?: string;
   desc: ReactNode;
   tech?: string[];
   status?: ProjectStatus;
   imgs?: string[];
 }; // 기본 카드정보 설정
 
-export type Cards<TDetail = ReactNode> = BaseCards & { detail?: TDetail };
-// 제네릭을 이용하여 옵션정보 설정
-// 기본값 TDetail = ReactNode이다.
-// 제네릭이 기본값이면 detail?: ReactNode로 설정된다.
-// 제네릭에 다른 설정값이 들어가면 detail?: 다른 설정값으로 설정된다.
-// 여기서는 CareerDetail이 들어갔으니까 detail?: CareerDetail로 설정된다.
+export type ProjectCards = BaseCards & { cta: ReactNode };
+export type CareerCards = BaseCards & {
+  tabName?: string;
+  detail: CareerDetail;
+};
+
+//제네릭 사용예 남겨두기
+// export type Cards<TDetail = ReactNode> = BaseCards & { detail?: TDetail };
+// // 제네릭을 이용하여 옵션정보 설정
+// // 기본값 TDetail = ReactNode이다.
+// // 제네릭이 기본값이면 detail?: ReactNode로 설정된다.
+// // 제네릭에 다른 설정값이 들어가면 detail?: 다른 설정값으로 설정된다.
+// // 여기서는 CareerDetail이 들어갔으니까 detail?: CareerDetail로 설정된다.
 
 export type CareerDetail = {
   challenge: ReactNode;
   action: ReactNode;
   result: ReactNode;
 }; // 부가옵션 경우의 수 설정
+
 // projects + career ends
 
 // career starts
