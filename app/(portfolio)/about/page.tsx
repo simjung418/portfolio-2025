@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import AboutContent from "./content.mdx";
-import ArticleLayout from "@/components/ui/ArticleLayout";
+import BasicLayout from "@/components/ui/BasicLayout";
 
 export const metadata: Metadata = {
   title: "Aboutme",
@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <ArticleLayout>
+    <BasicLayout>
       <div className="[&_p]:max-w-[70ch] [&_p]:indent-2">
         <AboutContent />
       </div>
-    </ArticleLayout>
+    </BasicLayout>
   );
 }

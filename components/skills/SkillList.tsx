@@ -15,7 +15,7 @@ const skillClassMap = {
     "border-green-200 bg-green-50 text-green-500 hover:bg-green-100 active:bg-green-200/70",
   inactive:
     "border-neutral-200 hover:border-neutral-200 hover:bg-neutral-100 active:border-neutral-300 active:bg-neutral-200",
-};
+}; // TODO 전역화
 
 export const SkillList = ({ section, activeSkill, onSelect }: Props) => {
   return (

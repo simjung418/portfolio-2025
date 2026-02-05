@@ -93,7 +93,7 @@ h1 span {
 }
 
 h2 {
-  @apply my-4 text-2xl font-bold sm:text-3xl md:text-5xl;
+  @apply my-4 text-2xl text-neutral-800 font-bold sm:text-3xl md:text-5xl;
 }
 
 a,

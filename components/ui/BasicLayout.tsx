@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
 };
-export default function ArticleLayout({ children }: Props) {
+export default function BasicLayout({ children }: Props) {
   return (
     <article
       className={clsx(

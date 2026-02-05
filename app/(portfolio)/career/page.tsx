@@ -5,7 +5,6 @@ import { CAREER_LIST } from "@/lib/types";
 import { useCareer } from "./useCareer";
 import { CAREER_CARDS } from "./career.content";
 
-
 export default function CareerPage() {
   const { selected, onSelect, trigger } = useCareer();
   return (
@@ -18,17 +17,18 @@ export default function CareerPage() {
           selected={selected}
         />
         {CAREER_LIST.map((name) => (
-          <div
-            key={name}
-            ref={(el) => {
-              trigger.current[name] = el;
-            }}
-            className="scroll-mt-24"
-          >
-            <CareerCardDetail card={CAREER_CARDS[name]} selected={selected} />
-            <div className="w-full bg-neutral-300 h-px my-4 md:my-8"></div>
-          </div>
-        ))}
+            <div
+              key={name}
+              ref={(el) => {
+                trigger.current[name] = el;
+              }}
+              className="scroll-mt-24"
+            >
+              <CareerCardDetail card={CAREER_CARDS[name]} selected={selected}/>
+              <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
+              {/* 구분선 */}
+            </div>
+          ))}
       </section>
     </>
   );

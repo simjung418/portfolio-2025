@@ -1,7 +1,7 @@
-import { Cards, ProjectListKeys } from "@/lib/types";
+import { ProjectCards, ProjectListKeys } from "@/lib/types";
 import Link from "next/link";
 
-export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
+export const PROJECT_CARDS: Record<ProjectListKeys, ProjectCards> = {
   todos: {
     title: "Todos Project",
     desc: (
@@ -12,10 +12,10 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
     ),
     tech: ["React", "Custom Hook", "Next.js", "TypeScript", "TailwindCSS"],
     cta: (
-        <Link
-          href="/todos"
-          className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
-        >
+      <Link
+        href="/todos"
+        className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
+      />
     ),
   },
   portfolio: {
@@ -27,20 +27,13 @@ export const PROJECT_CARDS: Record<ProjectListKeys, Cards> = {
     ),
     tech: ["React", "Components", "Next.js", "TypeScript", "TailwindCSS"],
     status: "PROCESSING",
-    detail: (
-      <>
-        <p>
-          • 섹션 단위 정보 구조 설계 (Hero/About/Skills/Projects/Career) •
-          Skills: 리스트→디테일 UX + 타입 안정성 • 디자인 시스템/타이포/레이아웃
-          실험
-        </p>
-        <Link
-          href="/todos"
-          className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
-        >
-          github 보러가기
-        </Link>
-      </>
+    cta: (
+      <Link
+        href="/todos"
+        className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
+      >
+        github 보러가기
+      </Link>
     ),
   } /* ,
   api: {
