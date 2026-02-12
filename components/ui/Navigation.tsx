@@ -8,15 +8,16 @@ import { RoutePath, ROUTES } from "@/lib/types";
 import clsx from "clsx";
 
 const navClassMap = {
-  base: "absolute right-0 z-100 mt-4 flex flex-col gap-5 rounded-2xl bg-neutral-50/70 p-3 shadow-[0_0_30px] shadow-green-400/15 backdrop-blur-md transition-all duration-200 xl:-right-8",
+  base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 bg-neutral-50/70 shadow-green-400/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
   opened: "pointer-events-auto translate-y-0 opacity-100",
   closed: "pointer-events-none -translate-y-2 opacity-0",
 };
 
 const routeClassMap = {
-  base: "ease px-2 py-0.5 text-lg font-medium transition-colors md:py-1 md:text-2xl",
-  active: "text-green-500 hover:text-green-600",
-  inactive: "text-neutral-400 hover:text-neutral-500 active:text-neutral-600",
+  base: "ease box-border px-4 block text-2xl/12 transition-colors md:px-2 md:py-0.5 md:text-2xl",
+  active: "text-green-500 hover:text-green-600 font-bold underline",
+  inactive:
+    "text-neutral-400 hover:text-neutral-500 font-medium active:text-neutral-600",
 };
 
 export const Navigation = () => {
@@ -64,7 +65,7 @@ export const Navigation = () => {
           isNavOpening && "clicked",
         )}
       >
-        <Bars3Icon className="size-6 text-neutral-300 transition-colors md:size-8" />
+        <Bars3Icon className="size-6 text-green-400 transition-colors md:size-8" />
       </button>
       <ul
         className={clsx(
@@ -74,7 +75,7 @@ export const Navigation = () => {
       >
         {Object.entries(ROUTES).map(([route, meta]) => {
           return (
-            <li key={route} className="cursor-pointer">
+            <li key={route} className="w-full cursor-pointer">
               <Link
                 className={clsx(
                   routeClassMap.base,
@@ -84,7 +85,7 @@ export const Navigation = () => {
                 )}
                 href={route}
               >
-                {meta.title}
+                {meta}
               </Link>
             </li>
           );

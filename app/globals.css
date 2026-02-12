@@ -9,6 +9,7 @@
 @theme {
   --button-background: oklch(97% 0 0);
   --button-shadow: oklch(70.8% 0 0);
+  --button-shadow: oklch(72.3% 0.219 149.579)
 }
 
 @theme inline {
@@ -93,7 +94,7 @@ h1 span {
 }
 
 h2 {
-  @apply my-4 text-2xl text-neutral-800 font-bold sm:text-3xl md:text-5xl;
+  @apply text-2xl font-bold sm:text-3xl md:my-4 md:text-5xl;
 }
 
 a,
@@ -118,7 +119,7 @@ button {
 }
 
 .shadowed-button:hover svg {
-  color: --alpha(var(--color-neutral-400)/ 0.75);
+  color: --alpha(var(--color-green-400) / 0.75);
 }
 
 .shadowed-button:active {
@@ -128,7 +129,7 @@ button {
 }
 
 .shadowed-button:active svg {
-  color: var(--color-neutral-400);
+  color: var(--color-green-400);
 }
 .shadowed-button.clicked {
   box-shadow:
@@ -140,3 +141,24 @@ button {
   color: var(--color-green-500);
 }
 /* nav end */
+
+/* responsive visibility utilities start */
+
+.pc-only {
+  display: none;
+}
+
+.mobile-only {
+  display: inline;
+}
+
+@media (min-width: 1024px) {
+  .pc-only {
+    display: inline;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+/* responsive visibility utilities end */

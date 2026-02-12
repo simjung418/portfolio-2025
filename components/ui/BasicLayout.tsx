@@ -18,12 +18,13 @@ export default function BasicLayout({ children }: Props) {
         "prose-h3:text-neutral-600",
         // p
         "prose-hr:my-13",
-        "prose-p:text-md",
+        "prose-p:text-base",
         "prose-p:font-medium",
         "prose-p:my-4",
         "prose-p:leading-relaxed",
+        "prose-strong:text-green-600",
         // li
-        "prose-li:text-md",
+        "prose-li:text-base",
         "prose-li:font-medium",
         "md:prose-li:text-xl",
         "prose-li:my-4",

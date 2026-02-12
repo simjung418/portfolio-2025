@@ -1,4 +1,5 @@
-import { Cards, CareerDetail, CareerListKeys } from "@/lib/types";
+import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
+import { CareerCards, CareerListKeys } from "@/lib/types";
 import clsx from "clsx";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
@@ -10,7 +11,7 @@ import clsx from "clsx";
 
 type Props = {
   list: readonly CareerListKeys[];
-  cards: Record<CareerListKeys, Cards<CareerDetail>>;
+  cards: Record<CareerListKeys, CareerCards>;
   selected: CareerListKeys;
   onSelect: (name: CareerListKeys) => void;
 };
@@ -26,8 +27,11 @@ export const CareerList = ({ list, cards, onSelect, selected }: Props) => {
             <button
               onClick={() => onSelect(name)}
               className={clsx(
-                `min-w-20 rounded-full border px-4 py-2`,
-                selected == name ? "bg-green-300" : "bg-white",
+                `min-w-20 justify-center rounded-full px-4 py-2 text-center font-medium whitespace-nowrap w-full`,
+                ctaBtnClassMap.base,
+                selected == name
+                  ? ctaBtnClassMap.active
+                  : ctaBtnClassMap.inactive,
               )}
             >
               {p.tabName}

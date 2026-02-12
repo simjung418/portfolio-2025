@@ -1,35 +1,15 @@
 import { ReactNode } from "react";
 
 // pathname starts
-export type LinkDetails = {
-  title: string;
-  h1: string;
-};
-
 export type RoutePath = "/" | "/about" | "/skills" | "/projects" | "/career";
 
 export const ROUTES = {
-  "/": {
-    title: "Home",
-    h1: "Home",
-  },
-  "/about": {
-    title: "About",
-    h1: "About me",
-  },
-  "/skills": {
-    title: "Skills",
-    h1: "Skills",
-  },
-  "/projects": {
-    title: "Projects",
-    h1: "Projects",
-  },
-  "/career": {
-    title: "Career",
-    h1: "Career",
-  },
-} as const satisfies Record<RoutePath, LinkDetails>;
+  "/": "Home",
+  "/about": "About",
+  "/skills": "Skills",
+  "/projects": "Projects",
+  "/career": "Career",
+} as const satisfies Record<RoutePath, string>;
 // pathname ends
 
 // todo starts

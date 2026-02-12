@@ -1,5 +1,7 @@
 import { SKILLS, SKILL_SECTIONS } from "@/app/(portfolio)/skills/skill.content";
+import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
 import { SkillKey, SkillSectionKey } from "@/lib/types";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -9,28 +11,27 @@ type Props = {
   onSelect: (skill: SkillKey) => void;
 };
 
-const skillClassMap = {
-  base: "box-border flex w-full items-center gap-3 rounded-md border px-4 py-2 text-left text-lg font-medium transition-colors",
-  active:
-    "border-green-200 bg-green-50 text-green-500 hover:bg-green-100 active:bg-green-200/70",
-  inactive:
-    "border-neutral-200 hover:border-neutral-200 hover:bg-neutral-100 active:border-neutral-300 active:bg-neutral-200",
-}; // TODO 전역화
-
 export const SkillList = ({ section, activeSkill, onSelect }: Props) => {
   return (
     <ul className="flex flex-col gap-2">
       {SKILL_SECTIONS[section].skills.map((skill) => {
         const detail = SKILLS[skill];
         return (
-          <li key={skill}>
+          <li key={skill} className="flex items-center gap-1">
+            <ChevronRightIcon
+              className={clsx(
+                "size-8",
+                activeSkill === skill ? "text-green-400" : "text-transparent",
+              )}
+            />
             <button
               type="button"
               className={clsx(
-                skillClassMap.base,
+                "w-full rounded-md text-left font-medium",
+                ctaBtnClassMap.base,
                 activeSkill === skill
-                  ? skillClassMap.active
-                  : skillClassMap.inactive,
+                  ? ctaBtnClassMap.active
+                  : ctaBtnClassMap.inactive,
               )}
               onClick={() => onSelect(skill)}
             >

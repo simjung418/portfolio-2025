@@ -1,5 +1,5 @@
 "use client";
-import { PlusIcon } from "@heroicons/react/16/solid";
+import { PlusIcon } from "@heroicons/react/24/outline";
 import { useTodos } from "./useTodos";
 import { TodoItem } from "@/components/todos/TodoItem";
 import { selectGetStatus } from "./todos.selector";
@@ -20,7 +20,7 @@ export default function Todos() {
       <p className="">오늘 당신의 todo를 입력하세요.</p>
       <ul className="flex flex-col gap-2">
         {todos.map((item) => {
-          const status = selectGetStatus(item)
+          const status = selectGetStatus(item);
           return (
             <TodoItem
               key={item.id}

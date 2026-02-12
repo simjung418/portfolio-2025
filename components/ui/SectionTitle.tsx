@@ -5,11 +5,10 @@ import { RoutePath, ROUTES } from "@/lib/types";
 
 export const SectionTitle = () => {
   const path = usePathname() as RoutePath;
-  const { title, h1 } = ROUTES[path];
-  console.log(typeof h1);
+  const title = ROUTES[path];
   return (
-    <h1 className="my-3 origin-left scale-x-200 text-4xl text-neutral-300 md:text-6xl">
-      {h1.split("").map((char, index) => (
+    <h1 className="my-3 origin-left scale-x-200 text-3xl text-neutral-300 md:text-6xl">
+      {title.split("").map((char, index) => (
         <span
           key={`${title}-${index}`}
           className="animate-font inline-block text-neutral-300"

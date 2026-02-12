@@ -12,8 +12,8 @@ export default function SkillsPage() {
       </section>
       
       <div className="relative mx-8 w-px bg-black/15">
-        <div className="pointer-events-none absolute top-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-b from-neutral-50 to-transparent" />
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-t from-neutral-50 to-transparent" />
+        {/* <div className="pointer-events-none absolute top-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-b from-neutral-50 to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-t from-neutral-50 to-transparent" /> */}
       </div>
 
       <aside className="md:flex-1">

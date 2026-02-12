@@ -5,7 +5,7 @@ import {
   CheckIcon,
   XMarkIcon,
   PencilIcon,
-} from "@heroicons/react/16/solid";
+} from "@heroicons/react/24/outline";
 import Input from "@/components/todos/TodoInput";
 import clsx from "clsx";
 
