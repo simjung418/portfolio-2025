@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 type Props = {
   href: string;
   children: ReactNode;
-}
+};
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -19,12 +19,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 export const mdxComponents = {
   a: ({ href, children, ...props }: Props) => {
     const isInternal = href?.startsWith("/");
-console.log(ctaBtnClassMap)
+    console.log(ctaBtnClassMap);
     if (isInternal) {
       return (
         <Link
           href={href}
-          className={clsx(ctaBtnClassMap.base, ctaBtnClassMap.active)}
+          className={clsx(
+            ctaBtnClassMap.base,
+            ctaBtnClassMap.active,
+            "h-16 w-auto rounded-md py-3 text-center text-xl no-underline md:inline-flex! md:px-6 md:py-5 md:text-xl",
+          )}
         >
           {children}
         </Link>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <BasicLayout>
-      <div className="[&_p]:max-w-[70ch] [&_p]:indent-2">
+      <div className="[&_p]:max-w-[70ch]">
         <AboutContent />
       </div>
     </BasicLayout>

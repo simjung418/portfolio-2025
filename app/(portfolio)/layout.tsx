@@ -31,12 +31,18 @@ export default function RootLayout({
           orbitron.variable,
         )}
       >
-        <div className="absolute top-0 left-0 -z-10 h-full w-dvw overflow-hidden">
-          <GlobeAltIcon className="absolute -right-100 size-400 font-light text-neutral-200/30" />
+        {/* viewport에 고정 */}
+        <div className="fixed inset-x-0 top-6 z-50">
+          {/* 가운데 정렬된 max-width 컨테이너 */}
+          <div className="relative mx-auto max-w-7xl px-4 md:px-6">
+            {/* 컨테이너 기준 right */}
+            <div className="absolute right-4 md:right-6">
+              <Navigation />
+            </div>
+          </div>
         </div>
-        <header className="mb-8 flex items-center justify-between">
+        <header className="mb-8 flex">
           <SectionTitle />
-          <Navigation />
         </header>
         {children}
         <Footer />
