@@ -6,6 +6,7 @@ import { Bars3Icon } from "@heroicons/react/16/solid";
 import { useEffect, useRef, useState } from "react";
 import { RoutePath, ROUTES } from "@/lib/types";
 import clsx from "clsx";
+import { animate } from "animejs";
 
 const navClassMap = {
   base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 bg-neutral-50/70 shadow-green-400/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
@@ -52,6 +53,7 @@ export const Navigation = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isNavOpening]);
+
   useEffect(() => {
     setIsNavOpening(false);
   }, [path]);

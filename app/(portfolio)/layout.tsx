@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "@/app/globals.css";
-import { Navigation, SectionTitle, Footer } from "@/components/ui/";
+import { Navigation, SectionTitle, Footer, CurvedGridBackground } from "@/components/ui/";
 import clsx from "clsx";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +30,7 @@ export default function RootLayout({
           orbitron.variable,
         )}
       >
+        <CurvedGridBackground />
         {/* viewport에 고정 */}
         <div className="fixed inset-x-0 top-6 z-50">
           {/* 가운데 정렬된 max-width 컨테이너 */}

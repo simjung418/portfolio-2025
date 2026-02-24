@@ -9,42 +9,54 @@ type Props = {
   children: ReactNode;
 };
 
+function MdxA(props: React.ComponentPropsWithoutRef<"a">) {
+  const { href, children, ...rest } = props;
+
+  // ✅ href 없으면 그냥 a 렌더 (또는 span으로 렌더해도 됨)
+  if (!href) {
+    return <a {...rest}>{children}</a>;
+  }
+
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+
+  if (isInternal) {
+    // 내부 링크면 Next Link
+    return (
+      <Link
+        href={href}
+        className={clsx(
+          ctaBtnClassMap.base,
+          ctaBtnClassMap.active,
+          "h-16 w-auto rounded-md py-3 text-center text-xl no-underline md:inline-flex! md:px-6 md:py-5 md:text-xl",
+        )}
+        {...(rest as any)}
+      >
+        {children}
+      </Link>
+    );
+  }
+
+  // 외부 링크면 a + 보안 속성
+  return (
+    <a
+      href={href}
+      target={rest.target ?? "_blank"}
+      rel={rest.rel ?? "noopener noreferrer"}
+      className="text-green-600 underline"
+      {...rest}
+    >
+      {children}
+    </a>
+  );
+}
+
+const mdxComponents: MDXComponents = {
+  a: MdxA,
+};
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     ...mdxComponents,
   };
 }
-
-export const mdxComponents = {
-  a: ({ href, children, ...props }: Props) => {
-    const isInternal = href?.startsWith("/");
-    console.log(ctaBtnClassMap);
-    if (isInternal) {
-      return (
-        <Link
-          href={href}
-          className={clsx(
-            ctaBtnClassMap.base,
-            ctaBtnClassMap.active,
-            "h-16 w-auto rounded-md py-3 text-center text-xl no-underline md:inline-flex! md:px-6 md:py-5 md:text-xl",
-          )}
-        >
-          {children}
-        </Link>
-      );
-    }
-
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-green-600 underline"
-        {...props}
-      >
-        {children}
-      </a>
-    );
-  },
-};

@@ -22,8 +22,8 @@ export default function CareSection({ title, subTitle, items }: Prop) {
           </p>
         </div>
       </dt>
-      {items.map((item) => (
-        <dd className="flex items-center justify-start gap-2 pl-3 text-base font-semibold md:pl-4 md:text-xl/10">
+      {items.map((item, index) => (
+        <dd key={`${title}-${index}`} className="flex items-center justify-start gap-2 pl-3 text-base font-semibold md:pl-4 md:text-xl/10">
           <MinusIcon className="size-2 text-neutral-500" />
           <p>{item}</p>
         </dd>
