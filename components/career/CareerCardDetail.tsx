@@ -4,18 +4,18 @@ import TechTag from "@/components/cards/TechTag";
 
 type Props = {
   card: CareerCards;
-  selected: CareerListKeys;
+  name: CareerListKeys; // "bisat2" | "iso" | "deepread2" | "lexcloud" | "metafield" | "bavl" | "platform" | "l10n"
 };
 
-export const CareerCardDetail = ({ card, selected }: Props) => {
+export const CareerCardDetail = ({ card, name }: Props) => {
   const detail = card.detail;
   const CAR = ["challenge", "action", "result"] as const;
   return (
     <div>
       <h2 className="text-neutral-700">{card.title}</h2>
-      <div className="flex flex-1 justify-between gap-4">
+      <div className="mt-6 flex flex-1 justify-between gap-4 md:mt-12">
         <div className="flex flex-col gap-5">
-          <dl>
+          <dl className="flex flex-col gap-2 md:gap-4">
             <dt className="text-lg font-bold text-neutral-400 capitalize md:text-3xl">
               Detail
             </dt>
@@ -26,8 +26,8 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
           {CAR.map((val, index) => {
             return (
               <dl
-                key={`${selected}_${val}`}
-                className="flex flex-col gap-2 md:gap-1"
+                key={`${name}_${val}`}
+                className="flex flex-col gap-2 md:gap-4"
               >
                 <dt className="text-lg font-bold text-neutral-400 capitalize md:text-3xl">
                   {val}
@@ -39,11 +39,7 @@ export const CareerCardDetail = ({ card, selected }: Props) => {
             );
           })}
           {card.tech ? (
-            <TechTag
-              tags={card.tech!}
-              parent={selected}
-              parentClicked={false}
-            />
+            <TechTag tags={card.tech!} parent={name} parentClicked={false} />
           ) : null}
         </div>
         <div>

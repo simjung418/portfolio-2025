@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
 };
-export default function BasicLayout({ children }: Props) {
+export default function AboutLayout({ children }: Props) {
   return (
     <article
       className={clsx(
@@ -16,12 +16,16 @@ export default function BasicLayout({ children }: Props) {
         "prose-h3:text-2xl",
         "prose-h3:font-bold",
         "prose-h3:text-neutral-600",
+        // hr
+        "prose-hr:mb-13",
+        "prose-hr:mt-25",
+        "prose-hr:border-neutral-300",
         // p
-        "prose-hr:my-13",
         "prose-p:text-base",
         "prose-p:font-medium",
         "prose-p:my-4",
         "prose-p:leading-relaxed",
+        // strong
         "prose-strong:text-green-600",
         // li
         "prose-li:text-base",
@@ -30,6 +34,8 @@ export default function BasicLayout({ children }: Props) {
         "prose-li:my-4",
         "prose-li:leading-relaxed",
         // 반응형
+        "md:prose-hr:mb-20",
+        "md:prose-hr:mt-20",
         "md:prose-h3:text-4xl",
         "md:prose-p:text-xl",
         "md:prose-li:text-xl",

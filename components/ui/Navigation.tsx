@@ -9,7 +9,7 @@ import clsx from "clsx";
 import { animate } from "animejs";
 
 const navClassMap = {
-  base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 bg-neutral-50/70 shadow-green-400/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
+  base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 px-2 bg-neutral-50/70 shadow-green-400/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
   opened: "pointer-events-auto translate-y-0 opacity-100",
   closed: "pointer-events-none -translate-y-2 opacity-0",
 };

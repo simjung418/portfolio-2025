@@ -21,13 +21,13 @@ export default function Home() {
       <p className="text-base/6.5 font-semibold break-keep md:text-3xl md:leading-normal">
         <strong className="font-black text-green-600">
           서로 다른 니즈를 하나의 흐름으로 엮어
-        </strong>
-        {" "}잘 연결된 프로젝트를 울창한 숲처럼 만들어갑니다.
+        </strong>{" "}
+        잘 연결된 프로젝트를 울창한 숲처럼 만들어갑니다.
       </p>
       <Link
         href="/career"
         className={clsx(
-          "my-10 justify-center rounded-md py-3 text-center md:inline-flex! md:px-6 md:py-5 md:text-xl",
+          "my-10 w-fit justify-center rounded-md py-3 text-center md:px-6 md:py-5 md:text-xl",
           style.base,
           style.active,
         )}

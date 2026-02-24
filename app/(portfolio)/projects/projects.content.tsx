@@ -1,40 +1,13 @@
 import { ProjectCards, ProjectListKeys } from "@/lib/types";
-import Link from "next/link";
 
 export const PROJECT_CARDS: Record<ProjectListKeys, ProjectCards> = {
   todos: {
     title: "Todos Project",
-    desc: (
-      <>
-        <p>클론 없이 직접 구현하며</p>
-        <p>Next.js/React 스택을 체화</p>
-      </>
-    ),
     tech: ["React", "Custom Hook", "Next.js", "TypeScript", "TailwindCSS"],
-    cta: (
-      <Link
-        href="/todos"
-        className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
-      />
-    ),
   },
   portfolio: {
     title: "Portfolio Project",
-    desc: (
-      <>
-        <p>포트폴리오를 만들며 고민했던 것들</p>
-      </>
-    ),
     tech: ["React", "Components", "Next.js", "TypeScript", "TailwindCSS"],
-    status: "PROCESSING",
-    cta: (
-      <Link
-        href="/todos"
-        className="mt-10 inline-flex items-center justify-center rounded-md bg-green-300 px-6 py-3 text-xl font-bold transition-colors hover:bg-green-400"
-      >
-        github 보러가기
-      </Link>
-    ),
   } /* ,
   api: {
     title: "Todos Project",

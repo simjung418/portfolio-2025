@@ -1,6 +1,6 @@
 import { ProjectCards, ProjectListKeys } from "@/lib/types";
-import TechTag from "@/components/cards/TechTag";
 import clsx from "clsx";
+import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
 // 1) key 목록(list)
@@ -24,35 +24,21 @@ const projectCardClassMap = {
 
 export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
   return (
-    <ul className="flex max-w-lg snap-x snap-mandatory flex-col items-stretch gap-4">
+    <ul className="sticky top-3 mb-4 flex items-center gap-4 md:mb-7">
       {list.map((name) => {
-        const p = cards[name];
-        const status = p.status ? p.status : "";
-
         return (
-          <li
-            key={name}
-            className="w-[95%] max-w-lg shrink-0 snap-start md:w-full"
-          >
+          <li key={name}>
             <button
               onClick={() => onSelect(name)}
               className={clsx(
-                projectCardClassMap.base,
-                status,
-                selected === name && projectCardClassMap.active,
+                `w-full min-w-20 justify-center rounded-full px-4 py-2 text-center font-medium whitespace-nowrap`,
+                ctaBtnClassMap.base,
+                selected == name
+                  ? ctaBtnClassMap.active
+                  : ctaBtnClassMap.inactive,
               )}
             >
-              <div>
-                <h3 className="mb-2 text-2xl font-semibold">{p.title}</h3>
-                {p.desc}
-              </div>
-              {p.tech ? (
-                <TechTag
-                  tags={p.tech}
-                  parent={name}
-                  parentClicked={selected === name}
-                />
-              ) : null}
+              {name}
             </button>
           </li>
         );

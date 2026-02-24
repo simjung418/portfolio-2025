@@ -42,7 +42,11 @@ function MdxA(props: React.ComponentPropsWithoutRef<"a">) {
       href={href}
       target={rest.target ?? "_blank"}
       rel={rest.rel ?? "noopener noreferrer"}
-      className="text-green-600 underline"
+      className={clsx(
+        ctaBtnClassMap.base,
+        ctaBtnClassMap.active,
+        "h-16 w-fit rounded-md py-3 text-center text-xl no-underline md:px-6 md:py-5 md:text-xl",
+      )}
       {...rest}
     >
       {children}

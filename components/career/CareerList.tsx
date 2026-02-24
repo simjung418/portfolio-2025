@@ -18,7 +18,7 @@ type Props = {
 
 export const CareerList = ({ list, cards, onSelect, selected }: Props) => {
   return (
-    <ul className="sticky top-3 flex items-center gap-4">
+    <ul className="sticky top-3 mb-4 flex items-center gap-4 overflow-x-auto whitespace-nowrap md:mb-7">
       {list.map((name) => {
         const p = cards[name];
 
@@ -27,7 +27,7 @@ export const CareerList = ({ list, cards, onSelect, selected }: Props) => {
             <button
               onClick={() => onSelect(name)}
               className={clsx(
-                `min-w-20 justify-center rounded-full px-4 py-2 text-center font-medium whitespace-nowrap w-full`,
+                `w-full min-w-20 justify-center rounded-full px-4 py-2 text-center font-medium whitespace-nowrap`,
                 ctaBtnClassMap.base,
                 selected == name
                   ? ctaBtnClassMap.active

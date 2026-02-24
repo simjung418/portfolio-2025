@@ -85,14 +85,14 @@ export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
 // projects + career starts
 export type BaseCards = {
   title: string;
-  desc: ReactNode;
   tech?: string[];
   status?: ProjectStatus;
   imgs?: string[];
 }; // 기본 카드정보 설정
 
-export type ProjectCards = BaseCards & { cta: ReactNode };
+export type ProjectCards = BaseCards;
 export type CareerCards = BaseCards & {
+  desc: ReactNode;
   tabName?: string;
   detail: CareerDetail;
 };

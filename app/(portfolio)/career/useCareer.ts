@@ -19,6 +19,7 @@ export function useCareer() {
     platform: null,
     l10n: null,
   });
+
   useEffect(() => {
     const options = {
       root: null,
@@ -48,5 +49,5 @@ export function useCareer() {
     };
   }, []);
 
-  return { selected, onSelect, trigger}
+  return { selected, onSelect, trigger }
 }

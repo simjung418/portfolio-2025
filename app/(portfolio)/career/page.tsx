@@ -1,7 +1,7 @@
 "use client";
 
-import { CareerList, CareerCardDetail } from "@/components/career/";
 import { CAREER_LIST } from "@/lib/types";
+import { CareerList, CareerCardDetail } from "@/components/career/";
 import { useCareer } from "./useCareer";
 import { CAREER_CARDS } from "./career.content";
 
@@ -17,18 +17,18 @@ export default function CareerPage() {
           selected={selected}
         />
         {CAREER_LIST.map((name) => (
-            <div
-              key={name}
-              ref={(el) => {
-                trigger.current[name] = el;
-              }}
-              className="scroll-mt-24"
-            >
-              <CareerCardDetail card={CAREER_CARDS[name]} selected={selected}/>
-              <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
-              {/* 구분선 */}
-            </div>
-          ))}
+          <div
+            key={name}
+            ref={(el) => {
+              trigger.current[name] = el;
+            }}
+            className="scroll-mt-24"
+          >
+            <CareerCardDetail card={CAREER_CARDS[name]} name={name} />
+            <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
+            {/* 구분선 */}
+          </div>
+        ))}
       </section>
     </>
   );
