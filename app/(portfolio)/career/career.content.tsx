@@ -13,7 +13,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
       </>
     ),
     tech: ["Vue3", "Vuex", "Vue Router", "FastAPI 연동"],
-    imgs: ["/bisat.png"],
+    // imgs: ["/bisat.png"],
     detail: {
       challenge: (
         <>
