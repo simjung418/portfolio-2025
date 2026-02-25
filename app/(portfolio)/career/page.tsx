@@ -26,7 +26,6 @@ export default function CareerPage() {
           >
             <CareerCardDetail card={CAREER_CARDS[name]} name={name} />
             <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
-            {/* 구분선 */}
           </div>
         ))}
       </section>

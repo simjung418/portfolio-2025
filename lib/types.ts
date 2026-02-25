@@ -35,16 +35,19 @@ export type TodoStatus = "green" | "yellow" | "stone";
 // todo ends
 
 // skills starts
-export type SkillKey =
-  | "nextjs"
-  | "typescript"
-  | "tailwind"
-  | "prisma"
-  | "vue"
-  | "php"
-  | "mysql"
-  | "python"
-  | "appdevelop";
+export const SKILL_KEYS = [
+  "nextjs"
+  , "typescript"
+  , "tailwind"
+  , "prisma"
+  , "vue"
+  , "php"
+  , "mysql"
+  , "python"
+  , "appdevelop"
+] as const;
+
+export type SkillKey = (typeof SKILL_KEYS)[number];
 
 export type SkillData = {
   name: string;

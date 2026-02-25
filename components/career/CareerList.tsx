@@ -18,7 +18,7 @@ type Props = {
 
 export const CareerList = ({ list, cards, onSelect, selected }: Props) => {
   return (
-    <ul className="sticky top-3 mb-4 flex items-center gap-4 overflow-x-auto whitespace-nowrap md:mb-7">
+    <ul className="sticky top-26 mb-4 flex items-center gap-4 overflow-x-auto whitespace-nowrap md:mb-7">
       {list.map((name) => {
         const p = cards[name];
 

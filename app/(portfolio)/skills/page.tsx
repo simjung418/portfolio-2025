@@ -1,26 +1,27 @@
 "use client";
 
+import { SKILLS } from "./skill.content";
 import { SkillDetail, SkillSections } from "@/components/skills/index";
 import { useSkill } from "./useSkill";
+import { SKILL_KEYS } from "@/lib/types";
 
 export default function SkillsPage() {
-  const { selectedSkill, activeSkill, onSelect } = useSkill();
+  const { activeSkill, onSelect, trigger } = useSkill();
   return (
-    <div className="mt-6 flex items-stretch justify-between gap-5">
-      <section className="md:flex-2">
-        <SkillDetail skill={selectedSkill} />
-      </section>
-      
-      <div className="relative mx-8 w-px bg-black/15">
-        {/* <div className="pointer-events-none absolute top-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-b from-neutral-50 to-transparent" />
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-10 w-6 -translate-x-1/2 bg-linear-to-t from-neutral-50 to-transparent" /> */}
-      </div>
-
-      <aside className="md:flex-1">
-        <div className="sticky top-24">
-          <SkillSections activeSkill={activeSkill} onSelect={onSelect} />
+    <section className="relative">
+      <SkillSections activeSkill={activeSkill} onSelect={onSelect} />
+      {SKILL_KEYS.map((name) => (
+        <div
+          key={name}
+          ref={(el) => {
+            trigger.current[name] = el;
+          }}
+          className="scroll-mt-24"
+        >
+          <SkillDetail card={SKILLS[name]} name={name} />
+          <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
         </div>
-      </aside>
-    </div>
+      ))}
+    </section>
   );
 }
