@@ -37,7 +37,7 @@ export default function Home() {
 
       <hr className="my-13 text-neutral-200" />
 
-      <div className="mt-10 flex items-baseline gap-4">
+      <div className="mt-10 flex flex-col items-baseline gap-1 md:flex-row md:gap-4">
         <h3 className="text-xl font-bold break-keep text-neutral-500 md:text-4xl md:leading-normal">
           What I Care About
         </h3>
