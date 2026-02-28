@@ -3,10 +3,48 @@ import clsx from "clsx";
 import { Metadata } from "next";
 import Link from "next/link";
 import CareSection from "@/components/hero/CareSection";
+import { CareCard } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Home",
 };
+
+const CARE_CARDS: CareCard[] = [
+  {
+    title: "왜 필요한가요?에서 출발하는 개발",
+    subTitle: "기능이 아니라 목적에서 출발합니다.",
+    items: [
+      <>구현에 앞서 “왜 필요한가요?”를 묻습니다.</>,
+      <>기능보다 목적을 먼저 이해하면 더 나은 해답을 찾을 수 있습니다.</>,
+      <>모두가 ‘왜’를 함께 생각할수록 더 좋은 길을 찾을 수 있다고 믿습니다.</>,
+    ],
+  },
+  {
+    title: "방향이 있는 실행",
+    subTitle:
+      "사람, 시간, 기술은 유한합니다. 그래서 전략은 선택이 아니라 기본입니다.",
+    items: [
+      <>
+        어떤 결과를 원하는지에서 출발해, 지금 무엇을 해야 하는지까지 이어지는<br/>
+        “퍼즐의 완성본”이 필요합니다.
+      </>,
+      <>전략 없이 반복되는 실행은 오래가기 어렵다고 생각합니다.</>,
+      <>방향성이 전제되면 실패도 데이터가 될 수 있습니다.</>,
+    ],
+  },
+  {
+    title: "반복을 줄이는 구조",
+    subTitle: "전체를 보고 규칙을 구조로, 구조를 효율로 바꿉니다.",
+    items: [
+      <>전체를 보며 규칙을 찾고, 그 규칙들을 구조화합니다.</>,
+      <>
+        코딩은 규칙을 얼마나 명확하고 아름답게 정의하느냐로 유지보수성과
+        안정성이 보장됩니다.
+      </>,
+      <>구조가 정리되면 효율은 자연스럽게 따라온다고 믿습니다.</>,
+    ],
+  },
+];
 
 export default function Home() {
   const style = ctaBtnClassMap;
@@ -14,26 +52,39 @@ export default function Home() {
     <>
       <h2 className="text-green-500">숲을 보는 개발자,</h2>
       <h2>프론트 엔지니어 심정민입니다.</h2>
-      <p className="mt-4 text-base/6.5 font-semibold break-keep md:mt-8 md:text-3xl md:leading-normal">
+      <p className="mt-4 text-base/6.5 font-medium break-keep md:mt-8 md:text-3xl md:leading-normal">
         기획과 디자인, 프론트엔드와 백엔드, 그리고 사용자까지 각자의 언어를
         이해하고
       </p>
-      <p className="text-base/6.5 font-semibold break-keep md:text-3xl md:leading-normal">
-        <strong className="font-black text-green-600">
+      <p className="text-base/6.5 font-medium break-keep md:text-3xl md:leading-normal">
+        <strong className="font-bold text-green-600">
           서로 다른 니즈를 하나의 흐름으로 엮어
         </strong>{" "}
         잘 연결된 프로젝트를 울창한 숲처럼 만들어갑니다.
       </p>
-      <Link
-        href="/career"
-        className={clsx(
-          "my-10 w-fit justify-center rounded-md py-3 text-center md:px-6 md:py-5 md:text-xl",
-          style.base,
-          style.active,
-        )}
-      >
-        커리어 바로가기
-      </Link>
+      <div className="my-10 flex gap-3 md:gap-4">
+        <Link
+          href="/career"
+          className={clsx(
+            "w-full flex-1 justify-center rounded-md py-3 text-center md:w-fit md:flex-none md:px-6 md:py-5 md:text-xl",
+            style.base,
+            style.active,
+          )}
+        >
+          커리어 바로가기
+        </Link>
+        <Link
+          href="https://github.com/simjung418/portfolio-2025.git"
+          className={clsx(
+            "w-full flex-1 justify-center rounded-md py-3 text-center md:w-fit md:flex-none md:px-6 md:py-5 md:text-xl",
+            style.base,
+            style.inactive,
+          )}
+          target="_blank"
+        >
+          깃허브 바로가기
+        </Link>
+      </div>
 
       <hr className="my-13 text-neutral-200" />
 
@@ -46,48 +97,15 @@ export default function Home() {
         </p>
       </div>
       <ul className="mt-4 flex flex-col gap-3 md:mt-8 **:[&_strong]:text-green-600">
-        <li>
-          <CareSection
-            title="왜 필요한가요?에서 출발하는 개발"
-            subTitle="기능이 아니라 목적에서 출발합니다."
-            items={[
-              <>구현에 앞서 먼저 “왜 필요한가요?”를 묻습니다.</>,
-              <>
-                목적을 이해하면 요구된 기능보다 더 나은 해답이 보일 때가
-                많습니다.
-              </>,
-              <>‘왜’를 공유할수록 더 나은 답을 함께 찾을 수 있다고 믿습니다.</>,
-            ]}
-          />
-        </li>
-        <li>
-          <CareSection
-            title="방향이 있는 실행"
-            subTitle="사람, 시간, 기술은 유한합니다. 그래서 전략은 선택이 아니라 기본입니다."
-            items={[
-              <>
-                어떤 결과를 원하는지에서 출발해, 지금 무엇을 해야 하는지까지
-                이어지는 “퍼즐의 완성본”이 필요합니다.
-              </>,
-              <>전략 없이 반복되는 실행은 오래가기 어렵다고 생각합니다.</>,
-              <>방향성이 전제되면 실패도 데이터가 될 수 있습니다.</>,
-            ]}
-          />
-        </li>
-        <li>
-          <CareSection
-            title="반복을 줄이는 구조"
-            subTitle="전체를 보고 규칙을 구조로, 구조를 효율로 바꿉니다."
-            items={[
-              <>전체를 보며 규칙을 찾고, 그 규칙들을 구조화합니다.</>,
-              <>
-                코딩은 규칙을 얼마나 명확하고 아름답게 정의하느냐의 문제라고
-                생각합니다.
-              </>,
-              <>구조가 정리되면 효율은 자연스럽게 따라온다고 믿습니다.</>,
-            ]}
-          />
-        </li>
+        {CARE_CARDS.map((care, index) => (
+          <li key={`care_${index}`}>
+            <CareSection
+              title={care.title}
+              subTitle={care.subTitle}
+              items={care.items}
+            />
+          </li>
+        ))}
       </ul>
     </>
   );

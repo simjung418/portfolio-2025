@@ -34,6 +34,16 @@ export type TodoStatusSource = Pick<Todo, "isDone" | "isRoutine">;
 export type TodoStatus = "green" | "yellow" | "stone";
 // todo ends
 
+
+// care starts
+export type CareCard = {
+  title: string;
+  subTitle: string;
+  items: ReactNode[];
+}
+// care ends
+
+
 // skills starts
 export const SKILL_KEYS = [
   "nextjs"
