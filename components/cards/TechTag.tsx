@@ -10,13 +10,15 @@ type Props = {
 
 const TechTag = ({ tags, parent, parentClicked }: Props) => {
   return (
-    <ul className="flex flex-wrap items-center gap-2">
+    <ul className="not-prose flex flex-wrap items-center gap-2">
       {tags.map((tech, index) => (
         <li
           key={`tech_${parent}_${index}`}
           className={clsx(
-            "rounded-full border bg-neutral-50 px-3 py-1 text-sm font-medium",
-            parentClicked ? "border-green-200 text-green-400" : " border-neutral-300 text-neutral-600"
+            "not-prose list-none rounded-full border bg-neutral-50 px-3 py-1 text-sm font-medium md:text-lg",
+            parentClicked
+              ? "border-green-200 text-green-400"
+              : "border-neutral-300 text-neutral-600",
           )}
         >
           {tech}

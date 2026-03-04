@@ -1,4 +1,7 @@
 import { SkillData, SkillKey } from "@/lib/types";
+import clsx from "clsx";
+import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
+import Link from "next/link";
 
 type Props = {
   card: SkillData;
@@ -23,13 +26,24 @@ export const SkillDetail = ({ card, name }: Props) => {
           </h4>
           <ul className="my-4 flex flex-col gap-4 pl-5">
             {card.projects.map((p) => (
-              <li key={p.name} className="w-1/2 rounded-md border p-4">
-                <strong className="mb-4 block text-xl font-bold">
-                  {p.name}
-                </strong>
-                <span className="font-medium text-neutral-700">
-                  {p.summary}
-                </span>
+              <li key={p.name}>
+                <Link
+                  href="/projects"
+                  className={clsx(
+                    "w-full min-w-20 flex-1 justify-center rounded-md py-3 md:w-fit md:flex-none md:px-6 md:py-5 md:text-xl",
+                    ctaBtnClassMap.base,
+                    ctaBtnClassMap.active,
+                  )}
+                >
+                  <div>
+                    <strong className="mb-4 block text-xl font-bold">
+                      {p.name}
+                    </strong>
+                    <span className="font-medium text-neutral-700">
+                      {p.summary}
+                    </span>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>

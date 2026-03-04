@@ -49,10 +49,10 @@ export const SKILL_KEYS = [
   "nextjs"
   , "typescript"
   , "tailwind"
-  , "prisma"
   , "vue"
   , "php"
   , "mysql"
+  , "prisma"
   , "python"
   , "appdevelop"
 ] as const;
@@ -67,6 +67,7 @@ export type SkillData = {
   projects?: {
     name: string;
     summary: string;
+    path?: string;
   }[];
 };
 
@@ -106,6 +107,7 @@ export type BaseCards = {
 export type ProjectCards = BaseCards;
 export type CareerCards = BaseCards & {
   desc: ReactNode;
+  term: string;
   tabName?: string;
   detail: CareerDetail;
 };

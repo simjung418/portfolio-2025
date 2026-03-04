@@ -12,6 +12,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2024.07 - 2024.09",
     tech: ["Vue3", "Vuex", "Vue Router", "FastAPI 연동"],
     // imgs: ["/bisat.png"],
     detail: {
@@ -45,7 +46,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   },
   iso: {
     tabName: "ISO",
-    title: "ISO 보안 인증 주도",
+    title: "ISO 27000, 27001, 27017 보안 인증 주도",
     desc: (
       <>
         <p>
@@ -54,6 +55,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2025.02 - 2025.06",
     tech: ["Vue.js", "PHP", "MySQL"],
     detail: {
       challenge: (
@@ -94,6 +96,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2023.11 - 2024.01",
     tech: ["Vue.js", "Websocket", "Axios"],
     detail: {
       challenge: (
@@ -125,7 +128,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   },
   lexcloud: {
     tabName: "UI/UX 개선",
-    title: "렉스클라우드 UI/UX 개선",
+    title: "렉스클라우드 사용자 페이지 UI/UX 개선",
     desc: (
       <>
         <p>
@@ -134,6 +137,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2022.01 - 2022.12",
     tech: ["Vue.js", "PHP", "CSS 표준화"],
     detail: {
       challenge: (
@@ -173,6 +177,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2023.10 - 2023.10",
     tech: ["jQuery", "JS", "FastAPI 연동", "AnyChart"],
     detail: {
       challenge: (
@@ -212,6 +217,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2021.06 - 2021.12",
     tech: ["Vue.js", "Javascript"],
     detail: {
       challenge: (
@@ -245,7 +251,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   },
   platform: {
     tabName: "플랫폼 운영",
-    title: "렉스클라우드 플랫폼 운영 (5년)",
+    title: "렉스클라우드 플랫폼 운영",
     desc: (
       <>
         <p>
@@ -254,6 +260,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2020.07 - 2025.07",
     tech: ["Vue.js", "PHP", "MySQL"],
     detail: {
       challenge: (
@@ -288,7 +295,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   },
   l10n: {
     tabName: "로컬리제이션",
-    title: "글로벌 서비스 로컬리제이션",
+    title: "글로벌 서비스 TMS 관리 / 로컬리제이션",
     desc: (
       <>
         <p>
@@ -297,6 +304,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
         </p>
       </>
     ),
+    term: "2020.07 - 2025.07",
     tech: ["Vue.js", "PHP", "MySQL"],
     detail: {
       challenge: (

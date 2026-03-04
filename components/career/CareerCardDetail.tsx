@@ -38,9 +38,6 @@ export const CareerCardDetail = ({ card, name }: Props) => {
               </dl>
             );
           })}
-          {card.tech ? (
-            <TechTag tags={card.tech!} parent={name} parentClicked={false} />
-          ) : null}
         </div>
         <div>
           {card.imgs != undefined

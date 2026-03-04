@@ -12,10 +12,10 @@ export function useSkill() {
     nextjs: null,
     typescript: null,
     tailwind: null,
-    prisma: null,
     vue: null,
     php: null,
     mysql: null,
+    prisma: null,
     python: null,
     appdevelop: null,
   });

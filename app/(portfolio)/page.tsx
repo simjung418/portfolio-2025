@@ -98,7 +98,7 @@ export default function Home() {
       </div>
       <ul className="mt-4 flex flex-col gap-3 md:mt-8 **:[&_strong]:text-green-600">
         {CARE_CARDS.map((care, index) => (
-          <li key={`care_${index}`}>
+          <li key={`care-${index}`}>
             <CareSection
               title={care.title}
               subTitle={care.subTitle}

@@ -13,8 +13,16 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "컴포넌트/데이터 흐름을 구조적으로 정리하는 데 집중 가능"
     ],
     projects: [
-      { name: "Todos Project", summary: "쿠키 저장 + useTodos 훅으로 상태/로직 분리" },
-      { name: "Portfolio", summary: "섹션별 데이터 구조 설계" }
+      {
+        name: "Todos Project",
+        summary: "쿠키 저장 + useTodos 훅으로 상태/로직 분리",
+        path: "/projects#todos"
+      },
+      {
+        name: "Portfolio",
+        summary: "섹션별 데이터 구조 설계",
+        path: "/projects#portfolio"
+      }
     ]
   },
 
@@ -29,8 +37,16 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "유지보수 시 타입이 코드 흐름을 이해하는데 유용"
     ],
     projects: [
-      { name: "Portfolio", summary: "cards/detail 제네릭 설계 + section key 계약 유지" },
-      { name: "Todos Project", summary: "상태/액션 타입을 명확히 두고 안정성 확보" }
+      {
+        name: "Portfolio",
+        summary: "cards/detail 제네릭 설계 + section key 계약 유지",
+        path: "/projects#todos"
+      },
+      {
+        name: "Todos Project",
+        summary: "상태/액션 타입을 명확히 두고 안정성 확보",
+        path: "/projects#portfolio"
+      }
     ]
   },
 
@@ -44,8 +60,16 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "별도 CSS 파일의 커스텀 클래스 사용 최소화로 구조 단순화"
     ],
     projects: [
-      { name: "Portfolio", summary: "섹션 공통 UI 패턴 통일 + 반응형 정리" },
-      { name: "Todos Project", summary: "상태 색상/variant를 컴포넌트 단위로 캡슐화" }
+      {
+        name: "Todos Project",
+        summary: "상태 색상/variant를 컴포넌트 단위로 캡슐화",
+        path: "/projects#todos"
+      },
+      {
+        name: "Portfolio",
+        summary: "섹션 공통 UI 패턴 통일 + 반응형 정리",
+        path: "/projects#portfolio"
+      },
     ]
   },
 
@@ -60,8 +84,16 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "Vue Router/Vuex 기반 구조 운영"
     ],
     projects: [
-      { name: "렉스클라우드 운영", summary: "레거시 혼재 환경에서 유지보수/개선 주도" },
-      { name: "BIS@T 2.0", summary: "리팩토링 프로젝트에서 구조 기반 설계 주도" }
+      {
+        name: "렉스클라우드 운영",
+        summary: "레거시 혼재 환경에서 유지보수/개선 주도",
+        path: "/career#platform"
+      },
+      {
+        name: "BIS@T 2.0",
+        summary: "리팩토링 프로젝트에서 구조 기반 설계 주도",
+        path: "/career#bisat2"
+      }
     ]
   },
 
@@ -75,8 +107,15 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "API/데이터 흐름 이해를 바탕으로 FE-BE 협업 효율화"
     ],
     projects: [
-      { name: "렉스클라우드 운영", summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결" },
-      { name: "WordPress", summary: "기존 구조를 파악하여 PHP 기반 기능 수정 경험" }
+      {
+        name: "렉스클라우드 운영",
+        summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결",
+        path: "/career#platform"
+      },
+      {
+        name: "WordPress",
+        summary: "기존 구조를 파악하여 PHP 기반 기능 수정 경험"
+      }
     ]
   },
 
@@ -90,7 +129,11 @@ export const SKILLS: Record<SkillKey, SkillData> = {
       "운영 환경에서 변경 영향도를 고려하며 대응"
     ],
     projects: [
-      { name: "렉스클라우드 운영", summary: "DB 구조 이해를 기반으로 유지보수 속도/정확도 개선" }
+      {
+        name: "렉스클라우드 운영",
+        summary: "DB 구조 이해를 기반으로 유지보수 속도/정확도 개선",
+        path: "/career#platform"
+      }
     ]
   },
 

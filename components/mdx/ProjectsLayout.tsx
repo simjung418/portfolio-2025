@@ -12,6 +12,8 @@ export default function AboutLayout({ children }: Props) {
         "prose-neutral",
         "mt-8",
         "max-w-none",
+        // h2
+        "prose-h2:my-8!",
         // h3
         "prose-h3:text-lg",
         "prose-h3:font-bold",

@@ -7,7 +7,6 @@ declare global {
   }
 }
 
-export {};
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
@@ -149,10 +148,18 @@ function CurvedGrid() {
   );
 }
 
-export function CurvedGridBackground() {
+export function CurvedGridBackground({ onReady }: { onReady?: () => void }) {
   return (
     <div className="pointer-events-none fixed inset-0 -z-50">
-      <Canvas camera={{ position: [0, 0, 6.8], fov: 52 }} dpr={[1, 1.5]}>
+      <Canvas
+        camera={{ position: [0, 0, 6.8], fov: 52 }}
+        dpr={[1, 1.5]}
+        onCreated={() => {
+          requestAnimationFrame(() => {
+            onReady?.();
+          });
+        }}
+      >
         <ambientLight intensity={0.6} />
         <directionalLight position={[4, 6, 4]} intensity={0.85} />
         <directionalLight position={[-4, 2, -2]} intensity={0.25} />

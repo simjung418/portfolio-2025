@@ -14,7 +14,7 @@ type Props = {
 
 export const SkillSections = ({ activeSkill, onSelect }: Props) => {
   return (
-    <ul className="sticky top-26 mb-4 flex items-center gap-4 overflow-x-auto whitespace-nowrap md:mb-7">
+    <ul className="z-10 sticky top-26 mb-4 flex items-center gap-4 overflow-x-auto md:pb-2 whitespace-nowrap md:mb-7">
       {SKILL_SECTION_KEYS.map((sectionKey) => {
         const section = SKILL_SECTIONS[sectionKey];
         return (

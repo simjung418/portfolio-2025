@@ -39,6 +39,12 @@ h1 span {
   animation: variable-loop 3s ease-in-out forwards;
   text-align: center;
 }
+
+button,
+a {
+  cursor: pointer;
+}
+
 @keyframes variable-loop {
   0% {
     font-weight: 300;
