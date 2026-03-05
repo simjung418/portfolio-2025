@@ -5,10 +5,10 @@ export type RoutePath = "/" | "/about" | "/skills" | "/projects" | "/career";
 
 export const ROUTES = {
   "/": "Home",
-  "/about": "About",
+  "/career": "Career",
   "/skills": "Skills",
   "/projects": "Projects",
-  "/career": "Career",
+  "/about": "About",
 } as const satisfies Record<RoutePath, string>;
 // pathname ends
 

@@ -92,7 +92,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
       <>
         <p>
           실시간 AI 분석 결과를 대화형 UX로 구현하여 플랫폼 사용자 수를 200%
-          이상 성장시켰습니다.
+          이상 유입시켰습니다.
         </p>
       </>
     ),

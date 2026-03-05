@@ -12,7 +12,7 @@ type Prop = {
   children: ReactNode;
 };
 
-export default function ClientShell({ children }: Prop) {
+export default function Shell({ children }: Prop) {
   const [bgReady, setBgReady] = useState(false);
 
   return (

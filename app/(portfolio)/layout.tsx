@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "@/app/globals.css";
-import ClientShell from "@/components/ui/ClientShell";
+import Shell from "@/components/ui/Shell.client";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
           orbitron.variable,
         )}
       >
-        <ClientShell>{children}</ClientShell>
+        <Shell>{children}</Shell>
       </body>
     </html>
   );
