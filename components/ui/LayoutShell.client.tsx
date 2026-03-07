@@ -1,18 +1,13 @@
 "use client";
 
 import { ReactNode, useState } from "react";
-import {
-  Footer,
-  Navigation,
-  SectionTitle,
-  CurvedGridBackground,
-} from "@/components/ui";
+import { Footer, Navigation, SectionTitle, CurvedGridBackground } from "@/components/ui";
 
 type Prop = {
   children: ReactNode;
 };
 
-export default function Shell({ children }: Prop) {
+export default function LayoutShell({ children }: Prop) {
   const [bgReady, setBgReady] = useState(false);
 
   return (

@@ -1,4 +1,4 @@
-import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
+import { ctaBtnClassMap } from "@/lib/portfolio/classNameMap";
 import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
 import clsx from "clsx";
 

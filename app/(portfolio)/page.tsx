@@ -2,10 +2,9 @@ import Hero from "@/components/hero/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Home"
 };
 
 export default function HomePage() {
-  return <Hero />
-  
+  return <Hero />;
 }

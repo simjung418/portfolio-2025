@@ -1,13 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
-import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
+import { ctaBtnClassMap } from "@/lib/portfolio/classNameMap";
 import clsx from "clsx";
-import { ReactNode } from "react";
-
-type Props = {
-  href: string;
-  children: ReactNode;
-};
 
 function MdxA(props: React.ComponentPropsWithoutRef<"a">) {
   const { href, children, ...rest } = props;

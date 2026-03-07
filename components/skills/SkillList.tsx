@@ -1,8 +1,7 @@
 import { SKILLS, SKILL_SECTIONS } from "@/app/(portfolio)/skills/skill.content";
-import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
+import { ctaBtnClassMap } from "@/lib/portfolio/classNameMap";
 import { SkillKey, SkillSectionKey } from "@/lib/portfolio/skills";
 import clsx from "clsx";
-import Image from "next/image";
 
 type Props = {
   section: SkillSectionKey;
@@ -22,9 +21,7 @@ export const SkillList = ({ section, activeSkill, onSelect }: Props) => {
               className={clsx(
                 "w-fit rounded-full text-left font-medium",
                 ctaBtnClassMap.base,
-                activeSkill === skill
-                  ? ctaBtnClassMap.active
-                  : ctaBtnClassMap.inactive,
+                activeSkill === skill ? ctaBtnClassMap.active : ctaBtnClassMap.inactive
               )}
               onClick={() => onSelect(skill)}
             >

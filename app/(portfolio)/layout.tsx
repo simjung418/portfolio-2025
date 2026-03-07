@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
 import "@/app/globals.css";
-import Shell from "@/components/ui/Shell.client";
+import Shell from "@/components/ui/LayoutShell.client";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
