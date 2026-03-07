@@ -1,6 +1,6 @@
 "use client";
 
-import { CAREER_LIST } from "@/lib/types";
+import { CAREER_LIST } from "@/lib/portfolio/career";
 import { CareerList, CareerCardDetail } from "@/components/career/";
 import { useCareer } from "./useCareer";
 import { CAREER_CARDS } from "./career.content";

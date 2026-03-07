@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { useEffect, useRef, useState } from "react";
-import { RoutePath, ROUTES } from "@/lib/types";
+import { RoutePath, ROUTES } from "@/lib/portfolio/routes";
 import clsx from "clsx";
 
 const navClassMap = {

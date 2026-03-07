@@ -1,4 +1,4 @@
-import { CareerCards, CareerListKeys } from "@/lib/types";
+import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
 
 export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   bisat2: {

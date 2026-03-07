@@ -1,6 +1,6 @@
 "use client";
 
-import { PROJECT_LIST, ProjectListKeys } from "@/lib/types";
+import { PROJECT_LIST, ProjectListKeys } from "@/lib/portfolio/projects";
 import { ProjectCardList } from "@/components/projects/ProjectCardList";
 import { PROJECT_CARDS } from "./projects.content";
 import { useProjects } from "./useProjects";

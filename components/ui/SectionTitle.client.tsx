@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { RoutePath, ROUTES } from "@/lib/types";
+import { RoutePath, ROUTES } from "@/lib/portfolio/routes";
 
 type Prop = {
   /**

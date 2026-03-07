@@ -1,4 +1,4 @@
-import { CAREER_LIST, CareerListKeys } from "@/lib/types";
+import { CAREER_LIST, CareerListKeys } from "@/lib/portfolio/career";
 import { useEffect, useRef, useState } from "react";
 
 export function useCareer() {

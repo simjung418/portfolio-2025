@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { Todo } from "@/lib/types";
+import { Todo } from "@/lib/portfolio/todos";
 import { getCookie, setCookie } from "./cookies";
 import todosReducer from "./todos.reducer";
 import { selectGetStatus, selectHasEditingTodo } from "./todos.selector";

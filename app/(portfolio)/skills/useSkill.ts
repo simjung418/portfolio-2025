@@ -1,4 +1,4 @@
-import { SKILL_KEYS, SkillKey } from "@/lib/types";
+import { SKILL_KEYS, SkillKey } from "@/lib/portfolio/skills";
 import { useEffect, useRef, useState } from "react";
 
 

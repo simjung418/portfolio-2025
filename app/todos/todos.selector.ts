@@ -1,4 +1,4 @@
-import { Todo, TodoStatus, TodoStatusSource } from "@/lib/types";
+import { Todo, TodoStatus, TodoStatusSource } from "@/lib/portfolio/todos";
 
 export function selectGetStatus(source: TodoStatusSource): TodoStatus {
   if (source.isDone) return "green";           // 완료됨 → 항상 초록

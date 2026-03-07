@@ -1,4 +1,4 @@
-import { ProjectCards, ProjectListKeys } from "@/lib/types";
+import { ProjectCards, ProjectListKeys } from "@/lib/portfolio/projects";
 import clsx from "clsx";
 import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
 

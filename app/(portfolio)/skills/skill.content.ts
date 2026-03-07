@@ -1,4 +1,4 @@
-import { SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "@/lib/types";
+import { SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "@/lib/portfolio/skills";
 
 export const SKILLS: Record<SkillKey, SkillData> = {
   nextjs: {

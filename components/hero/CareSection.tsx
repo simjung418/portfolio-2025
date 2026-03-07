@@ -1,4 +1,4 @@
-import { CareCard } from "@/lib/types";
+import { CareCard } from "@/lib/portfolio/hero";
 import { MinusIcon } from "@heroicons/react/16/solid";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 

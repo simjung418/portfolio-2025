@@ -1,4 +1,4 @@
-import { CareerCards, CareerListKeys } from "@/lib/types";
+import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
 import Image from "next/image";
 import TechTag from "@/components/cards/TechTag";
 

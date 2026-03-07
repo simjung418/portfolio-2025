@@ -1,4 +1,4 @@
-import { PROJECT_LIST, ProjectListKeys } from "@/lib/types";
+import { PROJECT_LIST, ProjectListKeys } from "@/lib/portfolio/projects";
 import { useEffect, useRef, useState } from "react";
 
 export function useProjects() {

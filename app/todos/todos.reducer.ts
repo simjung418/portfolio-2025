@@ -1,4 +1,4 @@
-import { Todo, TodoActions } from "@/lib/types";
+import { Todo, TodoActions } from "@/lib/portfolio/todos";
 
 export default function todosReducer(state: Todo[], action: TodoActions): Todo[] {
   /* Reducer

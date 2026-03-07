@@ -1,4 +1,4 @@
-import { ProjectCards, ProjectListKeys } from "@/lib/types";
+import { ProjectCards, ProjectListKeys } from "@/lib/portfolio/projects";
 
 export const PROJECT_CARDS: Record<ProjectListKeys, ProjectCards> = {
   todos: {

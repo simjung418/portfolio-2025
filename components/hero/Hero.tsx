@@ -2,7 +2,7 @@ import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
 import clsx from "clsx";
 import Link from "next/link";
 import CareSection from "@/components/hero/CareSection";
-import { CareCard } from "@/lib/types";
+import { CareCard } from "@/lib/portfolio/hero";
 import StatKpiRow from "../ui/StatKpiRow";
 
 const CARE_CARDS: CareCard[] = [

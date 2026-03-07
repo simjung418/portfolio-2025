@@ -1,4 +1,4 @@
-import { SkillData, SkillKey } from "@/lib/types";
+import { SkillData, SkillKey } from "@/lib/portfolio/skills";
 import clsx from "clsx";
 import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
 import Link from "next/link";

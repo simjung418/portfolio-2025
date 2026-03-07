@@ -1,4 +1,4 @@
-import { SkillKey } from "@/lib/types";
+import { SkillKey } from "@/lib/portfolio/skills";
 import { SkillList } from "./SkillList";
 import {
   SKILL_SECTION_KEYS,

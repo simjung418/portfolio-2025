@@ -1,4 +1,4 @@
-import { Todo, TodoStatus } from "@/lib/types";
+import { Todo, TodoStatus } from "@/lib/portfolio/todos";
 import styles from "./TodoItem.module.css";
 import {
   SparklesIcon,

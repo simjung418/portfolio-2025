@@ -3,7 +3,7 @@
 import { SKILLS } from "./skill.content";
 import { SkillDetail, SkillSections } from "@/components/skills/index";
 import { useSkill } from "./useSkill";
-import { SKILL_KEYS } from "@/lib/types";
+import { SKILL_KEYS } from "@/lib/portfolio/skills";
 
 export default function SkillsPage() {
   const { activeSkill, onSelect, trigger } = useSkill();

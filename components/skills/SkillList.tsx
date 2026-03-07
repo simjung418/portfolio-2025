@@ -1,6 +1,6 @@
 import { SKILLS, SKILL_SECTIONS } from "@/app/(portfolio)/skills/skill.content";
 import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
-import { SkillKey, SkillSectionKey } from "@/lib/types";
+import { SkillKey, SkillSectionKey } from "@/lib/portfolio/skills";
 import clsx from "clsx";
 import Image from "next/image";
 

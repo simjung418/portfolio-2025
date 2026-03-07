@@ -1,5 +1,5 @@
 import { ctaBtnClassMap } from "@/components/button/ctaBtnClassMap";
-import { CareerCards, CareerListKeys } from "@/lib/types";
+import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
 import clsx from "clsx";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
