@@ -1,15 +1,26 @@
 import { ReactNode } from "react";
 
 export const SKILL_KEYS = [
-  "nextjs"
-  , "typescript"
-  , "tailwind"
-  , "vue"
-  , "php"
-  , "mysql"
-  , "prisma"
-  , "python"
-  , "appdevelop"
+  "react",
+  "nextjs",
+  "typescript",
+  "tailwind",
+  "vue",
+  "php",
+  "mysql",
+  "prisma",
+  "python",
+  "figma",
+  "chatgpt",
+  "apple",
+  "notion",
+  "git",
+  "cursor",
+  "swiftui",
+  "rn",
+  "websocket",
+  "fastapi",
+  "axios"
 ] as const;
 
 export type SkillKey = (typeof SKILL_KEYS)[number];
@@ -17,8 +28,8 @@ export type SkillKey = (typeof SKILL_KEYS)[number];
 export type SkillData = {
   name: string;
   icon: string | ReactNode;
+  percent: number;
   subtext?: string;
-  features: string[];
   projects?: {
     name: string;
     summary: string;
@@ -29,8 +40,9 @@ export type SkillData = {
 export const SKILL_SECTION_KEYS = [
   "CURRENT_SKILLS",
   "EXPERIENCE_SKILLS",
+  "TOOLS",
   "STUDYING_SKILLS",
-  "INTEREST_SKILLS",
+  "INTEREST_SKILLS"
 ] as const;
 
 export type SkillSectionKey = (typeof SKILL_SECTION_KEYS)[number];

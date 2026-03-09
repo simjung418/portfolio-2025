@@ -1,214 +1,32 @@
-import { SkillData, SkillKey, SkillSectionData, SkillSectionKey } from "@/lib/portfolio/skills";
+import { SkillSectionData, SkillSectionKey } from "@/lib/portfolio/skills";
 
-export const SKILLS: Record<SkillKey, SkillData> = {
-  nextjs: {
-    name: "React / Next.js",
-    icon: "nextjs.png",
-    subtext: "만인의 검증된 선택",
-    features: [
-      "npm 기반 생태계로 도구 도입·유지 비용 감소",
-      "App Router 기반 페이지/레이아웃 설계",
-      "기존 프레임워크의 구조적 이점을 더 일관된 규칙과 체계 안에서 유지",
-      "공식 컨벤션, 라이브러리가 다양하여 팀 합류/인수인계 비용 감소",
-      "컴포넌트/데이터 흐름을 구조적으로 정리하는 데 집중 가능"
-    ],
-    projects: [
-      {
-        name: "Todos Project",
-        summary: "쿠키 저장 + useTodos 훅으로 상태/로직 분리",
-        path: "/projects#todos"
-      },
-      {
-        name: "Portfolio",
-        summary: "섹션별 데이터 구조 설계",
-        path: "/projects#portfolio"
-      }
-    ]
+export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
+  CURRENT_SKILLS: {
+    name: "현재 집중",
+    skills: ["react", "nextjs", "tailwind", "typescript"] as const
   },
-
-  typescript: {
-    name: "TypeScript",
-    icon: "ts.png",
-    subtext: "코드로 남기는 설명서",
-    features: [
-      "초기 개발의 코드 규칙을 코드 레벨에서 고정",
-      "구조 변경시 컴파일 단계에서 오류를 잡아 유지보수 리스크 감소",
-      "as const + satisfies로 데이터/키 계약을 유지",
-      "유지보수 시 타입이 코드 흐름을 이해하는데 유용"
-    ],
-    projects: [
-      {
-        name: "Portfolio",
-        summary: "cards/detail 제네릭 설계 + section key 계약 유지",
-        path: "/projects#todos"
-      },
-      {
-        name: "Todos Project",
-        summary: "상태/액션 타입을 명확히 두고 안정성 확보",
-        path: "/projects#portfolio"
-      }
-    ]
+  EXPERIENCE_SKILLS: {
+    name: "실무 경험",
+    skills: ["vue", "php", "mysql", "websocket", "axios", "fastapi"] as const
   },
-
-  tailwind: {
-    name: "TailwindCSS",
-    icon: "tailwind.svg",
-    subtext: "디자인 반영이 또 하나의 구조가 되지 않도록",
-    features: [
-      "컴포넌트 단위 클래스 패턴을 고정하여 일정하게 유지",
-      "통일된 사이즈/색상 체계로 UI 변경 시 유지보수 부담 감소",
-      "별도 CSS 파일의 커스텀 클래스 사용 최소화로 구조 단순화"
-    ],
-    projects: [
-      {
-        name: "Todos Project",
-        summary: "상태 색상/variant를 컴포넌트 단위로 캡슐화",
-        path: "/projects#todos"
-      },
-      {
-        name: "Portfolio",
-        summary: "섹션 공통 UI 패턴 통일 + 반응형 정리",
-        path: "/projects#portfolio"
-      },
-    ]
+  TOOLS: {
+    name: "사용가능 툴",
+    skills: ["figma", "chatgpt", "apple", "notion", "git", "cursor"] as const
   },
-
-  vue: {
-    name: "Vue.js",
-    icon: "vue.png",
-    subtext: "레거시를 정리하며 습득한 구조 감각",
-    features: [
-      "jQuery 혼재 환경에서 Vue 기반으로 점진 전환 경험",
-      "직접 DOM을 제어하지 않고도 UI 동작을 구현하는 방식에 대해 이해",
-      "데이터 책임/컴포넌트 책임 분리가 UX 변경에 미치는 영향 체감",
-      "Vue Router/Vuex 기반 구조 운영"
-    ],
-    projects: [
-      {
-        name: "렉스클라우드 운영",
-        summary: "레거시 혼재 환경에서 유지보수/개선 주도",
-        path: "/career#platform"
-      },
-      {
-        name: "BIS@T 2.0",
-        summary: "리팩토링 프로젝트에서 구조 기반 설계 주도",
-        path: "/career#bisat2"
-      }
-    ]
+  STUDYING_SKILLS: {
+    name: "학습중",
+    skills: ["prisma", "python"] as const
   },
-
-  php: {
-    name: "PHP",
-    icon: "php.png",
-    subtext: "문제를 끝까지 해결하기 위한 백엔드 이해",
-    features: [
-      "핵심 플랫폼 유지보수 과정에서 백엔드 코드 직접 수정 경험",
-      "외주 의존도를 줄이기 위해 내부에서 해결 가능한 범위 확장",
-      "API/데이터 흐름 이해를 바탕으로 FE-BE 협업 효율화"
-    ],
-    projects: [
-      {
-        name: "렉스클라우드 운영",
-        summary: "필요한 구간은 직접 백엔드 수정하며 문제 해결",
-        path: "/career#platform"
-      },
-      {
-        name: "WordPress",
-        summary: "기존 구조를 파악하여 PHP 기반 기능 수정 경험"
-      }
-    ]
-  },
-
-  mysql: {
-    name: "MySQL",
-    icon: "mysql.png",
-    subtext: "플랫폼 관리를 위한 데이터 흐름의 이해",
-    features: [
-      "요구사항을 빠르게 해결하기 위해 DB 구조 학습/파악",
-      "문제 원인을 데이터 관점까지 내려가서 찾는 습관",
-      "운영 환경에서 변경 영향도를 고려하며 대응"
-    ],
-    projects: [
-      {
-        name: "렉스클라우드 운영",
-        summary: "DB 구조 이해를 기반으로 유지보수 속도/정확도 개선",
-        path: "/career#platform"
-      }
-    ]
-  },
-
-  prisma: {
-    name: "Prisma",
-    icon: "prisma.png",
-    subtext: "프론트엔드 관점에서 데이터 흐름을 이해하는 방법",
-    features: [
-      "DB 연동/모델링 흐름을 이해하기 위한 학습/실험",
-      "작은 프로젝트에서 데이터 계층을 깔끔히 두는 연습",
-      "데이터 저장이 필요한 프로젝트를 고려한 구조 설계 습득"
-    ]
-  },
-
-  python: {
-    name: "Python",
-    icon: "python.png",
-    subtext: "실무 바깥의 문제를 해결하는 언어",
-    features: [
-      "자동화, 데이터 수집을 위해 BeautifulSoup 및 Selenium 활용 경험",
-      "실무 서비스 개발보다 프로덕트 제작 외의 문제 해결에 사용",
-      "기존 다른언어 학습 경험을 바탕으로 필요 시 실무 사용까지 빠르게 확장 가능"
-    ]
-  },
-
-  appdevelop: {
-    name: "앱 개발 (SwiftUI / React Native)",
-    icon: "swift.svg",
-    subtext: "앱 생태계에 스며들기 위한 학습",
-    features: [
-      "프로덕트의 확장 시 앱 환경에서도 자연스럽게 동작하기 위해 UX와 퍼포먼스 관점에서 접근",
-      "iOS 네이티브(SwiftUI)와 크로스플랫폼(React Native)의 차이를 비교하며 학습",
-      "프로젝트 기획 / 설계하며 앱 개발 흐름을 익히는 단계",
-    ],
-    projects: [
-      { name: "WOTD", summary: "UX 기획/프로토타입 설계 + SwiftUI로 구현" }
-    ]
+  INTEREST_SKILLS: {
+    name: "관심 기술",
+    skills: ["swiftui", "rn"] as const
   }
 };
 
-export const SKILL_SECTIONS: Record<SkillSectionKey, SkillSectionData> = {
-  "CURRENT_SKILLS": {
-    name: "현재 집중",
-    skills: [
-      "nextjs",
-      "tailwind",
-      "typescript"
-    ] as const
-  },
-  "EXPERIENCE_SKILLS": {
-    name: "실무 경험",
-    skills: [
-      "vue",
-      "php",
-      "mysql",
-    ] as const
-  },
-  "STUDYING_SKILLS": {
-    name: "학습중",
-    skills: [
-      "prisma",
-      "python"
-    ] as const
-  },
-  "INTEREST_SKILLS": {
-    name: "관심 기술",
-    skills: [
-      "appdevelop"
-    ] as const
-  },
-}
-
 export const SKILL_SECTION_KEYS = [
-  "CURRENT_SKILLS"
-  , "EXPERIENCE_SKILLS"
-  , "STUDYING_SKILLS"
-  , "INTEREST_SKILLS"
-] as const satisfies readonly SkillSectionKey[]
+  "CURRENT_SKILLS",
+  "EXPERIENCE_SKILLS",
+  "TOOLS",
+  "STUDYING_SKILLS",
+  "INTEREST_SKILLS"
+] as const satisfies readonly SkillSectionKey[];

@@ -59,13 +59,12 @@ export const Navigation = () => {
     <div ref={navRef} className="relative">
       <button
         onClick={() => setIsNavOpening((prev) => !prev)}
-        // className="flex size-20 items-center justify-center rounded-full border border-neutral-500"
         className={clsx(
-          `group shadowed-button relative flex size-12 items-center justify-center rounded-full transition-all md:size-16`,
-          isNavOpening && "clicked"
+          `group relative flex size-12 items-center justify-center rounded-full border backdrop-blur-xs transition-all hover:border-green-400 md:size-16`,
+          isNavOpening ? "border-green-400 shadow-md shadow-green-200" : "border-neutral-300"
         )}
       >
-        <Bars3Icon className="size-6 text-green-400 transition-colors md:size-8" />
+        <Bars3Icon className="size-6 md:size-8 text-green-400 transition-colors" />
       </button>
       <ul className={clsx(navClassMap.base, isNavOpening ? navClassMap.opened : navClassMap.closed)}>
         {Object.entries(ROUTES).map(([route, meta]) => {

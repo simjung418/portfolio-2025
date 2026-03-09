@@ -6,6 +6,7 @@ import { useProjects } from "./useProjects";
 import ProjectsLayout from "@/components/mdx/ProjectsLayout";
 import TodosContent from "@/app/(portfolio)/projects/mdx/todos.content.mdx";
 import PortfolioContent from "@/app/(portfolio)/projects/mdx/portfolio.content.mdx";
+import { CTA } from "@/components/button/CTA";
 
 const PROJECT_CONTENT: Record<ProjectListKeys, React.ReactNode> = {
   todos: <TodosContent />,
@@ -36,6 +37,12 @@ export default function ProjectsPage() {
           </div>
         ))}
       </section>
+      <div className="my-30 flex items-center justify-center gap-5">
+        <p className="text-xl font-medium">기술 나열을 원하신다면,</p>
+        <CTA href="/skills" active={true}>
+          사용가능한 Skill 보러가기
+        </CTA>
+      </div>
     </div>
   );
 }

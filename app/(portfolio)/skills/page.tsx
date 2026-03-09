@@ -1,12 +1,6 @@
-"use client";
-
-import { SKILLS } from "./skill.content";
-import { SkillDetail, SkillSections } from "@/components/skills/index";
-import { useSkill } from "./useSkill";
-import { SKILL_KEYS } from "@/lib/portfolio/skills";
+import { SkillSections } from "@/components/skills/SkillSections";
 
 export default function SkillsPage() {
-  const { activeSkill, onSelect, trigger } = useSkill();
   return (
     <>
       <div className="mt-4 mb-10">
@@ -17,19 +11,7 @@ export default function SkillsPage() {
         </p>
       </div>
       <section className="relative">
-        <SkillSections activeSkill={activeSkill} onSelect={onSelect} />
-        {SKILL_KEYS.map((name) => (
-          <div
-            key={name}
-            ref={(el) => {
-              trigger.current[name] = el;
-            }}
-            className="scroll-mt-24"
-          >
-            <SkillDetail card={SKILLS[name]} name={name} />
-            <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
-          </div>
-        ))}
+        <SkillSections/>
       </section>
     </>
   );

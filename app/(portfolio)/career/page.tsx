@@ -5,7 +5,6 @@ import { CareerList, CareerCardDetail } from "@/components/career/";
 import { useCareer } from "./useCareer";
 import { CAREER_CARDS } from "./career.content";
 import { badgeClass } from "@/lib/portfolio/classNameMap";
-import { ArrowUpIcon } from "@heroicons/react/16/solid";
 import { CTA } from "@/components/button/CTA";
 
 export default function CareerPage() {
@@ -50,9 +49,6 @@ export default function CareerPage() {
       <div className="my-30 flex items-center justify-center gap-5">
         <p className="text-xl font-medium">인상깊게 확인하셨다면,</p>
         <CTA href="/projects" active={true}>Next.js로 만든 프로젝트 보러가기</CTA>
-      </div>
-      <div className="size-5 btm-0 fixed right-0 flex items-center justify-center rounded-full shadow-sm">
-        <ArrowUpIcon />
       </div>
     </>
   );

@@ -109,45 +109,51 @@ button {
   @apply focus-visible:ring-1 focus-visible:ring-green-400 focus-visible:outline-none;
 }
 
-/* nav start */
-.shadowed-button {
-  box-shadow:
-    -4px -4px 30px var(--color-white),
-    4px 4px 30px --alpha(var(--button-shadow) / 0.4),
-    inset -4px -4px 4px --alpha(var(--button-shadow) / 0.25),
-    inset 4px 4px 4px var(--color-white);
-  background: var(--button-background);
+/* skill animation start */
+@keyframes wave {
+  0% {
+    transform: translateX(0) skewX(0deg) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-6px) skewX(6deg) rotate(1deg);
+  }
+  50% {
+    transform: translateX(0) skewX(-6deg) rotate(0deg);
+  }
+  75% {
+    transform: translateX(6px) skewX(4deg) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) skewX(0deg) rotate(0deg);
+  }
 }
 
-.shadowed-button:hover {
-  box-shadow:
-    -4px -4px 30px var(--color-white),
-    4px 4px 30px --alpha(var(--button-shadow) / 0.4);
+@keyframes wave-slow {
+  0% {
+    transform: translateX(0) skewX(0deg) rotate(0deg);
+  }
+  25% {
+    transform: translateX(5px) skewX(-4deg) rotate(-1deg);
+  }
+  50% {
+    transform: translateX(0) skewX(5deg) rotate(0deg);
+  }
+  75% {
+    transform: translateX(-5px) skewX(-3deg) rotate(1deg);
+  }
+  100% {
+    transform: translateX(0) skewX(0deg) rotate(0deg);
+  }
 }
 
-.shadowed-button:hover svg {
-  color: --alpha(var(--color-green-400) / 0.75);
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
 }
 
-.shadowed-button:active {
-  box-shadow:
-    -4px -4px 4px --alpha(var(--color-white) / 0.7),
-    4px 4px 4px --alpha(var(--button-shadow) / 0.2);
+.animate-wave-slow {
+  animation: wave-slow 2.8s ease-in-out infinite;
 }
-
-.shadowed-button:active svg {
-  color: var(--color-green-400);
-}
-.shadowed-button.clicked {
-  box-shadow:
-    -4px -4px 4px --alpha(var(--color-white) / 0.7),
-    4px 4px 4px --alpha(var(--button-shadow) / 0.2);
-}
-
-.shadowed-button.clicked svg {
-  color: var(--color-green-500);
-}
-/* nav end */
+/* skill animation start */
 
 /* responsive visibility utilities start */
 
