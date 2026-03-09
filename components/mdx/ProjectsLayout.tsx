@@ -24,14 +24,15 @@ export default function AboutLayout({ children }: Props) {
         "prose-hr:border-neutral-300",
         // p
         "prose-p:text-base",
-        "prose-p:font-medium",
         "prose-p:my-4",
+        "prose-p:text-neutral-700",
         "prose-p:leading-relaxed",
         // strong
-        "prose-strong:text-green-600",
+        "prose-strong:font-semibold",
+        "prose-strong:text-neutral-700",
         // li
         "prose-li:text-base",
-        "prose-li:font-medium",
+        "prose-li:text-neutral-700",
         "prose-li:my-4",
         "prose-li:leading-relaxed",
         // 반응형

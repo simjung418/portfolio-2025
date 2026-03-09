@@ -27,6 +27,7 @@ const KPI_CAREER = {
 
 const KPI_USER = {
   label: { suffix: "서비스 사용자" },
+  labelCareer: { suffix: "사용자 플랫폼 운영" },
   end: 20000,
   suffix: "+",
   separator: ","
@@ -44,6 +45,31 @@ const KPI_ISO = {
   end: 27000,
   prefix: "ISO ",
   separator: ""
+};
+
+const KPI_BISAT = {
+  label: { suffix: "모던 프론트엔드 구조 전환, DX 개선" },
+  end: 0,
+  separator: ""
+};
+
+const KPI_UI = {
+  label: {
+    prefix: "외부 사용자",
+    suffix: "증가"
+  },
+  end: 67,
+  suffix: "%",
+  separator: ""
+};
+
+const KPI_BAVL = {
+  label: {
+    suffix: "과업 달성"
+  },
+  end: 150000,
+  suffix: "문장 데이터",
+  separator: ","
 };
 
 const MergeKPIClass = (kpi: HeroKpi, classNameForLabel: string, classNameForCountUp: string): HeroKpi => {
@@ -88,3 +114,6 @@ export const C_KPI_CAREER = MergeKPIClass(KPI_CAREER, CareerLabelClassName, Care
 export const C_KPI_USER = MergeKPIClass(KPI_USER, CareerLabelClassName, CareerCountUpClassName);
 export const C_KPI_JOIN = MergeKPIClass(KPI_JOIN, CareerLabelClassName, CareerCountUpClassName);
 export const C_KPI_ISO = MergeKPIClass(KPI_ISO, CareerLabelClassName, CareerCountUpClassName);
+export const C_KPI_BISAT = MergeKPIClass(KPI_BISAT, CareerLabelClassName, CareerCountUpClassName);
+export const C_KPI_UI = MergeKPIClass(KPI_UI, CareerLabelClassName, CareerCountUpClassName);
+export const C_KPI_BAVL = MergeKPIClass(KPI_BAVL, CareerLabelClassName, CareerCountUpClassName);

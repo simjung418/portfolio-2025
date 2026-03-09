@@ -1,5 +1,5 @@
 import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
-import { C_KPI_ISO, C_KPI_JOIN, C_KPI_USER } from "@/lib/portfolio/kpi";
+import { C_KPI_BAVL, C_KPI_BISAT, C_KPI_ISO, C_KPI_JOIN, C_KPI_UI, C_KPI_USER } from "@/lib/portfolio/kpi";
 
 export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   iso: {
@@ -8,62 +8,47 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
     highlight: C_KPI_ISO,
     desc: (
       <>
-        <p>개발·QA·심사 전 과정을 리딩하며 ISO 27000 시리즈 인증을 획득해 입찰 경쟁력을 강화했습니다.</p>
+        <p>
+          ISO 27000 시리즈 인증을 위해 보안 요구사항을 분석하고
+          <br />
+          2FA 인증, IP 접근 통제 등 핵심 보안 기능을 직접 개발했습니다.
+          <br />
+          이후 보안 취약점 점검, QA, 인증 심사 대응까지
+          <br />전 과정을 리딩하여 ISO 27000, 27001, 27017 인증 취득을 완료했습니다.
+        </p>
       </>
     ),
     term: "2025.02 - 2025.06",
     tech: ["Vue.js", "PHP", "MySQL"],
+    imgs: [
+      {
+        src: "/iso.png",
+        label: "내부직원 전용 로그인 페이지와 2FA 인증 코드"
+      }
+    ],
     detail: {
       challenge: (
         <>
-          <p>입찰 경쟁력 강화를 위해 ISO 27000 시리즈 글로벌 보안 인증 취득이 필수적이었습니다.</p>
+          <p>입찰 경쟁력 강화를 위해 ISO 27000 시리즈 글로벌 보안 인증 취득을 요했습니다.</p>
         </>
       ),
       action: (
         <>
           <p>
-            보안 취약점 진단부터 개발항목 취합, 경영진 논의, 개발, QA, 인증 심사까지 전 과정을 주도 했습니다. IP 통제,
-            2FA 인증, 민감정보 접근 통제 등 핵심 보안 요건을 직접 구현했습니다.
+            보안 취약점 진단부터 개발항목 취합, 경영진 논의, 개발, QA, 인증 심사까지 전 과정을 주도 했습니다.
+            <br /> IP 통제, 2FA 인증, 민감정보 접근 통제 등 <strong>핵심 보안 요건을 직접 구현</strong>했습니다.
           </p>
         </>
       ),
       result: (
         <>
           <p>
-            ISO 27000/27001/27017 인증을 획득하여 입찰 경쟁력을 확보하고 고객의 데이터 보안 신뢰도를 극대화했습니다.
+            ISO 27000, 27001, 27017 인증을 획득하여 입찰 경쟁력을 확보하고 고객의 데이터 보안 신뢰도를 극대화했습니다.
           </p>
-        </>
-      )
-    }
-  },
-  deepread2: {
-    tabName: "DeepRead 2.0",
-    title: "DeepRead 2.0 AI 챗봇 개발",
-    highlight: C_KPI_JOIN,
-    desc: (
-      <>
-        <p>실시간 AI 분석 결과를 대화형 UX로 구현하여 플랫폼 사용자 수를 200% 이상 유입시켰습니다.</p>
-      </>
-    ),
-    term: "2023.11 - 2024.01",
-    tech: ["Vue.js", "Websocket", "Axios"],
-    detail: {
-      challenge: (
-        <>
-          <p>AI 논문 분석 서비스의 실시간 응답 처리 및 사용자 친화적인 UX 구현이 핵심 과제였습니다.</p>
-        </>
-      ),
-      action: (
-        <>
           <p>
-            Websocket으로 ChatGPT 기반 AI 분석결과를 실시간 수신하여 대화형 인터페이스로 구현하고, 채팅과 동시에 논문을
-            읽을 수 있는 UI를 구현하였습니다. 또한 SNS 로그인 도입으로 진입 장벽을 낮췄습니다.
+            플랫폼을 운영할 때 개인정보와 민감정보를 다루는 방법과 <strong>개인정보 관련 법적 규제 및 정책</strong>을
+            습득하고 그에 맞는 수준의 보안관련 개발을 경험했습니다.
           </p>
-        </>
-      ),
-      result: (
-        <>
-          <p>플랫폼 사용자 200% 증가 및 유료 서비스 사용자 풀 확대를 달성했습니다.</p>
         </>
       )
     }
@@ -74,11 +59,20 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
     highlight: C_KPI_USER,
     desc: (
       <>
-        <p>5년간 핵심 플랫폼을 안정적으로 운영하며 외주 의존도를 100% 제거했습니다.</p>
+        <p>
+          프로젝트관리, HR, 회계, 복지, 내부근태, 휴가 등 종합적인 기능을 운영하는 핵심 플랫폼의 기능 유지보수 및 신규
+          기능 개발을 총괄했습니다.
+        </p>
       </>
     ),
     term: "2020.07 - 2025.07",
     tech: ["Vue.js", "PHP", "MySQL"],
+    imgs: [
+      {
+        src: "/lexcloud.png",
+        label: "LEX-Cloud 랜딩페이지"
+      }
+    ],
     detail: {
       challenge: (
         <>
@@ -107,6 +101,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
   bisat2: {
     tabName: "BIS@T 2.0",
     title: "BIS@T 2.0 프론트엔드 리팩토링",
+    highlight: C_KPI_BISAT,
     desc: (
       <>
         <p>레거시 PHP 시스템을 Vue 3 기반 모던 프론트엔드로 전환하며 사용자 이전을 성공적으로 완료했습니다.</p>
@@ -114,7 +109,7 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
     ),
     term: "2024.07 - 2024.09",
     tech: ["Vue3", "Vuex", "Vue Router", "FastAPI 연동"],
-    // imgs: ["/bisat.png"],
+    imgs: [{ src: "/bisat.png", label: "BIS@T 랜딩페이지" }],
     detail: {
       challenge: (
         <>
@@ -123,10 +118,13 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
       ),
       action: (
         <>
-          <p>
-            Python/FastAPI로 전환되는 백엔드에 맞춰 Vue 3 기반 프론트엔드 아키텍처를 전면 재설계하고, 백엔드 팀과 긴밀히
-            협업하여 데이터 인터페이스를 최적화 했습니다.
-          </p>
+          <ul>
+            <li>
+              Python/FastAPI로 전환되는 백엔드에 맞춰 Vue 3 기반 프론트엔드 아키텍처를 전면 재설계하고, 백엔드 팀과
+              긴밀히 협업하여 데이터 인터페이스를 최적화 했습니다.
+            </li>
+            <li>컴포넌트 기반 CSS 구조를 정리하고 스타일 가이드를 적용해 UI 일관성과 유지보수성을 개선했습니다.</li>
+          </ul>
         </>
       ),
       result: (
@@ -139,30 +137,44 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
       )
     }
   },
-  lexcloud: {
-    tabName: "UI/UX 개선",
-    title: "렉스클라우드 사용자 페이지 UI/UX 개선",
+  deepread2: {
+    tabName: "DeepRead 2.0",
+    title: "DeepRead 2.0 AI 챗봇 개발",
+    highlight: C_KPI_JOIN,
     desc: (
       <>
-        <p>외부 사용자 페이지 전면 개선을 통해 재접속률과 서비스 활용도를 유의미하게 끌어올렸습니다.</p>
+        <p>실시간 AI 분석 결과를 대화형 UX로 구현하여 플랫폼 사용자 수를 200% 이상 유입시켰습니다.</p>
       </>
     ),
-    term: "2022.01 - 2022.12",
-    tech: ["Vue.js", "PHP", "CSS 표준화"],
+    term: "2023.11 - 2024.01",
+    tech: ["Vue.js", "Websocket", "Axios"],
+    imgs: [
+      {
+        src: "/deepread.png",
+        label: "DeepRead 2.0 논문 분석 페이지"
+      },
+      {
+        src: "/deepread-list.png",
+        label: "DeepRead 2.0 리스트 페이지"
+      }
+    ],
     detail: {
       challenge: (
         <>
-          <p>고객 및 번역사 외부 페이지 16개의 낮은 사용성으로 인해 사용자 이탈이 발생했습니다.</p>
+          <p>AI 논문 분석 서비스의 실시간 응답 처리 및 사용자 친화적인 UX 구현이 핵심 과제였습니다.</p>
         </>
       ),
       action: (
         <>
-          <p>UI/UX 전면 리뉴얼 및 CSS 스타일 가이드 통일을 통해 디자인 반영 작업 볼륨을 30% 감소 시켰습니다.</p>
+          <p>
+            Websocket으로 ChatGPT 기반 AI 분석결과를 실시간 수신하여 대화형 인터페이스로 구현하고, 채팅과 동시에 논문을
+            읽을 수 있는 UI를 구현하였습니다. 또한 SNS 로그인 도입으로 진입 장벽을 낮췄습니다.
+          </p>
         </>
       ),
       result: (
         <>
-          <p>외부 사용자 수 67% 증가를 달성하여 재접속률 및 서비스 활용도를 극대화했습니다.</p>
+          <p>플랫폼 사용자 200% 증가 및 유료 서비스 사용자 풀 확대를 달성했습니다.</p>
         </>
       )
     }
@@ -177,6 +189,24 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
     ),
     term: "2023.10 - 2023.10",
     tech: ["jQuery", "JS", "FastAPI 연동", "AnyChart"],
+    imgs: [
+      {
+        src: "/metafield.png",
+        label: "메타필드 분석결과 화면"
+      },
+      {
+        src: "/metafield2.png",
+        label: "메타필드 분석결과 화면"
+      },
+      {
+        src: "/metafield3.png",
+        label: "메타필드 분석결과 화면"
+      },
+      {
+        src: "/metafield4.png",
+        label: "메타필드 분석결과 화면"
+      }
+    ],
     detail: {
       challenge: (
         <>
@@ -204,9 +234,39 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
       )
     }
   },
+  lexcloud: {
+    tabName: "UI/UX 개선",
+    title: "렉스클라우드 사용자 페이지 UI/UX 개선",
+    highlight: C_KPI_UI,
+    desc: (
+      <>
+        <p>외부 사용자 페이지 전면 개선을 통해 재접속률과 서비스 활용도를 유의미하게 끌어올렸습니다.</p>
+      </>
+    ),
+    term: "2022.01 - 2022.12",
+    tech: ["Vue.js", "PHP", "CSS 표준화"],
+    detail: {
+      challenge: (
+        <>
+          <p>고객 및 번역사 외부 페이지 16개의 낮은 사용성으로 인해 사용자 이탈이 발생했습니다.</p>
+        </>
+      ),
+      action: (
+        <>
+          <p>UI/UX 전면 리뉴얼 및 CSS 스타일 가이드 통일을 통해 디자인 반영 작업 볼륨을 30% 감소 시켰습니다.</p>
+        </>
+      ),
+      result: (
+        <>
+          <p>외부 사용자 수 67% 증가를 달성하여 재접속률 및 서비스 활용도를 극대화했습니다.</p>
+        </>
+      )
+    }
+  },
   bavl: {
     tabName: "BAVL",
     title: "BAVL 데이터 수집 시스템",
+    highlight: C_KPI_BAVL,
     desc: (
       <>
         <p>대규모 데이터 수집 프로젝트에서 프론트엔드 구현과 실무 협업을 동시에 리딩했습니다.</p>
@@ -214,6 +274,12 @@ export const CAREER_CARDS: Record<CareerListKeys, CareerCards> = {
     ),
     term: "2021.06 - 2021.12",
     tech: ["Vue.js", "Javascript"],
+    imgs: [
+      {
+        src: "/bavl.png",
+        label: "BAVL 랜딩페이지"
+      }
+    ],
     detail: {
       challenge: (
         <>

@@ -5,4 +5,4 @@ export const ctaBtnClassMap = {
     "border-neutral-200 text-neutral-600 bg-neutral-50/30 hover:border-neutral-200 hover:bg-neutral-100/50 active:border-neutral-300 active:bg-neutral-200/50 font-normal cursor-pointer"
 };
 
-export const badgeClass = "text-sm rounded-full border border-neutral-200 bg-neutral-50 px-2 py-1 text-neutral-600";
+export const badgeClass = "text-sm rounded-full border border-neutral-300 bg-neutral-50 px-2 py-1 text-neutral-600";

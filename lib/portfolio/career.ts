@@ -1,17 +1,7 @@
-import { BaseCard } from "@/lib/portfolio/card";
 import { ReactNode } from "react";
 import { HeroKpi } from "./kpi";
 
-export const CAREER_LIST = [
-  "iso",
-  "deepread2",
-  "platform",
-  "bisat2",
-  "lexcloud",
-  "metafield",
-  "bavl",
-  "l10n",
-] as const;
+export const CAREER_LIST = ["iso", "platform", "bisat2", "deepread2", "metafield", "lexcloud", "bavl", "l10n"] as const;
 
 export type CareerListKeys = (typeof CAREER_LIST)[number];
 
@@ -21,10 +11,16 @@ export type CareerDetail = {
   result: ReactNode;
 };
 
-export type CareerCards = BaseCard & {
+export type CareerCards = {
+  title: string;
+  tech?: string[];
   highlight?: HeroKpi;
   desc: ReactNode;
   term: string;
   tabName?: string;
   detail: CareerDetail;
+  imgs?: {
+    src: string;
+    label: string;
+  }[];
 };

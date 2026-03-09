@@ -1,6 +1,6 @@
-import { ProjectCards, ProjectListKeys } from "@/lib/portfolio/projects";
+import { ProjectListKeys } from "@/lib/portfolio/projects";
 import clsx from "clsx";
-import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
+import { ctaBtnClassMap } from "@/lib/portfolio/classNameMap";
 
 // 카드 리스트는 "프로젝트"든 "커리어"든 상관없이,
 // 1) key 목록(list)
@@ -11,7 +11,6 @@ import { ctaBtnClassMap } from "../button/ctaBtnClassMap";
 
 type Props = {
   list: readonly ProjectListKeys[];
-  cards: Record<ProjectListKeys, ProjectCards>;
   onSelect: (name: ProjectListKeys) => void;
   selected: ProjectListKeys;
 };
@@ -22,7 +21,7 @@ const projectCardClassMap = {
     "clicked **:[h3]:text-green-500  **:[&_p]:text-neutral-600 bg-green-200/40!",
 };
 
-export const ProjectCardList = ({ list, cards, onSelect, selected }: Props) => {
+export const ProjectCardList = ({ list, onSelect, selected }: Props) => {
   return (
     <ul className="sticky top-3 mb-4 flex items-center gap-4 md:mb-7">
       {list.map((name) => {

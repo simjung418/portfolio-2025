@@ -11,7 +11,7 @@ export default function CareerPage() {
   return (
     <>
       <h3 className="text-3xl font-bold text-neutral-700">LEXCODE Inc.</h3>
-      <ul className="mt-2 flex flex-wrap items-center md:gap-x-4 gap-x-2 gap-y-1">
+      <ul className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 md:gap-x-4">
         <li className="flex items-center gap-2">
           <span className={badgeClass}>직급</span>
           <p className="text-lg font-semibold">대리</p>
@@ -34,8 +34,9 @@ export default function CareerPage() {
 
       <section className="relative">
         <CareerList list={CAREER_LIST} onSelect={onSelect} cards={CAREER_CARDS} selected={selected} />
-        {CAREER_LIST.map((name) => (
+        {CAREER_LIST.map((name, index) => (
           <div key={name} className="scroll-mt-24">
+            {index !== 0 && <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>}
             <CareerCardDetail
               triggerRef={(el) => {
                 trigger.current[name] = el;
@@ -43,7 +44,6 @@ export default function CareerPage() {
               card={CAREER_CARDS[name]}
               name={name}
             />
-            <div className="my-4 h-px w-full bg-neutral-300 md:my-8"></div>
           </div>
         ))}
       </section>
