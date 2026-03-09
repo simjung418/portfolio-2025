@@ -5,6 +5,8 @@ import { CareerList, CareerCardDetail } from "@/components/career/";
 import { useCareer } from "./useCareer";
 import { CAREER_CARDS } from "./career.content";
 import { badgeClass } from "@/lib/portfolio/classNameMap";
+import { ArrowUpIcon } from "@heroicons/react/16/solid";
+import { CTA } from "@/components/button/CTA";
 
 export default function CareerPage() {
   const { selected, onSelect, trigger } = useCareer();
@@ -29,9 +31,7 @@ export default function CareerPage() {
         재직 기간 동안 수행한 업무를 주요 프로젝트 중심으로 정리했습니다.
         <br />각 항목은 문제 정의부터 해결 과정, 그리고 결과까지의 흐름으로 구성했습니다.
       </p>
-
       <div className="bg-neutral-300 md:my-8 w-full h-px my-4"></div>
-
       <section className="relative">
         <CareerList list={CAREER_LIST} onSelect={onSelect} cards={CAREER_CARDS} selected={selected} />
         {CAREER_LIST.map((name, index) => (
@@ -47,6 +47,13 @@ export default function CareerPage() {
           </div>
         ))}
       </section>
+      <div className="my-30 flex items-center justify-center gap-5">
+        <p className="text-xl font-medium">인상깊게 확인하셨다면,</p>
+        <CTA href="/projects" active={true}>Next.js로 만든 프로젝트 보러가기</CTA>
+      </div>
+      <div className="size-5 btm-0 fixed right-0 flex items-center justify-center rounded-full shadow-sm">
+        <ArrowUpIcon />
+      </div>
     </>
   );
 }

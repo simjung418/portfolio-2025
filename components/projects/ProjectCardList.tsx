@@ -23,7 +23,7 @@ const projectCardClassMap = {
 
 export const ProjectCardList = ({ list, onSelect, selected }: Props) => {
   return (
-    <ul className="sticky top-3 mb-4 flex items-center gap-4 md:mb-7">
+    <ul className="top-3 md:mb-7 sticky z-10 flex items-center gap-4 mb-4">
       {list.map((name) => {
         return (
           <li key={name}>

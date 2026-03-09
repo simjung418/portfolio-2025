@@ -1,9 +1,7 @@
-import { ctaBtnClassMap } from "@/lib/portfolio/classNameMap";
-import clsx from "clsx";
-import Link from "next/link";
 import CareSection from "@/components/hero/CareSection";
 import { CareCard } from "@/lib/portfolio/hero";
 import StatKpiRow from "./StatKpiRow";
+import { CTA } from "../button/CTA";
 
 const CARE_CARDS: CareCard[] = [
   {
@@ -40,7 +38,6 @@ const CARE_CARDS: CareCard[] = [
 ];
 
 export default function Hero() {
-  const style = ctaBtnClassMap;
   return (
     <>
       <h2 className="text-green-500">숲을 보는 개발자,</h2>
@@ -53,37 +50,22 @@ export default function Hero() {
         <strong className="font-bold text-green-600">서로 다른 언어를 하나의 흐름으로 연결하여</strong> 프로젝트를
         울창한 숲처럼 만들어갑니다.
       </p>
-      <div className="my-10 flex gap-3 md:gap-4">
-        <Link
-          href="/career"
-          className={clsx(
-            "w-full flex-1 justify-center rounded-md py-3 text-center md:w-fit md:flex-none md:px-6 md:py-5 md:text-xl",
-            style.base,
-            style.active
-          )}
-        >
-          커리어 바로가기
-        </Link>
-        <Link
-          href="https://github.com/simjung418/portfolio-2025.git"
-          className={clsx(
-            "w-full flex-1 justify-center rounded-md py-3 text-center md:w-fit md:flex-none md:px-6 md:py-5 md:text-xl",
-            style.base,
-            style.inactive
-          )}
-          target="_blank"
-        >
+      <div className="md:gap-4 flex gap-3 my-10">
+        <CTA href="/career" active={true}>
+          커리어 보러가기
+        </CTA>
+        <CTA href="https://github.com/simjung418/portfolio-2025.git" active={false} target="_blank">
           깃허브 바로가기
-        </Link>
+        </CTA>
       </div>
 
       <hr className="my-13 text-neutral-200" />
 
-      <div className="mt-10 flex flex-col items-baseline gap-1 md:flex-row md:gap-4">
-        <h3 className="text-xl font-bold break-keep text-neutral-500 md:text-4xl md:leading-normal">
+      <div className="md:flex-row md:gap-4 flex flex-col items-baseline gap-1 mt-10">
+        <h3 className="break-keep text-neutral-500 md:text-4xl md:leading-normal text-xl font-bold">
           What I Care About
         </h3>
-        <p className="text-base/7 font-bold text-neutral-400 md:text-2xl">기능이 아니라 방향을 설계합니다.</p>
+        <p className="text-base/7 text-neutral-400 md:text-2xl font-bold">기능이 아니라 방향을 설계합니다.</p>
       </div>
       <ul className="mt-4 flex flex-col gap-3 md:mt-8 **:[&_strong]:text-green-600">
         {CARE_CARDS.map((care, index) => (
