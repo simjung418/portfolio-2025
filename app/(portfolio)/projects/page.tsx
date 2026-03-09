@@ -37,7 +37,7 @@ export default function ProjectsPage() {
           </div>
         ))}
       </section>
-      <div className="my-30 flex items-center justify-center gap-5">
+      <div className="my-30 flex flex-col items-center justify-center gap-5 md:flex-row">
         <p className="text-xl font-medium">기술 나열을 원하신다면,</p>
         <CTA href="/skills" active={true}>
           사용가능한 Skill 보러가기
