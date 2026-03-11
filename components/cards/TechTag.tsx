@@ -16,9 +16,7 @@ const TechTag = ({ tags, parent, parentClicked }: Props) => {
           key={`tech_${parent}_${index}`}
           className={clsx(
             "not-prose list-none rounded-full border bg-neutral-50 px-3 py-1 text-sm font-medium md:text-lg",
-            parentClicked
-              ? "border-green-200 text-green-400"
-              : "border-neutral-300 text-neutral-600",
+            parentClicked ? "border-green-200 text-green-500" : "border-neutral-300 text-neutral-600"
           )}
         >
           {tech}

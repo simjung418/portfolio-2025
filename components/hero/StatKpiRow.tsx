@@ -9,7 +9,7 @@ export default function StatKpiRow() {
           return (
             <li
               key={`${item.end}_${index}`}
-              className="flex w-full flex-col items-center justify-center gap-0 rounded-md bg-white/60 py-5 text-center backdrop-blur-xs md:gap-4 md:px-5 md:py-8"
+              className="flex min-h-48 w-full flex-col items-center justify-center gap-0 rounded-md bg-white/20 p-5 text-center backdrop-blur-xs md:gap-4 md:px-5"
             >
               <StatKpiClient {...item} />
             </li>

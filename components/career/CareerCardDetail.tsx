@@ -2,8 +2,6 @@ import { CareerCards, CareerListKeys } from "@/lib/portfolio/career";
 import ShowImage from "@/components/ui/ShowImage";
 import TechTag from "@/components/cards/TechTag";
 import StatKpiClient from "./StatKpi.client";
-import clsx from "clsx";
-import { badgeClass } from "@/lib/portfolio/classNameMap";
 
 type Props = {
   triggerRef?: (el: HTMLDivElement | null) => void;
@@ -21,24 +19,22 @@ export const CareerCardDetail = ({ triggerRef, card, name }: Props) => {
   const CAR = ["challenge", "action", "result"] as const;
   return (
     <div>
-      {card.term && <p className="text-neutral-600 md:text-lg font-medium">{card.term}</p>}
-      <div className="flex flex-wrap items-baseline gap-4">
-        <h2 ref={triggerRef} className="mt-0! text-neutral-700">
-          {card.title}
-        </h2>
-        {card.highlight && <StatKpiClient {...card.highlight} />}
-      </div>
-      <div className="md:mt-0 mt-2">
+      {card.term && <p className="mb-2 font-medium text-neutral-600 md:mb-0 md:text-lg">{card.term}</p>}
+      <h2 ref={triggerRef} className="mt-0! mb-2! text-neutral-700 md:leading-15">
+        {card.title}
+      </h2>
+      {card.highlight && <StatKpiClient {...card.highlight} />}
+      <div className="mt-2 md:mt-0">
         {card.tech && <TechTag tags={card.tech!} parent={name} parentClicked={false} />}
       </div>
-      <div className="md:mt-10 flex flex-col gap-12 mt-6">
-        <dl className="md:gap-4 flex flex-col gap-2">
+      <div className="mt-6 flex flex-col gap-12 md:mt-10">
+        <dl className="flex flex-col gap-2 md:gap-4">
           <dt className={dlClassMap.dt}>About</dt>
           <dd className={dlClassMap.dd}>{card.desc}</dd>
         </dl>
         {CAR.map((val) => {
           return (
-            <dl key={`${name}_${val}`} className="md:gap-4 flex flex-col gap-2">
+            <dl key={`${name}_${val}`} className="flex flex-col gap-2 md:gap-4">
               <dt className={dlClassMap.dt}>{val}</dt>
               <dd className={dlClassMap.dd}>{detail?.[val]}</dd>
             </dl>

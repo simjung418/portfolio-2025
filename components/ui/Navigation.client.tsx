@@ -8,14 +8,14 @@ import { RoutePath, ROUTES } from "@/lib/portfolio/routes";
 import clsx from "clsx";
 
 const navClassMap = {
-  base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 px-2 bg-neutral-50/70 shadow-green-400/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
+  base: "absolute -right-4 z-100 mt-4 box-border flex w-lvw flex-col gap-5 md:rounded-2xl py-4 px-2 bg-neutral-50/70 shadow-green-500/15 backdrop-blur-md transition-all duration-200 md:w-auto md:p-3 md:shadow-[0_0_30px] xl:-right-8",
   opened: "pointer-events-auto translate-y-0 opacity-100",
   closed: "pointer-events-none -translate-y-2 opacity-0"
 };
 
 const routeClassMap = {
   base: "ease box-border px-4 block text-2xl/12 transition-colors md:px-2 md:py-0.5 md:text-2xl",
-  active: "text-green-500 hover:text-green-600 font-bold underline",
+  active: "text-green-500 hover:text-green-500 font-bold underline",
   inactive: "text-neutral-400 hover:text-neutral-500 font-medium active:text-neutral-600"
 };
 
@@ -60,11 +60,11 @@ export const Navigation = () => {
       <button
         onClick={() => setIsNavOpening((prev) => !prev)}
         className={clsx(
-          `group relative flex size-12 items-center justify-center rounded-full border backdrop-blur-xs transition-all hover:border-green-400 md:size-16`,
-          isNavOpening ? "border-green-400 shadow-md shadow-green-200" : "border-neutral-300"
+          `group relative flex size-12 items-center justify-center rounded-full border backdrop-blur-xs transition-all hover:border-green-500 md:size-16`,
+          isNavOpening ? "border-green-500 shadow-md shadow-green-200" : "border-neutral-300"
         )}
       >
-        <Bars3Icon className="size-6 md:size-8 text-green-400 transition-colors" />
+        <Bars3Icon className="size-6 text-green-500 transition-colors md:size-8" />
       </button>
       <ul className={clsx(navClassMap.base, isNavOpening ? navClassMap.opened : navClassMap.closed)}>
         {Object.entries(ROUTES).map(([route, meta]) => {

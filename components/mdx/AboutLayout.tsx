@@ -26,7 +26,7 @@ export default function AboutLayout({ children }: Props) {
         "prose-p:my-4",
         "prose-p:leading-relaxed",
         // strong
-        "prose-strong:text-green-600",
+        "prose-strong:text-green-500",
         // li
         "prose-li:text-base",
         "prose-li:font-medium",

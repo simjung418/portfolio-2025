@@ -15,7 +15,7 @@ export default function StatKpiClient(item: HeroKpi) {
   return (
     <>
       {mounted ? (
-        <div className="flex gap-2">
+        <div className="mb-1 flex gap-2 md:mb-4">
           {labelMerged.prefix && <p className={labelMerged.className}>{labelMerged?.prefix}</p>}
           {end !== 0 && (
             <CountUp

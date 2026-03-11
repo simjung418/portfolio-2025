@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { HeroKpi } from "./kpi";
 
-export const CAREER_LIST = ["iso", "platform", "bisat2", "deepread2", "metafield", "lexcloud", "bavl", "l10n"] as const;
+export const CAREER_LIST = ["iso", "platform", "deepread2", "bisat2", "metafield", "lexcloud", "bavl", "l10n"] as const;
 
 export type CareerListKeys = (typeof CAREER_LIST)[number];
 
@@ -12,7 +12,7 @@ export type CareerDetail = {
 };
 
 export type CareerCards = {
-  title: string;
+  title: ReactNode;
   tech?: string[];
   highlight?: HeroKpi;
   desc: ReactNode;

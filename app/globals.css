@@ -9,7 +9,7 @@
 @theme {
   --button-background: oklch(97% 0 0);
   --button-shadow: oklch(70.8% 0 0);
-  --button-shadow: oklch(72.3% 0.219 149.579)
+  --button-shadow: oklch(72.3% 0.219 149.579);
 }
 
 @theme inline {
@@ -106,7 +106,7 @@ h2 {
 
 a,
 button {
-  @apply focus-visible:ring-1 focus-visible:ring-green-400 focus-visible:outline-none;
+  @apply focus-visible:ring-1 focus-visible:ring-green-500 focus-visible:outline-none;
 }
 
 /* skill animation start */

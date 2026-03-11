@@ -40,17 +40,15 @@ const CARE_CARDS: CareCard[] = [
 export default function Hero() {
   return (
     <>
-      <h2 className="text-green-500">숲을 보는 개발자,</h2>
-      <h2>프론트 엔지니어 심정민입니다.</h2>
+      <h2 className="text-green-500">제품의 구조를 설계하는 프론트엔드 엔지니어,</h2>
+      <h2>안녕하세요, 심정민입니다.</h2>
+      <p className="my-10 text-base/6.5 font-medium break-keep md:text-3xl md:leading-normal">
+        <strong className="font-bold text-green-500">기능이 아니라 제품</strong>을 만들기 위해
+        <br />
+        확장 가능한 프론트엔드 구조를 설계합니다.
+      </p>
       <StatKpiRow />
-      <p className="mt-4 text-base/6.5 font-medium break-keep md:text-3xl md:leading-normal">
-        기획, 디자인, 개발자, 그리고 사용자까지
-      </p>
-      <p className="text-base/6.5 font-medium break-keep md:text-3xl md:leading-normal">
-        <strong className="font-bold text-green-600">서로 다른 언어를 하나의 흐름으로 연결하여</strong> 프로젝트를
-        울창한 숲처럼 만들어갑니다.
-      </p>
-      <div className="md:gap-4 flex gap-3 my-10">
+      <div className="mt-10 flex gap-3 md:gap-4">
         <CTA href="/career" active={true}>
           커리어 보러가기
         </CTA>
@@ -58,16 +56,19 @@ export default function Hero() {
           깃허브 바로가기
         </CTA>
       </div>
+      <p className="mt-2 mb-10 text-sm font-medium break-keep md:text-lg">
+        이 포트폴리오는 기획, 디자인, 개발을 모두 단독으로 진행했습니다.
+      </p>
 
       <hr className="my-13 text-neutral-200" />
 
-      <div className="md:flex-row md:gap-4 flex flex-col items-baseline gap-1 mt-10">
-        <h3 className="break-keep text-neutral-500 md:text-4xl md:leading-normal text-xl font-bold">
+      <div className="mt-10 flex flex-col items-baseline gap-1 md:flex-row md:gap-4">
+        <h3 className="text-xl font-bold break-keep text-neutral-500 md:text-4xl md:leading-normal">
           What I Care About
         </h3>
-        <p className="text-base/7 text-neutral-400 md:text-2xl font-bold">기능이 아니라 방향을 설계합니다.</p>
+        <p className="text-base/7 font-bold text-neutral-400 md:text-2xl">기능이 아니라 방향을 설계합니다.</p>
       </div>
-      <ul className="mt-4 flex flex-col gap-3 md:mt-8 **:[&_strong]:text-green-600">
+      <ul className="mt-4 flex flex-col gap-3 md:mt-8 **:[&_strong]:text-green-500">
         {CARE_CARDS.map((care, index) => (
           <li key={`care-${index}`}>
             <CareSection title={care.title} subTitle={care.subTitle} items={care.items} />

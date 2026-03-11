@@ -16,6 +16,7 @@ export default function StatKpiClient(item: HeroKpi) {
     <>
       {mounted ? (
         <>
+          {label.prefix && <p className={label.className}>{label?.prefix}</p>}
           <CountUp
             start={start != 0 ? start : undefined}
             end={end}
@@ -30,8 +31,9 @@ export default function StatKpiClient(item: HeroKpi) {
         </>
       ) : (
         <>
+          {label.prefix && <span className={label.className}>{label.prefix}</span>}
           <div className={className}>{unmountedLabel}</div>
-          <span className={label.className}>{label.suffix}</span>
+          {label.suffix && <span className={label.className}>{label.suffix}</span>}
         </>
       )}
     </>
