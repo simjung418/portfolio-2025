@@ -1,11 +1,6 @@
 import { Todo, TodoStatus } from "@/lib/portfolio/todos";
 import styles from "./TodoItem.module.css";
-import {
-  SparklesIcon,
-  CheckIcon,
-  XMarkIcon,
-  PencilIcon,
-} from "@heroicons/react/24/outline";
+import { SparklesIcon, CheckIcon, XMarkIcon, PencilIcon } from "@heroicons/react/24/outline";
 import Input from "@/components/todos/TodoInput";
 import clsx from "clsx";
 
@@ -23,7 +18,7 @@ type Props = {
 const statusClassMap: Record<TodoStatus, string> = {
   green: styles.green,
   yellow: styles.yellow,
-  stone: styles.stone,
+  stone: styles.stone
 };
 
 export const TodoItem = ({ item, handlers, status }: Props) => {
@@ -36,15 +31,10 @@ export const TodoItem = ({ item, handlers, status }: Props) => {
       className={clsx(
         `relative box-border flex cursor-pointer items-center justify-between gap-3 rounded-md border border-solid px-2 py-1 transition-colors ease-in active:[&_section]:scale-125`,
         isEditing && "ring-2",
-        statusClassMap[status],
+        statusClassMap[status]
       )}
     >
-      <div
-        className={clsx(
-          `item-center flex min-w-1/2 gap-3 [&_svg]:size-7`,
-          styles.svg_transition,
-        )}
-      >
+      <div className={clsx(`item-center flex min-w-1/2 gap-3 [&_svg]:size-7`, styles.svg_transition)}>
         <SparklesIcon
           className={clsx(!isRoutine && styles.svg_opacity)}
           onClick={(e) => {
@@ -64,9 +54,7 @@ export const TodoItem = ({ item, handlers, status }: Props) => {
           </div>
         ) : (
           <>
-            <div className="w-full cursor-text text-xl text-neutral-900">
-              {label}
-            </div>
+            <div className="w-full cursor-text text-xl text-neutral-900">{label}</div>
           </>
         )}
       </div>
@@ -85,7 +73,7 @@ export const TodoItem = ({ item, handlers, status }: Props) => {
         <section
           className={clsx(
             `box-border flex shrink-0 items-center justify-center rounded-lg p-0.5 transition-all ease-in active:scale-125`,
-            !isDone && `${styles.svg_opacity} active:opacity-100`,
+            !isDone && `${styles.svg_opacity} active:opacity-100`
           )}
         >
           <CheckIcon className="font-bold" />

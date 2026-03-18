@@ -38,7 +38,7 @@ export default function AboutLayout({ children }: Props) {
         "md:prose-hr:mt-20",
         "md:prose-h3:text-4xl",
         "md:prose-p:text-xl",
-        "md:prose-li:text-xl",
+        "md:prose-li:text-xl"
       )}
     >
       {children}
