@@ -1,4 +1,4 @@
-import { Todo, TodoStatus } from "@/lib/portfolio/todos";
+import { Todo, TodoStatus } from "@/lib/todos/todos";
 import styles from "./TodoItem.module.css";
 import { SparklesIcon, CheckIcon, XMarkIcon, PencilIcon } from "@heroicons/react/24/outline";
 import Input from "@/components/todos/TodoInput";

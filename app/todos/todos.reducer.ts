@@ -1,4 +1,4 @@
-import { Todo, TodoActions } from "@/lib/portfolio/todos";
+import { Todo, TodoActions } from "@/lib/todos/todos";
 
 export default function todosReducer(state: Todo[], action: TodoActions): Todo[] {
   /* Reducer
@@ -7,39 +7,37 @@ export default function todosReducer(state: Todo[], action: TodoActions): Todo[]
   다음 상태를 계산해서 반환하는 계산기” */
   let updater: ((todo: Todo) => Todo) | null = null; // updater initalize
 
-  switch (action.type) { // (updater에 식 집어넣어주기 / 식 없으면 고대로 switch에서 리듀서 탈출) / 데이터 아예 덮어씌우기 load
+  switch (
+    action.type // (updater에 식 집어넣어주기 / 식 없으면 고대로 switch에서 리듀서 탈출) / 데이터 아예 덮어씌우기 load
+  ) {
     case "LOAD":
       return action.todos;
     case "ADD":
-      return [
-        ...state,
-        action.initialTodo
-      ]
+      return [...state, action.initialTodo];
     case "TOGGLE_DONE":
-      updater = todo => {
-        const updated = { ...todo, isDone: !todo.isDone }
-        return { ...updated }
-      }
+      updater = (todo) => {
+        const updated = { ...todo, isDone: !todo.isDone };
+        return { ...updated };
+      };
       break;
     case "TOGGLE_EDIT":
-      updater = todo => ({
+      updater = (todo) => ({
         ...todo,
         isEditing: !todo.isEditing
-      })
+      });
       break;
     case "TOGGLE_ROUTINE":
-      updater = todo => ({
+      updater = (todo) => ({
         ...todo,
         isRoutine: !todo.isRoutine
-      })
+      });
       break;
     case "UPDATE_LABEL":
-      updater = todo => ({ ...todo, label: todo.label, isEditing: false })
+      updater = (todo) => ({ ...todo, label: todo.label, isEditing: false });
       break;
-    default: return state;
+    default:
+      return state;
   }
 
-  return state.map(todo => (
-    todo.id === action.id ? updater!(todo) : todo
-  ))
+  return state.map((todo) => (todo.id === action.id ? updater!(todo) : todo));
 }

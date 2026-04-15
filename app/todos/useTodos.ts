@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { Todo } from "@/lib/portfolio/todos";
+import { Todo } from "@/lib/todos/todos";
 import { getCookie, setCookie } from "./cookies";
 import todosReducer from "./todos.reducer";
 import { selectGetStatus, selectHasEditingTodo } from "./todos.selector";
@@ -10,7 +10,7 @@ export function useTodos() {
     ...item,
     status: selectGetStatus(item)
   }));
-  const [todos, dispatch] = useReducer(todosReducer, initialTodos)
+  const [todos, dispatch] = useReducer(todosReducer, initialTodos);
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -19,7 +19,7 @@ export function useTodos() {
     const loadTodos = async () => {
       const cookieTodo = await getCookie();
 
-      if (cookieTodo !== '') {
+      if (cookieTodo !== "") {
         dispatch({ type: "LOAD", todos: JSON.parse(cookieTodo) });
       }
       setIsLoading(false); // 로딩 끝
@@ -32,12 +32,13 @@ export function useTodos() {
     if (todos.length > 0 && !isLoading) {
       setCookie(JSON.stringify(todos)); // todos가 변할때 마다 쿠키에 저장
     }
-    if (selectHasEditingTodo(todos)) { // 에디팅 체크 될때마다 변환
+    if (selectHasEditingTodo(todos)) {
+      // 에디팅 체크 될때마다 변환
       setIsEditing(true);
     } else {
       setIsEditing(false);
     }
-  }, [todos, isLoading])
+  }, [todos, isLoading]);
 
   const addTodo = () => {
     const length = todos.length;
@@ -46,9 +47,9 @@ export function useTodos() {
       label: "",
       isDone: false,
       isRoutine: false,
-      isEditing: true,
-    }
-    dispatch({ type: "ADD", initialTodo })
+      isEditing: true
+    };
+    dispatch({ type: "ADD", initialTodo });
   };
   const toggleDone = (id: number) => dispatch({ type: "TOGGLE_DONE", id });
   const toggleEdit = (id: number) => dispatch({ type: "TOGGLE_EDIT", id });
@@ -56,6 +57,12 @@ export function useTodos() {
   const updateLabel = (id: number, label: string) => dispatch({ type: "UPDATE_LABEL", id, label });
 
   return {
-    todos, isEditing, addTodo, toggleDone, toggleEdit, updateLabel, toggleRoutine
-  }
+    todos,
+    isEditing,
+    addTodo,
+    toggleDone,
+    toggleEdit,
+    updateLabel,
+    toggleRoutine
+  };
 }
