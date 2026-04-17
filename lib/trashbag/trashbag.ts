@@ -43,7 +43,7 @@ export type Shop = {
   degYmd: string; // 지정일자
   // eobYmd: string; // 폐업일자
   // mngInstNm: string; // 관리기관명
-  crtrYmd: string; // 데이터기준일자
+  // crtrYmd: string; // 데이터기준일자
   // insttCode: string; // 제공기관코드
   // insttNm: string; // 제공기관명
 };

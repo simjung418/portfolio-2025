@@ -4,8 +4,8 @@ import { Price, Region, TrashUsage } from "@/lib/trashbag/trashbag";
 
 export const getPrice = async (region: Region, usage: TrashUsage) => {
   const priceParams = new URLSearchParams({
-    serviceKey: "95b3109d1398182c2fd249c845a629695692852c44ed8ff78edf517058c03678",
-    // serviceKey: process.env.DATA_PUBLIC_KEY ?? "",
+    // serviceKey: "95b3109d1398182c2fd249c845a629695692852c44ed8ff78edf517058c03678",
+    serviceKey: process.env.NEXT_PUBLIC_DATA_PUBLIC_KEY ?? "",
     type: "json",
     pageNo: "1",
     numOfRows: "100",

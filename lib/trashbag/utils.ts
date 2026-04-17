@@ -71,3 +71,7 @@ export const getUniqueRegions = (list: ShopWithD[]): Region[] => {
 };
 
 export const getRegionKey = (ctpvNm: string, sggNm: string) => `${ctpvNm}-${sggNm}`;
+
+export const getliKey = (bzmnRegNo: string | null, stoNm: string, sggNm: string, degYmd: string) => {
+  return bzmnRegNo ? `${bzmnRegNo}-${degYmd}` : `${stoNm}-${sggNm}-${degYmd}`;
+};
