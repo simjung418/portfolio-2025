@@ -102,6 +102,8 @@ export default function TrashBagClient() {
             <option value={0}>거리</option>
             <option value={1000}>1km</option>
             <option value={10000}>10km</option>
+            <option value={20000}>20km</option>
+            <option value={30000}>30km</option>
             <option value={50000}>50km</option>
           </select>
         </div>
@@ -119,7 +121,7 @@ export default function TrashBagClient() {
                   <li
                     key={liKey}
                     className={clsx(
-                      "flex flex-col gap-3 border-b border-b-zinc-200 p-3",
+                      "flex flex-col gap-3 border-b border-b-zinc-200 p-3 cursor-pointer",
                       selected ? "bg-white" : "bg-neutral-50"
                     )}
                     onClick={(e) => {
@@ -203,7 +205,7 @@ export default function TrashBagClient() {
                 더 불러오는중
               </div>
             ) : (
-              pagedList.length > 0 && <div className="">마지막까지 모두 불러왔어요.</div>
+              pagedList.length > 0 && <div className="py-4 text-center text-sm text-zinc-400">마지막까지 모두 불러왔어요.</div>
             )}
           </div>
         ) : (
