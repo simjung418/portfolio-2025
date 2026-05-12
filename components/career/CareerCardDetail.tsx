@@ -11,7 +11,7 @@ type Props = {
 
 const dlClassMap = {
   dt: "text-lg font-bold text-neutral-400 capitalize md:text-2xl",
-  dd: "md:text-2xl/10 text-neutral-700 text-base **:[&_strong]:font-semibold!"
+  dd: "md:text-2xl/10 text-neutral-900 text-base **:[&_strong]:font-semibold!"
 };
 
 export const CareerCardDetail = ({ triggerRef, card, name }: Props) => {
@@ -20,7 +20,7 @@ export const CareerCardDetail = ({ triggerRef, card, name }: Props) => {
   return (
     <div>
       {card.term && <p className="mb-2 font-medium text-neutral-600 md:mb-0 md:text-lg">{card.term}</p>}
-      <h2 ref={triggerRef} className="mt-0! mb-2! text-neutral-700 md:leading-15">
+      <h2 ref={triggerRef} className="mt-0! mb-2! text-neutral-900 md:leading-15">
         {card.title}
       </h2>
       {card.highlight && <StatKpiClient {...card.highlight} />}

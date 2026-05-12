@@ -6,11 +6,15 @@ import { useProjects } from "./useProjects";
 import ProjectsLayout from "@/components/mdx/ProjectsLayout";
 import TodosContent from "@/app/(portfolio)/projects/mdx/todos.content.mdx";
 import PortfolioContent from "@/app/(portfolio)/projects/mdx/portfolio.content.mdx";
+import LetsoooContent from "@/app/(portfolio)/projects/mdx/letsooo.content.mdx";
+import TrashbagContent from "@/app/(portfolio)/projects/mdx/trashbag.content.mdx";
 import { CTA } from "@/components/button/CTA";
 
 const PROJECT_CONTENT: Record<ProjectListKeys, React.ReactNode> = {
+  letsooo: <LetsoooContent />,
+  portfolio: <PortfolioContent />,
+  trashbag: <TrashbagContent />,
   todos: <TodosContent />,
-  portfolio: <PortfolioContent />
 };
 
 export default function ProjectsPage() {
