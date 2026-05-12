@@ -8,8 +8,10 @@ export function useProjects() {
   };
 
   const trigger = useRef<Record<ProjectListKeys, HTMLDivElement | null>>({
-    todos: null,
+    letsooo: null,
     portfolio: null,
+    trashbag: null,
+    todos: null,
   });
 
   useEffect(() => {

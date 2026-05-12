@@ -25,7 +25,7 @@ export const POST = async (request: NextRequest) => {
   }
 };
 
-export const getRegionPrice = async ({ regions, usage }: Props) => {
+const getRegionPrice = async ({ regions, usage }: Props) => {
   const result = await Promise.all(
     regions.map(async (region) => {
       const response = await getPrice(region, usage);
