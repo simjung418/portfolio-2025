@@ -1,116 +1,13 @@
 "use client";
 
-import { SKILL_SECTIONS } from "@/app/(portfolio)/skills/skill.content";
-import { SkillKey, SkillSectionKey, SkillData } from "@/lib/portfolio/skills";
+import { SKILL_SECTIONS, SKILLS } from "@/app/(portfolio)/skills/skill.content";
+import { SkillKey, SkillSectionKey } from "@/lib/portfolio/skills";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
 
 type Props = {
   section: SkillSectionKey;
-};
-export const SKILLS: Record<SkillKey, SkillData> = {
-  react: {
-    name: "React",
-    icon: "react.svg",
-    percent: 100
-  },
-  nextjs: {
-    name: "Next.js",
-    icon: "nextjs.png",
-    percent: 100
-  },
-  typescript: {
-    name: "TypeScript",
-    icon: "ts.png",
-    percent: 100
-  },
-
-  tailwind: {
-    name: "Tailwind CSS",
-    icon: "tailwind.svg",
-    percent: 100
-  },
-  vue: {
-    name: "Vue.js",
-    icon: "vue.png",
-    percent: 100
-  },
-  php: {
-    name: "PHP",
-    icon: "php.png",
-    percent: 100
-  },
-  mysql: {
-    name: "MySQL",
-    icon: "mysql.png",
-    percent: 100
-  },
-  prisma: {
-    name: "Prisma",
-    icon: "prisma.png",
-    percent: 50
-  },
-  python: {
-    name: "Python",
-    icon: "python.png",
-    percent: 70
-  },
-  swiftui: {
-    name: "SwiftUI",
-    icon: "swift.svg",
-    percent: 10
-  },
-  rn: {
-    name: "React Native",
-    icon: "rn.svg",
-    percent: 0
-  },
-  figma: {
-    name: "Figma",
-    icon: "figma.png",
-    percent: 100
-  },
-  chatgpt: {
-    name: "Chat GPT",
-    icon: "gpt.svg",
-    percent: 100
-  },
-  notion: {
-    name: "Notion",
-    icon: "notion.svg",
-    percent: 100
-  },
-  git: {
-    name: "GitHub",
-    icon: "github.svg",
-    percent: 100
-  },
-  cursor: {
-    name: "Cursor.ai",
-    icon: "cursor.png",
-    percent: 100
-  },
-  apple: {
-    name: "Apple Devices",
-    icon: "apple.png",
-    percent: 100
-  },
-  websocket: {
-    name: "WebSocket",
-    icon: "websocket.png",
-    percent: 100
-  },
-  fastapi: {
-    name: "Fast API",
-    icon: "fastapi.png",
-    percent: 80
-  },
-  axios: {
-    name: "Axios",
-    icon: "axios.svg",
-    percent: 100
-  }
 };
 
 export const SkillList = ({ section }: Props) => {

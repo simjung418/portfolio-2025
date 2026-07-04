@@ -53,7 +53,7 @@ export default function LayoutShell({ children }: Prop) {
         {/* 가운데 정렬된 max-width 컨테이너 */}
         <div className="max-w-7xl md:px-6 relative px-4 mx-auto">
           {/* 컨테이너 기준 right */}
-          <div className="right-4 md:right-6 absolute">
+          <div className="right-4 md:-right-16 absolute">
             <button
               onClick={scrollToTop}
               className={clsx(

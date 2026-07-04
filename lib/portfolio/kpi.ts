@@ -19,14 +19,21 @@ export type HeroKpi = {
 };
 
 const KPI_CAREER = {
-  label: { suffix: "SaaS 플랫폼 개발 및 운영" },
+  label: { suffix: "운영 플랫폼 개발" },
   duration: 2,
   end: 5,
   suffix: "+ years"
 };
 
+const KPI_IMPROVE = {
+  label: { prefix: "1건 당", suffix: "실무진 업무시간 단축" },
+  end: 3,
+  suffix: "시간",
+  separator: "~"
+};
+
 const KPI_USER = {
-  label: { prefix: "전체 사용자" },
+  label: { suffix: "사용자 규모 플랫폼 운영" },
   labelCareer: { suffix: "사용자 플랫폼 운영" },
   end: 20000,
   suffix: "+",
@@ -34,7 +41,7 @@ const KPI_USER = {
 };
 
 const KPI_JOIN = {
-  label: { prefix: "AI 서비스로 사용자 ", suffix: "증가" },
+  label: { prefix: "AI 기능 도입 사용자", suffix: "증가" },
   end: 200,
   suffix: "%"
 };
@@ -110,7 +117,7 @@ const CareerCountUpClassName = "text-lg md:text-2xl font-bold text-green-500";
 
 export const HERO_KPI: HeroKpi[] = [
   MergeKPIClass(KPI_CAREER, HeroLabelClassName, HeroCountUpClassName),
-  MergeKPIClass(KPI_USER, HeroLabelClassName, HeroCountUpClassName),
+  MergeKPIClass(KPI_IMPROVE, HeroLabelClassName, HeroCountUpClassName),
   MergeKPIClass(KPI_JOIN, HeroLabelClassName, HeroCountUpClassName),
   MergeKPIClass(KPI_ISO, HeroLabelClassName, HeroCountUpClassName)
 ];

@@ -7,6 +7,8 @@ export const Footer = () => {
         <li>simjung418@naver.com</li>
         <li className="h-4 w-px bg-neutral-300 md:block hidden"></li>
         <li>©2026 Shim Jungmin All right reserved</li>
+        <li className="h-4 w-px bg-neutral-300 md:block hidden"></li>
+        <li>기획, 디자인, 개발 단독진행</li>
       </ul>
     </footer>
   );

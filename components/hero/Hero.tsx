@@ -2,6 +2,7 @@ import CareSection from "@/components/hero/CareSection";
 import { CareCard } from "@/lib/portfolio/hero";
 import StatKpiRow from "./StatKpiRow";
 import { CTA } from "../button/CTA";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 const CARE_CARDS: CareCard[] = [
   {
@@ -15,7 +16,7 @@ const CARE_CARDS: CareCard[] = [
   },
   {
     title: "방향이 있는 실행",
-    subTitle: "사람, 시간, 기술은 유한합니다. 그래서 전략은 선택이 아니라 기본입니다.",
+    subTitle: "사람, 시간, 기술은 유한합니다. 전략은 선택이 아니라 기본입니다.",
     items: [
       <>
         어떤 결과를 원하는지에서 출발해, 지금 무엇을 해야 하는지까지 이어지는
@@ -40,25 +41,102 @@ const CARE_CARDS: CareCard[] = [
 export default function Hero() {
   return (
     <>
-      <h2 className="text-green-500">제품의 구조를 설계하는 프론트엔드 엔지니어,</h2>
-      <h2>안녕하세요, 심정민입니다.</h2>
+      <h2 className="text-neutral-700">운영 중인 업무 시스템을 분석하고</h2>
+      <h2 className="mt-2 text-neutral-700">반복 업무를 자동화하는 웹 플랫폼 개발자</h2>
       <p className="my-10 text-base/6.5 font-medium break-keep md:text-3xl md:leading-normal">
-        <strong className="font-bold text-green-500">기능이 아니라 제품</strong>을 만들기 위해
-        <br />
-        확장 가능한 프론트엔드 구조를 설계합니다.
+        문제를 해결하기 위해 <strong className="text-green-500">실무진의 시선으로 해결방법을 모색</strong>합니다.
       </p>
       <StatKpiRow />
-      <div className="mt-10 flex gap-3 md:gap-4">
+
+      <hr className="my-13 text-neutral-200" />
+
+      <h2 className="text-green-500 text-center mb-15!">Career</h2>
+      <p className="text-lg text-neutral-700"></p>
+      <div className="flex items-stretch gap-15 justify-center">
+        <ul className="flex flex-col gap-4 text-xl [&_li]:flex [&_li]:items-center [&_li]:gap-2 **:[&_svg]:size-8 **:[&_svg]:text-green-500">
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>운영진 <strong>반복 업무 자동화</strong> 기능 개발</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p><strong>사용자 권한 기반</strong> 화면 및 데이터 접근 제어</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>ISO 27000 <strong>보안 인증</strong> 기능 개발</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>5년간 운영 플랫폼 <strong>운영 및 기능 개선</strong></p>
+          </li>
+        </ul>
         <CTA href="/career" active={true}>
           커리어 보러가기
         </CTA>
-        <CTA href="https://github.com/simjung418/portfolio-2025.git" active={false} target="_blank">
+      </div>
+      
+      <hr className="my-13 text-neutral-200" />
+
+      <h2 className="text-green-500 text-center mb-15!">Projects</h2>
+      <p className="text-lg text-neutral-700"></p>
+      <div className="flex items-stretch gap-15 justify-center">
+        <ul className="flex flex-col justify-center gap-4 text-xl [&_li]:flex [&_li]:items-center [&_li]:gap-2 **:[&_svg]:size-8 **:[&_svg]:text-green-500 h-44">
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>운동 기록 및 성장지표 시각화 앱</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>포트폴리오 구조</p>
+          </li>
+        </ul>
+        <CTA href="https://github.com/simjung418" active={false} target="_blank">
           깃허브 바로가기
         </CTA>
       </div>
-      <p className="mt-2 mb-10 text-sm font-medium break-keep md:text-lg">
-        이 포트폴리오는 기획, 디자인, 개발을 모두 단독으로 진행했습니다.
-      </p>
+
+      <hr className="my-13 text-neutral-200" />
+
+      <h2 className="text-green-500 text-center mb-15!">SKILLS</h2>
+      <p className="text-lg text-neutral-700"></p>
+      <div className="flex items-stretch gap-15 justify-center">
+        <ul className="flex flex-col justify-center gap-4 text-xl [&_li]:flex [&_li]:items-center [&_li]:gap-2 **:[&_svg]:size-8 **:[&_svg]:text-green-500 h-44">
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>PHP, MySQL, Javascript, Vue.js 실무 경력</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>React, Typescript, Next.js 개인 프로젝트 경험</p>
+          </li>
+          <li>
+            <span>
+              <ArrowRightIcon />
+            </span>
+            <p>JAVA, Spring Boot 개인 프로젝트 경험</p>
+          </li>
+        </ul>
+        <CTA href="/skills" active={true}>
+          스킬 보러가기
+        </CTA>
+      </div>
 
       <hr className="my-13 text-neutral-200" />
 
